@@ -3,9 +3,8 @@
 import { motion } from "framer-motion";
 import { useCallback, useEffect, useRef } from "react";
 
-/* ─── Interactive hero with cursor-reactive lines ─── */
+/* ─── Line data ─── */
 
-// Line definitions for the strata cross-section
 const STRATA_LINES = [
   { y: 250, offset: 5 },
   { y: 350, offset: -3 },
@@ -15,11 +14,101 @@ const STRATA_LINES = [
   { y: 750, offset: -3 },
 ];
 
-// Structural diamond paths — stored as center points for proximity calc
 const DIAMOND_SEGMENTS = [
-  { cx: 800, cy: 400, label: "right" },
-  { cx: 600, cy: 400, label: "left" },
+  { cx: 800, cy: 400 },
+  { cx: 600, cy: 400 },
 ];
+
+/* ─── Inscription zones: hidden text + cracks revealed on dwell ─── */
+
+// Words from languages that shaped commerce, governance, and building
+// Each zone has: position, crack paths, inscription text, and a kintsugi repair line
+const INSCRIPTION_ZONES = [
+  {
+    // Top-left quadrant — Latin / governance
+    cx: 320, cy: 240,
+    radius: 140,
+    text: "fundamentum",
+    lang: "Latin — foundation",
+    textX: 270, textY: 255,
+    cracks: [
+      "M260 210 L285 225 L278 248 L300 260",
+      "M310 200 L325 218 L318 240",
+      "M280 248 L265 275 L278 290",
+    ],
+    repair: "M278 248 L300 260 L318 240",
+  },
+  {
+    // Center-right — Italian / Renaissance craft
+    cx: 1050, cy: 350,
+    radius: 130,
+    text: "pietra angolare",
+    lang: "Italian — cornerstone",
+    textX: 980, textY: 365,
+    cracks: [
+      "M1020 310 L1040 330 L1035 355 L1055 370",
+      "M1070 320 L1055 345 L1065 365",
+      "M1035 355 L1015 378 L1030 395",
+    ],
+    repair: "M1035 355 L1055 370 L1065 365",
+  },
+  {
+    // Lower-left — Greek / structure
+    cx: 400, cy: 550,
+    radius: 120,
+    text: "θεμέλιος",
+    lang: "Greek — foundational",
+    textX: 360, textY: 565,
+    cracks: [
+      "M370 520 L390 540 L385 558 L405 570",
+      "M410 515 L400 538 L412 555",
+      "M385 558 L368 580 L380 595",
+    ],
+    repair: "M385 558 L405 570 L412 555",
+  },
+  {
+    // Center — Dutch / trade
+    cx: 700, cy: 450,
+    radius: 130,
+    text: "grondslag",
+    lang: "Dutch — groundwork",
+    textX: 658, textY: 465,
+    cracks: [
+      "M670 420 L688 438 L682 460 L705 472",
+      "M715 415 L700 440 L712 458",
+      "M682 460 L665 482 L678 498",
+    ],
+    repair: "M682 460 L705 472 L712 458",
+  },
+  {
+    // Upper-right — Arabic / masonry
+    cx: 1100, cy: 180,
+    radius: 120,
+    text: "أساس",
+    lang: "Arabic — foundation",
+    textX: 1078, textY: 195,
+    cracks: [
+      "M1070 155 L1090 170 L1085 190 L1108 200",
+      "M1115 148 L1100 168 L1110 188",
+    ],
+    repair: "M1085 190 L1108 200 L1110 188",
+  },
+  {
+    // Bottom-center — Japanese / bedrock
+    cx: 800, cy: 680,
+    radius: 115,
+    text: "礎石",
+    lang: "Japanese — foundation stone",
+    textX: 780, textY: 695,
+    cracks: [
+      "M770 655 L788 668 L782 690 L805 698",
+      "M810 650 L798 672 L808 688",
+    ],
+    repair: "M782 690 L805 698 L808 688",
+  },
+];
+
+/* ─── Component ─── */
 
 export function GeometricHero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -28,95 +117,157 @@ export function GeometricHero() {
   const lineRefs = useRef<(SVGLineElement | null)[]>([]);
   const pathRefs = useRef<(SVGPathElement | null)[]>([]);
   const cornerRefs = useRef<(SVGPathElement | null)[]>([]);
+  const zoneGroupRefs = useRef<(SVGGElement | null)[]>([]);
   const rafId = useRef<number>(0);
+
+  // Dwell tracking
+  const dwellPos = useRef({ x: 0, y: 0 });
+  const dwellStart = useRef(0);
+  const dwellTimerId = useRef<ReturnType<typeof setInterval>>(0 as unknown as ReturnType<typeof setInterval>);
+  const activeZones = useRef<Set<number>>(new Set());
+  const DWELL_RADIUS = 80; // SVG units — how far you can drift and still count as "dwelling"
+  const DWELL_TIME = 1800; // ms before inscriptions start appearing
+
+  /* ── Dwell checker: runs on interval while cursor is in hero ── */
+  const checkDwell = useCallback(() => {
+    const now = Date.now();
+    const elapsed = now - dwellStart.current;
+    if (elapsed < DWELL_TIME) return;
+
+    // Progressive reveal: the longer you dwell, the more zones can appear
+    const dwellStrength = Math.min(1, (elapsed - DWELL_TIME) / 2000);
+
+    INSCRIPTION_ZONES.forEach((zone, i) => {
+      const dx = dwellPos.current.x - zone.cx;
+      const dy = dwellPos.current.y - zone.cy;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      const g = zoneGroupRefs.current[i];
+      if (!g) return;
+
+      if (dist < zone.radius) {
+        // Within range — reveal
+        if (!activeZones.current.has(i)) {
+          activeZones.current.add(i);
+        }
+        const zoneStrength = Math.min(1, dwellStrength * (1 - dist / zone.radius) * 2);
+        g.style.opacity = String(zoneStrength);
+
+        // Stagger: cracks first, then text, then kintsugi repair
+        const children = g.children;
+        for (let c = 0; c < children.length; c++) {
+          const child = children[c] as SVGElement;
+          const role = child.getAttribute("data-role");
+          if (role === "crack") {
+            child.style.opacity = String(Math.min(1, zoneStrength * 2));
+          } else if (role === "text") {
+            child.style.opacity = String(Math.max(0, zoneStrength * 1.5 - 0.3));
+          } else if (role === "lang") {
+            child.style.opacity = String(Math.max(0, zoneStrength * 1.5 - 0.5));
+          } else if (role === "repair") {
+            child.style.opacity = String(Math.max(0, zoneStrength - 0.6) * 2.5);
+          }
+        }
+      } else if (activeZones.current.has(i)) {
+        // Out of range — fade out slowly
+        const current = parseFloat(g.style.opacity || "0");
+        const next = current * 0.92;
+        if (next < 0.01) {
+          g.style.opacity = "0";
+          activeZones.current.delete(i);
+        } else {
+          g.style.opacity = String(next);
+        }
+      }
+    });
+  }, []);
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     cancelAnimationFrame(rafId.current);
     rafId.current = requestAnimationFrame(() => {
       const container = containerRef.current;
-      const svg = svgRef.current;
-      if (!container || !svg) return;
+      if (!container) return;
 
       const rect = container.getBoundingClientRect();
-      // Normalized 0-1 position within the container
       const nx = (e.clientX - rect.left) / rect.width;
       const ny = (e.clientY - rect.top) / rect.height;
-
-      // Map to SVG viewBox coordinates (1400x900)
       const svgX = nx * 1400;
       const svgY = ny * 900;
 
-      // Move the ambient glow to follow cursor
+      // Check if cursor drifted too far — reset dwell timer
+      const dx = svgX - dwellPos.current.x;
+      const dy = svgY - dwellPos.current.y;
+      if (Math.sqrt(dx * dx + dy * dy) > DWELL_RADIUS) {
+        dwellPos.current = { x: svgX, y: svgY };
+        dwellStart.current = Date.now();
+      }
+
+      // Cursor glow
       if (glowRef.current) {
         glowRef.current.style.left = `${nx * 100}%`;
         glowRef.current.style.top = `${ny * 100}%`;
         glowRef.current.style.opacity = "1";
       }
 
-      // Strata lines — brighten based on vertical proximity
+      // Strata lines
       lineRefs.current.forEach((line, i) => {
         if (!line) return;
         const lineY = STRATA_LINES[i].y;
         const dist = Math.abs(svgY - lineY);
-        const proximity = Math.max(0, 1 - dist / 200); // 200 SVG units radius
-        const baseOpacity = 0.015;
-        const maxOpacity = 0.12;
-        const opacity = baseOpacity + proximity * proximity * (maxOpacity - baseOpacity);
-        const strokeWidth = 1 + proximity * 1.5;
-
+        const proximity = Math.max(0, 1 - dist / 200);
+        const opacity = 0.015 + proximity * proximity * 0.105;
         line.setAttribute("stroke", `rgba(196,154,108,${opacity})`);
-        line.setAttribute("stroke-width", String(strokeWidth));
+        line.setAttribute("stroke-width", String(1 + proximity * 1.5));
       });
 
-      // Diamond structural paths — brighten based on distance to center
+      // Diamond paths
       pathRefs.current.forEach((path, i) => {
         if (!path) return;
         const seg = DIAMOND_SEGMENTS[i];
-        const dx = svgX - seg.cx;
-        const dy = svgY - seg.cy;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        const proximity = Math.max(0, 1 - dist / 500);
-        const opacity = 0.05 + proximity * proximity * 0.1;
-        path.setAttribute("stroke", `rgba(196,154,108,${opacity})`);
+        const d = Math.sqrt((svgX - seg.cx) ** 2 + (svgY - seg.cy) ** 2);
+        const p = Math.max(0, 1 - d / 500);
+        path.setAttribute("stroke", `rgba(196,154,108,${0.05 + p * p * 0.1})`);
       });
 
-      // Corner accents — brighten when cursor is near corners
+      // Corner accents
       cornerRefs.current.forEach((path, i) => {
         if (!path) return;
-        // Corner 0: top-left (150, 150), Corner 1: bottom-right (1250, 750)
         const cx = i === 0 ? 150 : 1250;
         const cy = i === 0 ? 150 : 750;
-        const dx = svgX - cx;
-        const dy = svgY - cy;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        const proximity = Math.max(0, 1 - dist / 400);
-        const opacity = 0.07 + proximity * proximity * 0.2;
-        path.setAttribute("stroke", `rgba(196,154,108,${opacity})`);
-        path.setAttribute("stroke-width", String(1 + proximity * 0.5));
+        const d = Math.sqrt((svgX - cx) ** 2 + (svgY - cy) ** 2);
+        const p = Math.max(0, 1 - d / 400);
+        path.setAttribute("stroke", `rgba(196,154,108,${0.07 + p * p * 0.2})`);
+        path.setAttribute("stroke-width", String(1 + p * 0.5));
       });
     });
   }, []);
 
   const handleMouseLeave = useCallback(() => {
     cancelAnimationFrame(rafId.current);
-    // Fade everything back to defaults
-    if (glowRef.current) {
-      glowRef.current.style.opacity = "0";
-    }
-    lineRefs.current.forEach((line) => {
-      if (!line) return;
-      line.setAttribute("stroke", "rgba(232,230,227,0.015)");
-      line.setAttribute("stroke-width", "1");
+    dwellStart.current = Date.now() + 99999; // disable dwell
+
+    if (glowRef.current) glowRef.current.style.opacity = "0";
+
+    lineRefs.current.forEach((l) => {
+      if (!l) return;
+      l.setAttribute("stroke", "rgba(232,230,227,0.015)");
+      l.setAttribute("stroke-width", "1");
     });
-    pathRefs.current.forEach((path) => {
-      if (!path) return;
-      path.setAttribute("stroke", "rgba(196,154,108,0.05)");
+    pathRefs.current.forEach((p) => {
+      if (!p) return;
+      p.setAttribute("stroke", "rgba(196,154,108,0.05)");
     });
-    cornerRefs.current.forEach((path) => {
-      if (!path) return;
-      path.setAttribute("stroke", "rgba(196,154,108,0.07)");
-      path.setAttribute("stroke-width", "1");
+    cornerRefs.current.forEach((p) => {
+      if (!p) return;
+      p.setAttribute("stroke", "rgba(196,154,108,0.07)");
+      p.setAttribute("stroke-width", "1");
     });
+
+    // Fade out all inscription zones
+    zoneGroupRefs.current.forEach((g) => {
+      if (g) g.style.opacity = "0";
+    });
+    activeZones.current.clear();
   }, []);
 
   useEffect(() => {
@@ -124,12 +275,17 @@ export function GeometricHero() {
     if (!el) return;
     el.addEventListener("mousemove", handleMouseMove);
     el.addEventListener("mouseleave", handleMouseLeave);
+
+    // Dwell check interval — 60fps-ish
+    dwellTimerId.current = setInterval(checkDwell, 50);
+
     return () => {
       el.removeEventListener("mousemove", handleMouseMove);
       el.removeEventListener("mouseleave", handleMouseLeave);
       cancelAnimationFrame(rafId.current);
+      clearInterval(dwellTimerId.current);
     };
-  }, [handleMouseMove, handleMouseLeave]);
+  }, [handleMouseMove, handleMouseLeave, checkDwell]);
 
   return (
     <div
@@ -156,7 +312,7 @@ export function GeometricHero() {
         preserveAspectRatio="xMidYMid slice"
         fill="none"
       >
-        {/* Deep strata layers — static geological fill */}
+        {/* Deep strata layers */}
         <path
           d="M0 680 C280 660 560 690 840 670 S1120 685 1400 675 L1400 900 L0 900Z"
           fill="rgba(40,40,50,0.4)"
@@ -170,7 +326,7 @@ export function GeometricHero() {
           fill="rgba(17,17,22,0.6)"
         />
 
-        {/* Architectural structural lines — cursor-reactive */}
+        {/* Architectural structural lines */}
         <motion.path
           ref={(el) => { pathRefs.current[0] = el; }}
           d="M700 100 L900 300 L900 700 L700 900"
@@ -192,7 +348,7 @@ export function GeometricHero() {
           style={{ transition: "stroke 0.3s ease-out" }}
         />
 
-        {/* Horizontal strata lines — cursor-reactive */}
+        {/* Horizontal strata lines */}
         {STRATA_LINES.map((line, i) => (
           <motion.line
             key={line.y}
@@ -214,7 +370,7 @@ export function GeometricHero() {
           />
         ))}
 
-        {/* Corner accents — cursor-reactive */}
+        {/* Corner accents */}
         <motion.path
           ref={(el) => { cornerRefs.current[0] = el; }}
           d="M100 100 L200 100 L200 200"
@@ -237,12 +393,72 @@ export function GeometricHero() {
           transition={{ duration: 1.5, delay: 1.2 }}
           style={{ transition: "stroke 0.3s ease-out, stroke-width 0.3s ease-out" }}
         />
+
+        {/* ═══ Inscription zones — revealed on dwell ═══ */}
+        {INSCRIPTION_ZONES.map((zone, i) => (
+          <g
+            key={i}
+            ref={(el) => { zoneGroupRefs.current[i] = el; }}
+            style={{ opacity: 0, transition: "opacity 0.4s ease-out" }}
+          >
+            {/* Cracks — fine fissure lines */}
+            {zone.cracks.map((d, j) => (
+              <path
+                key={`crack-${j}`}
+                d={d}
+                stroke="rgba(232,230,227,0.15)"
+                strokeWidth="0.6"
+                strokeLinecap="round"
+                data-role="crack"
+                style={{ opacity: 0, transition: "opacity 0.6s ease-out" }}
+              />
+            ))}
+
+            {/* Kintsugi repair — gold filling the crack */}
+            <path
+              d={zone.repair}
+              stroke="rgba(196,154,108,0.5)"
+              strokeWidth="1.2"
+              strokeLinecap="round"
+              data-role="repair"
+              style={{ opacity: 0, transition: "opacity 1s ease-out 0.3s" }}
+            />
+
+            {/* Inscription text */}
+            <text
+              x={zone.textX}
+              y={zone.textY}
+              fill="rgba(196,154,108,0.4)"
+              fontSize="16"
+              fontFamily="var(--font-humanist), Georgia, serif"
+              fontStyle="italic"
+              data-role="text"
+              style={{ opacity: 0, transition: "opacity 0.8s ease-out 0.2s" }}
+            >
+              {zone.text}
+            </text>
+
+            {/* Language label — tiny */}
+            <text
+              x={zone.textX}
+              y={zone.textY + 18}
+              fill="rgba(232,230,227,0.15)"
+              fontSize="8"
+              fontFamily="var(--font-sans), system-ui, sans-serif"
+              letterSpacing="0.1em"
+              data-role="lang"
+              style={{ opacity: 0, transition: "opacity 0.8s ease-out 0.5s" }}
+            >
+              {zone.lang}
+            </text>
+          </g>
+        ))}
       </svg>
     </div>
   );
 }
 
-/* ─── Strata divider between sections ─── */
+/* ─── Strata divider ─── */
 export function StrataDivider() {
   return (
     <div className="relative h-24 md:h-32 overflow-hidden pointer-events-none">
@@ -252,24 +468,15 @@ export function StrataDivider() {
         preserveAspectRatio="none"
         fill="none"
       >
-        <path
-          d="M0 80 C360 70 720 90 1080 75 S1440 85 1440 85 L1440 120 L0 120Z"
-          fill="rgba(40,40,50,0.15)"
-        />
-        <path
-          d="M0 60 C240 55 600 70 960 58 S1200 65 1440 60 L1440 120 L0 120Z"
-          fill="rgba(26,26,33,0.1)"
-        />
-        <path
-          d="M0 95 C480 88 840 100 1200 92 S1440 98 1440 98 L1440 120 L0 120Z"
-          fill="rgba(17,17,22,0.2)"
-        />
+        <path d="M0 80 C360 70 720 90 1080 75 S1440 85 1440 85 L1440 120 L0 120Z" fill="rgba(40,40,50,0.15)" />
+        <path d="M0 60 C240 55 600 70 960 58 S1200 65 1440 60 L1440 120 L0 120Z" fill="rgba(26,26,33,0.1)" />
+        <path d="M0 95 C480 88 840 100 1200 92 S1440 98 1440 98 L1440 120 L0 120Z" fill="rgba(17,17,22,0.2)" />
       </svg>
     </div>
   );
 }
 
-/* ─── Section background variants ─── */
+/* ─── Section backgrounds ─── */
 export function GeometricSection({
   variant = "lines",
 }: {
@@ -278,12 +485,7 @@ export function GeometricSection({
   if (variant === "strata") {
     return (
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <svg
-          className="absolute inset-0 w-full h-full"
-          viewBox="0 0 1400 600"
-          preserveAspectRatio="xMidYMid slice"
-          fill="none"
-        >
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" fill="none">
           {[100, 200, 300, 400, 500].map((y, i) => (
             <path
               key={y}
@@ -300,22 +502,9 @@ export function GeometricSection({
   if (variant === "diamond") {
     return (
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <svg
-          className="absolute inset-0 w-full h-full opacity-[0.04]"
-          viewBox="0 0 1400 600"
-          preserveAspectRatio="xMidYMid slice"
-          fill="none"
-        >
-          <path
-            d="M700 50 L1050 300 L700 550 L350 300 Z"
-            stroke="rgba(196,154,108,1)"
-            strokeWidth="1"
-          />
-          <path
-            d="M700 100 L1000 300 L700 500 L400 300 Z"
-            stroke="rgba(232,230,227,1)"
-            strokeWidth="0.5"
-          />
+        <svg className="absolute inset-0 w-full h-full opacity-[0.04]" viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" fill="none">
+          <path d="M700 50 L1050 300 L700 550 L350 300 Z" stroke="rgba(196,154,108,1)" strokeWidth="1" />
+          <path d="M700 100 L1000 300 L700 500 L400 300 Z" stroke="rgba(232,230,227,1)" strokeWidth="0.5" />
         </svg>
       </div>
     );
@@ -323,22 +512,9 @@ export function GeometricSection({
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <svg
-        className="absolute inset-0 w-full h-full opacity-[0.03]"
-        viewBox="0 0 1400 600"
-        preserveAspectRatio="xMidYMid slice"
-        fill="none"
-      >
+      <svg className="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" fill="none">
         {[0, 1, 2, 3, 4].map((i) => (
-          <line
-            key={i}
-            x1="0"
-            y1={120 * i + 60}
-            x2="1400"
-            y2={120 * i + 60}
-            stroke="rgba(232,230,227,1)"
-            strokeWidth="0.5"
-          />
+          <line key={i} x1="0" y1={120 * i + 60} x2="1400" y2={120 * i + 60} stroke="rgba(232,230,227,1)" strokeWidth="0.5" />
         ))}
       </svg>
     </div>
