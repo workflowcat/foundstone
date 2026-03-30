@@ -1,18 +1,162 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useCallback, useEffect, useRef } from "react";
+
+/* ─── Interactive hero with cursor-reactive lines ─── */
+
+// Line definitions for the strata cross-section
+const STRATA_LINES = [
+  { y: 250, offset: 5 },
+  { y: 350, offset: -3 },
+  { y: 450, offset: 5 },
+  { y: 550, offset: -3 },
+  { y: 650, offset: 5 },
+  { y: 750, offset: -3 },
+];
+
+// Structural diamond paths — stored as center points for proximity calc
+const DIAMOND_SEGMENTS = [
+  { cx: 800, cy: 400, label: "right" },
+  { cx: 600, cy: 400, label: "left" },
+];
 
 export function GeometricHero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const svgRef = useRef<SVGSVGElement>(null);
+  const glowRef = useRef<HTMLDivElement>(null);
+  const lineRefs = useRef<(SVGLineElement | null)[]>([]);
+  const pathRefs = useRef<(SVGPathElement | null)[]>([]);
+  const cornerRefs = useRef<(SVGPathElement | null)[]>([]);
+  const rafId = useRef<number>(0);
+
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    cancelAnimationFrame(rafId.current);
+    rafId.current = requestAnimationFrame(() => {
+      const container = containerRef.current;
+      const svg = svgRef.current;
+      if (!container || !svg) return;
+
+      const rect = container.getBoundingClientRect();
+      // Normalized 0-1 position within the container
+      const nx = (e.clientX - rect.left) / rect.width;
+      const ny = (e.clientY - rect.top) / rect.height;
+
+      // Map to SVG viewBox coordinates (1400x900)
+      const svgX = nx * 1400;
+      const svgY = ny * 900;
+
+      // Move the ambient glow to follow cursor
+      if (glowRef.current) {
+        glowRef.current.style.left = `${nx * 100}%`;
+        glowRef.current.style.top = `${ny * 100}%`;
+        glowRef.current.style.opacity = "1";
+      }
+
+      // Strata lines — brighten based on vertical proximity
+      lineRefs.current.forEach((line, i) => {
+        if (!line) return;
+        const lineY = STRATA_LINES[i].y;
+        const dist = Math.abs(svgY - lineY);
+        const proximity = Math.max(0, 1 - dist / 200); // 200 SVG units radius
+        const baseOpacity = 0.015;
+        const maxOpacity = 0.12;
+        const opacity = baseOpacity + proximity * proximity * (maxOpacity - baseOpacity);
+        const strokeWidth = 1 + proximity * 1.5;
+
+        line.setAttribute("stroke", `rgba(196,154,108,${opacity})`);
+        line.setAttribute("stroke-width", String(strokeWidth));
+      });
+
+      // Diamond structural paths — brighten based on distance to center
+      pathRefs.current.forEach((path, i) => {
+        if (!path) return;
+        const seg = DIAMOND_SEGMENTS[i];
+        const dx = svgX - seg.cx;
+        const dy = svgY - seg.cy;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const proximity = Math.max(0, 1 - dist / 500);
+        const opacity = 0.05 + proximity * proximity * 0.1;
+        path.setAttribute("stroke", `rgba(196,154,108,${opacity})`);
+      });
+
+      // Corner accents — brighten when cursor is near corners
+      cornerRefs.current.forEach((path, i) => {
+        if (!path) return;
+        // Corner 0: top-left (150, 150), Corner 1: bottom-right (1250, 750)
+        const cx = i === 0 ? 150 : 1250;
+        const cy = i === 0 ? 150 : 750;
+        const dx = svgX - cx;
+        const dy = svgY - cy;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const proximity = Math.max(0, 1 - dist / 400);
+        const opacity = 0.07 + proximity * proximity * 0.2;
+        path.setAttribute("stroke", `rgba(196,154,108,${opacity})`);
+        path.setAttribute("stroke-width", String(1 + proximity * 0.5));
+      });
+    });
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    cancelAnimationFrame(rafId.current);
+    // Fade everything back to defaults
+    if (glowRef.current) {
+      glowRef.current.style.opacity = "0";
+    }
+    lineRefs.current.forEach((line) => {
+      if (!line) return;
+      line.setAttribute("stroke", "rgba(232,230,227,0.015)");
+      line.setAttribute("stroke-width", "1");
+    });
+    pathRefs.current.forEach((path) => {
+      if (!path) return;
+      path.setAttribute("stroke", "rgba(196,154,108,0.05)");
+    });
+    cornerRefs.current.forEach((path) => {
+      if (!path) return;
+      path.setAttribute("stroke", "rgba(196,154,108,0.07)");
+      path.setAttribute("stroke-width", "1");
+    });
+  }, []);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    el.addEventListener("mousemove", handleMouseMove);
+    el.addEventListener("mouseleave", handleMouseLeave);
+    return () => {
+      el.removeEventListener("mousemove", handleMouseMove);
+      el.removeEventListener("mouseleave", handleMouseLeave);
+      cancelAnimationFrame(rafId.current);
+    };
+  }, [handleMouseMove, handleMouseLeave]);
+
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* Geological strata — cool stone tones */}
+    <div
+      ref={containerRef}
+      className="absolute inset-0 overflow-hidden"
+      style={{ pointerEvents: "auto" }}
+    >
+      {/* Cursor-following ambient glow */}
+      <div
+        ref={glowRef}
+        className="absolute -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(196,154,108,0.06) 0%, rgba(196,154,108,0.02) 40%, transparent 70%)",
+          opacity: 0,
+          transition: "opacity 0.6s ease-out",
+        }}
+      />
+
       <svg
-        className="absolute inset-0 w-full h-full"
+        ref={svgRef}
+        className="absolute inset-0 w-full h-full pointer-events-none"
         viewBox="0 0 1400 900"
         preserveAspectRatio="xMidYMid slice"
         fill="none"
       >
-        {/* Deep strata layers — subtle, cool-toned */}
+        {/* Deep strata layers — static geological fill */}
         <path
           d="M0 680 C280 660 560 690 840 670 S1120 685 1400 675 L1400 900 L0 900Z"
           fill="rgba(40,40,50,0.4)"
@@ -26,32 +170,37 @@ export function GeometricHero() {
           fill="rgba(17,17,22,0.6)"
         />
 
-        {/* Architectural structural lines */}
+        {/* Architectural structural lines — cursor-reactive */}
         <motion.path
+          ref={(el) => { pathRefs.current[0] = el; }}
           d="M700 100 L900 300 L900 700 L700 900"
           stroke="rgba(196,154,108,0.05)"
           strokeWidth="1"
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
           transition={{ duration: 3, ease: "easeInOut" }}
+          style={{ transition: "stroke 0.3s ease-out" }}
         />
         <motion.path
+          ref={(el) => { pathRefs.current[1] = el; }}
           d="M700 100 L500 300 L500 700 L700 900"
           stroke="rgba(196,154,108,0.05)"
           strokeWidth="1"
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
           transition={{ duration: 3, ease: "easeInOut", delay: 0.3 }}
+          style={{ transition: "stroke 0.3s ease-out" }}
         />
 
-        {/* Horizontal strata lines — like geological cross-section */}
-        {[250, 350, 450, 550, 650, 750].map((y, i) => (
+        {/* Horizontal strata lines — cursor-reactive */}
+        {STRATA_LINES.map((line, i) => (
           <motion.line
-            key={y}
+            key={line.y}
+            ref={(el) => { lineRefs.current[i] = el; }}
             x1="200"
-            y1={y}
+            y1={line.y}
             x2="1200"
-            y2={y + (i % 2 === 0 ? 5 : -3)}
+            y2={line.y + line.offset}
             stroke="rgba(232,230,227,0.015)"
             strokeWidth="1"
             initial={{ pathLength: 0, opacity: 0 }}
@@ -61,11 +210,13 @@ export function GeometricHero() {
               delay: 0.5 + i * 0.15,
               ease: "easeOut",
             }}
+            style={{ transition: "stroke 0.25s ease-out, stroke-width 0.25s ease-out" }}
           />
         ))}
 
-        {/* Corner accents */}
+        {/* Corner accents — cursor-reactive */}
         <motion.path
+          ref={(el) => { cornerRefs.current[0] = el; }}
           d="M100 100 L200 100 L200 200"
           stroke="rgba(196,154,108,0.07)"
           strokeWidth="1"
@@ -73,8 +224,10 @@ export function GeometricHero() {
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
           transition={{ duration: 1.5, delay: 1 }}
+          style={{ transition: "stroke 0.3s ease-out, stroke-width 0.3s ease-out" }}
         />
         <motion.path
+          ref={(el) => { cornerRefs.current[1] = el; }}
           d="M1300 800 L1200 800 L1200 700"
           stroke="rgba(196,154,108,0.07)"
           strokeWidth="1"
@@ -82,22 +235,14 @@ export function GeometricHero() {
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
           transition={{ duration: 1.5, delay: 1.2 }}
+          style={{ transition: "stroke 0.3s ease-out, stroke-width 0.3s ease-out" }}
         />
       </svg>
-
-      {/* Ambient glow — slightly cooler */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(196,154,108,0.03) 0%, transparent 70%)",
-        }}
-      />
     </div>
   );
 }
 
-/* Strata divider — used between sections */
+/* ─── Strata divider between sections ─── */
 export function StrataDivider() {
   return (
     <div className="relative h-24 md:h-32 overflow-hidden pointer-events-none">
@@ -124,6 +269,7 @@ export function StrataDivider() {
   );
 }
 
+/* ─── Section background variants ─── */
 export function GeometricSection({
   variant = "lines",
 }: {
@@ -138,7 +284,6 @@ export function GeometricSection({
           preserveAspectRatio="xMidYMid slice"
           fill="none"
         >
-          {/* Geological layer lines */}
           {[100, 200, 300, 400, 500].map((y, i) => (
             <path
               key={y}
