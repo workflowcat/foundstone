@@ -50,20 +50,31 @@ export default function VenetianBookkeepingNote() {
           <FadeIn>
             <div className="prose-foundstone space-y-6 text-stone-300 leading-relaxed text-[16px]">
               <p>
-                Double-entry bookkeeping is 530 years old, mass-produced
-                since 1494, and functionally unchanged. This is unusual.
-                Most technologies from the 1490s are in museums. This one
-                runs every company on earth.
+                In November 1494, a Franciscan friar named Luca Pacioli
+                published a 615-page mathematics textbook in Venice. 27
+                pages described how to do bookkeeping. Those 27 pages are
+                still, functionally, how bookkeeping works. Everything else
+                from 1494 is in a museum.
               </p>
 
               <p>
-                Several things are true about it at once: it is a
-                mathematical identity that checks itself automatically, it
-                is an institutional trust mechanism that makes strangers
-                willing to do business, and it is a daily practice that most
-                of the people performing it do not fully understand. All
-                three matter. The interesting question is which one kept the
-                system alive for five centuries.
+                Pacioli did not invent double-entry. He documented what he
+                called &ldquo;the method of Venice&rdquo; — a system the
+                merchants had been running for at least two centuries. The
+                earliest surviving records are from 1299, a Florentine firm
+                called Farolfi. What Pacioli did was write it down clearly
+                enough that you could learn it from the book instead of from
+                a Venetian merchant. Venice had the printing press. Within
+                decades the method had spread across Europe.
+              </p>
+
+              <p>
+                The same thing happens with spreadsheets, cloud accounting,
+                now probably automated bookkeeping. Working knowledge exists
+                in practice for a long time, then someone packages it with
+                a distribution technology and suddenly everyone has it. We
+                don&apos;t have great data yet on what the current cycle
+                changes. But the pattern is old.
               </p>
 
               <NoteFigure
@@ -74,91 +85,62 @@ export default function VenetianBookkeepingNote() {
               />
 
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
-                What Pacioli actually did
+                How it works
               </h2>
 
               <p>
-                In November 1494, a Franciscan friar named Luca Pacioli
-                published a 615-page mathematics textbook in Venice. 27
-                pages described double-entry bookkeeping. He did not invent
-                it. He documented what he called &ldquo;the method of
-                Venice&rdquo; — a system the merchants had been using for
-                at least two centuries. The earliest surviving records date
-                to 1299, from a Florentine firm called Farolfi.
+                Venetian bookkeeping used three books. The <em>memoriale</em> was
+                a diary — every transaction as it happened, in plain
+                language. The <em>giornale</em> translated those into
+                formal entries with explicit debits and credits.
+                The <em>quaderno</em>, the master ledger, organized
+                everything by account.
               </p>
 
               <p>
-                What Pacioli did was write it down clearly enough that
-                anyone could learn it. Venice in the 1490s had the printing
-                press and the commercial density. A mature practice met a
-                new distribution technology. Within decades the Venetian
-                method had spread across Europe. This pattern — working
-                knowledge that exists in practice for a long time before
-                someone codifies and distributes it — repeats. Spreadsheets.
-                Cloud accounting. We are probably in the middle of another
-                cycle now with automated bookkeeping and we don&apos;t have
-                good data yet on what it changes.
+                Every account had two columns: <em>dare</em> (to give,
+                the left side) and <em>avere</em> (to have, the right
+                side). Every transaction touched at least two accounts.
+                You buy spices for cash: spice inventory goes up on the
+                left, cash goes down on the right. The sum of all left
+                columns always equals the sum of all right columns.
+              </p>
+
+              <p>
+                This is not a convention someone decided on. It is a
+                mathematical identity: assets = liabilities + equity. Every
+                transaction preserves the equation. If your books do not
+                balance, there is an error, and you can find it without
+                understanding any of the individual entries. Your bookkeeper
+                does not need to know what the business does in order to
+                tell you something is wrong. Most software built in the
+                last twenty years does not self-check this cleanly.
               </p>
 
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
-                The three books
+                Cash is not revenue
               </h2>
 
               <p>
-                The <em>memoriale</em>: a raw diary. Every transaction as
-                it happened, narrative form, who, what, when, how much.
-                The <em>giornale</em>: those narratives translated into
-                formal entries with explicit debit and credit designations.
-                The <em>quaderno</em> (master ledger): everything organized
-                by account.
+                If you have run a company, you have probably looked at your
+                bank balance and felt good about it, and then someone in
+                finance told you that most of that money is not actually
+                yours yet. This is the deferred revenue problem, and the
+                Venetians had already solved it.
               </p>
 
               <p>
-                Each account had two sides: <em>dare</em> (to give) and
-                <em> avere</em> (to have). Every transaction touched at
-                least two accounts. Merchant buys spices for cash: inventory
-                debited, cash credited. Total debits always equal total
-                credits.
-              </p>
-
-              <p>
-                This is not a convention. It is a mathematical identity.
-                Assets = liabilities + equity, by definition. Every
-                transaction preserves the equation. If the books don&apos;t
-                balance, something is wrong, and you can detect it
-                mechanically. You do not need to understand the substance of
-                each entry to know an error exists. This is a remarkable
-                property for a system designed in the 13th century. Most
-                modern software does not self-check this reliably.
-              </p>
-
-              <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
-                Cash and earning
-              </h2>
-
-              <p>
-                Receiving money and earning money are different events. This
-                is obvious when stated. It is routinely confused in practice.
-              </p>
-
-              <p>
-                A Venetian merchant who received advance payment for
-                undelivered goods recorded it as an obligation — a liability.
-                Cash hit one account. The obligation hit another. They
-                reconciled when performance occurred. A 15th-century spice
-                trader understood the distinction that most founders mix up
-                when they look at their bank balance and think they know
-                their revenue.
-              </p>
-
-              <p>
-                SaaS accounting calls this deferred revenue. Annual
-                prepayment of $120,000: cash up by $120,000, deferred
-                revenue (liability) up by $120,000. Each month, $10,000
-                moves from liability to recognized revenue as the service
-                is delivered. Salesforce carries billions in deferred
-                revenue at any given time. The structural discipline that
-                makes this trackable is the same one Pacioli documented.
+                A merchant who received advance payment for goods he had not
+                yet delivered recorded it as a liability — an obligation.
+                The cash went into one account. The obligation went into
+                another. They only met when he actually shipped the goods.
+                In SaaS terms: you get a $120,000 annual prepayment, cash
+                goes up $120,000, deferred revenue (a liability) goes up
+                $120,000. Each month you deliver the service, $10,000 moves
+                from the liability column to recognized revenue. Salesforce
+                carries billions in deferred revenue at any given time.
+                The accounting structure that makes this trackable is
+                Pacioli&apos;s.
               </p>
 
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
@@ -166,19 +148,20 @@ export default function VenetianBookkeepingNote() {
               </h2>
 
               <p>
-                Venetian merchants treated each trading voyage as its own
-                profit centre. Open an account, accumulate costs — cargo,
-                insurance, crew wages, port fees, bribes — recognize revenue
-                on sale, close the account with a profit or loss.
+                Venetian merchants opened a separate account for each
+                trading voyage. All costs went in — cargo, insurance, crew
+                wages, port fees, bribes. Revenue was recognized on sale.
+                The account closed with a profit or loss. Each voyage was
+                its own P&amp;L.
               </p>
 
               <p>
-                A SaaS subscription is the same structure: start date,
-                cycle, defined revenue, expandable or terminable. New MRR,
-                expansion MRR, churned MRR, net revenue retention — a
-                categorization scheme for flows into and out of subscription
-                voyage accounts. We use different words. The ledger entries
-                would map.
+                A SaaS subscription works the same way. Start date, billing
+                cycle, defined revenue amount, can be expanded or cancelled.
+                New MRR, expansion MRR, churned MRR, net revenue retention —
+                these are categories for flows into and out of what are
+                essentially subscription voyage accounts. The vocabulary is
+                different. The ledger entries would look the same.
               </p>
 
               <NoteFigure
@@ -189,45 +172,44 @@ export default function VenetianBookkeepingNote() {
               />
 
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
-                What survived
+                530 years later
               </h2>
 
               <p>
-                Show Pacioli a modern general ledger and he would recognize
-                the chart of accounts, the trial balance (his <em>summa
-                summarum</em>), receivables, payables, the capital account
+                If you showed Pacioli the general ledger of a modern B2B
+                company, he would know what he was looking at. Chart of
+                accounts, trial balance (he called it the <em>summa
+                summarum</em>), receivables, payables, capital account
                 (his <em>conto del cavedal</em>). Stock-based compensation
-                and goodwill would confuse him. The core mechanic — record
-                every event in two places so the system checks itself —
-                would not.
+                would confuse him. The mechanic of recording every event
+                twice so the system catches its own errors would not.
               </p>
 
               <p>
-                ASC 606 (current US revenue recognition standard): identify
-                the contract, identify performance obligations, determine
-                price, allocate it, recognize revenue when obligations are
-                satisfied. A Venetian merchant would recognize every step.
-                The compliance layer is new. The accounting logic is not.
+                ASC 606, the current US revenue recognition standard, works
+                like this: identify the contract, identify what you owe,
+                set the price, allocate it, recognize revenue when you
+                deliver. A Venetian merchant following Pacioli&apos;s
+                instructions would recognize every step. The compliance
+                paperwork around it is new. The accounting is not.
               </p>
 
               <p>
-                Venice&apos;s commercial success ran on infrastructure that
-                individual merchants did not build and mostly did not think
-                about: the colleganza partnership structure, the Banco di
-                Rialto (public bank for giro transfers), regulated marine
-                insurance, mandatory bookkeeping. The merchants came and
-                went. The Banco della Piazza di Rialto was established in
-                1587 — a full-reserve public bank, forbidden from making
-                loans, mandated by the state for wholesale settlement. The
-                infrastructure outlasted every merchant who used it.
+                Venice ran on infrastructure the merchants themselves did
+                not build: the colleganza partnership structure, the Banco
+                di Rialto (a public bank for transfers between accounts),
+                regulated marine insurance, mandatory bookkeeping.
+                Individual merchants came and went. In 1587 the state
+                established the Banco della Piazza di Rialto — full-reserve,
+                no loans allowed, mandated for wholesale settlement. The
+                merchants used it. They did not maintain it. It outlasted
+                all of them.
               </p>
 
               <p>
                 GAAP, auditing standards, stock exchanges, banking
-                regulation. Different vocabulary. Same function. Whether
-                the current version of this infrastructure is the right
-                one, or merely the one we have — that question is also
-                530 years old.
+                regulation — different words for the same function. The
+                plumbing changes. The need for plumbing does not.
               </p>
             </div>
           </FadeIn>
