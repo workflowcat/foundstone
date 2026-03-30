@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animate";
-import { IconFile, IconLedger, IconMineShaft, IconShip } from "@/components/note-icons";
+import { IconConstraint, IconFile, IconLedger, IconMineShaft, IconShip } from "@/components/note-icons";
 
 const notes = [
   {
@@ -8,9 +8,9 @@ const notes = [
     date: "March 2026",
     title: "When the Master Craftsman Becomes the Constraint",
     excerpt:
-      "A company doubles in size. The founder who was best at every function is now the bottleneck at every function. The Arsenal of Venice, the Prussian General Staff, and Cynefin — three lenses on the same problem.",
-    readTime: "15 min read",
-    Icon: IconFile,
+      "A company doubles in size. The founder who was best at every function is now the bottleneck at every function. The Arsenal of Venice, the Prussian General Staff, and three sensors that tell you before it breaks.",
+    readTime: "18 min read",
+    Icon: IconConstraint,
   },
   {
     slug: "what-your-bank-sees",

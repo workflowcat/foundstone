@@ -1,15 +1,15 @@
 import Link from "next/link";
 import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animate";
 import { GeometricHero, StrataDivider } from "@/components/geometric-bg";
-import { IconFile, IconLedger, IconMineShaft, IconShip } from "@/components/note-icons";
+import { IconConstraint, IconFile, IconLedger, IconMineShaft, IconShip } from "@/components/note-icons";
 
 const notes = [
   {
     slug: "master-craftsman-constraint",
     date: "Mar 2026",
     title: "When the master craftsman becomes the constraint",
-    readTime: "15 min",
-    Icon: IconFile,
+    readTime: "18 min",
+    Icon: IconConstraint,
   },
   {
     slug: "what-your-bank-sees",

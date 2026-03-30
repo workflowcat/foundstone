@@ -75,6 +75,27 @@ export function IconShip({ className = "" }: { className?: string }) {
   );
 }
 
+export function IconConstraint({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 80 80" className={className} fill="none">
+      {/* Converging lines to centre */}
+      {[
+        [10, 15], [10, 40], [10, 65],
+        [70, 15], [70, 40], [70, 65],
+        [25, 5], [40, 5], [55, 5],
+        [25, 75], [40, 75], [55, 75],
+      ].map(([x, y], i) => (
+        <line key={i} x1={x} y1={y} x2={40} y2={40} stroke={SL} strokeWidth="0.4" />
+      ))}
+      {/* Pressure rings */}
+      <circle cx="40" cy="40" r="14" stroke={G} strokeWidth="0.6" />
+      <circle cx="40" cy="40" r="9" stroke={S} strokeWidth="0.7" />
+      {/* Central dot */}
+      <circle cx="40" cy="40" r="3" stroke={S} strokeWidth="0.8" />
+    </svg>
+  );
+}
+
 export function IconFile({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 80 80" className={className} fill="none">
