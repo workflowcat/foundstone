@@ -101,6 +101,70 @@ export default function MasterCraftsmanNote() {
                 they just need to work harder.
               </p>
 
+              {/* ─── How you notice ─── */}
+
+              <h2 className="font-serif text-2xl text-cream mt-16 mb-6">
+                How you notice before it breaks
+              </h2>
+
+              <p>
+                The catastrophe version is obvious: you lose a key client,
+                miss a deadline badly, or someone good quits and says the
+                reason is that nothing moves without your approval. But by
+                the time that happens the problem has been compounding for
+                months. The earlier signals are quieter and most founders
+                misread them as personal failures rather than structural
+                ones.
+              </p>
+
+              <p>
+                Your calendar is the first sensor. If more than half of
+                your meetings are about things other people could decide —
+                vendor selection, hiring calls for roles you will not
+                manage, internal process questions where the answer should
+                already exist in a document somewhere — you are not
+                leading. You are load-bearing. The difference matters
+                because one of them scales and the other does not.
+              </p>
+
+              <p>
+                The second sensor is response time. When someone on your
+                team asks a question and the answer takes two days because
+                it is waiting in your inbox behind forty other things, the
+                team starts routing around you. They make the decision
+                themselves (sometimes well, sometimes badly) or they wait
+                (which is worse). Either way, you have become the
+                constraint without anyone formally announcing it, and the
+                workarounds people build to avoid depending on you will
+                create their own problems six months later.
+              </p>
+
+              <p>
+                The third sensor is what you do not know. At 15 people you
+                can sense when something is off because you are close to
+                every function. At 30, the things you do not know about
+                accumulate silently. The question to ask yourself is not
+                &ldquo;am I on top of everything&rdquo; — you are not, and
+                the honest answer to that question at 30 people is always
+                no — but &ldquo;do I have a way of finding out what I do
+                not know about, other than someone telling me directly or
+                a problem becoming visible?&rdquo; If the answer is no,
+                you are operating on the same information model Prussia
+                used at Jena.
+              </p>
+
+              <p>
+                The people who can help you see this are usually already in
+                the company. Your most experienced direct reports know where
+                the bottleneck is. They are waiting for you to ask, or they
+                have been hinting in ways you have been reading as
+                complaints rather than diagnostics. An outside operator —
+                a fractional COO, a board advisor, a coach who has seen
+                this transition before — can also name it, because they are
+                not inside the emotional structure of having built the thing
+                and being told that their way of running it no longer works.
+              </p>
+
               {/* ─── The Arsenal ─── */}
 
               <h2 className="font-serif text-2xl text-cream mt-16 mb-6">
