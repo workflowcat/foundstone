@@ -113,63 +113,6 @@ export default function MasterCraftsmanNote() {
                 they just need to work harder.
               </p>
 
-              {/* ─── How you notice ─── */}
-
-              <h2 className="font-serif text-2xl text-cream mt-16 mb-6">
-                How you notice before it breaks
-              </h2>
-
-              <p>
-                The catastrophe version is obvious: you lose a client,
-                miss a deadline, someone good quits. By then it has been
-                compounding for months. The earlier signals are quieter.
-              </p>
-
-              <p>
-                Look at your calendar for the last two weeks. Count the
-                meetings where you were deciding something that someone
-                else on the team could have decided — a vendor choice,
-                a hiring call for a role you will not manage, a process
-                question where the answer should already be written down
-                somewhere. If that number is more than half your
-                meetings, your calendar is telling you something about
-                where you are spending your processing capacity versus
-                where the company actually needs it.
-              </p>
-
-              <p>
-                Look at your response time. When someone on the team
-                asks you a question and the answer sits in your inbox
-                for two days behind forty other things, the team adapts.
-                They either make the decision without you (sometimes
-                well, sometimes badly) or they wait. Both of these
-                produce second-order problems that show up weeks later
-                and look like someone else&apos;s mistake.
-              </p>
-
-              <p>
-                Look at what you do not know. At 15 people you can sense
-                when something is off because you are close to everything.
-                At 30, things accumulate that you have no way of learning
-                about unless someone walks into your office and tells
-                you, or unless the problem gets big enough to become
-                visible on its own. If you do not have a reporting
-                system, a standup, a dashboard — some mechanism that
-                surfaces information without requiring your direct
-                involvement — you are running on the same information
-                architecture that Prussia used at Jena.
-              </p>
-
-              <p>
-                Your most experienced direct reports probably already
-                know where the bottleneck is. They have been hinting.
-                You have been reading the hints as complaints. An
-                outside operator — fractional COO, board advisor,
-                someone who has watched this transition happen at other
-                companies — can name it faster because they are not
-                inside the thing they are diagnosing.
-              </p>
-
               {/* ─── The Arsenal ─── */}
 
               <h2 className="font-serif text-2xl text-cream mt-16 mb-6">
@@ -294,11 +237,11 @@ export default function MasterCraftsmanNote() {
                 Prussian command doctrine had not changed in fifty years
                 and every decision still flowed up to the commanding
                 general while every order flowed back down through the
-                same single point of processing, which meant that when
-                the situation on the ground at Auerstedt started moving
-                faster than one person could assess it, the entire
-                command structure locked up and 60,000 soldiers stood
-                waiting for instructions that could not arrive in time.
+                same single point of processing. When the situation on
+                the ground at Auerstedt started moving faster than one
+                person could assess it, the entire command structure
+                locked up and 60,000 soldiers stood waiting for
+                instructions that could not arrive in time.
               </p>
 
               <NoteFigure
@@ -436,10 +379,67 @@ export default function MasterCraftsmanNote() {
                 lasted 700 years.
               </p>
 
+              {/* ─── How you notice ─── */}
+
+              <h2 className="font-serif text-2xl text-cream mt-16 mb-6">
+                How you notice before it breaks
+              </h2>
+
+              <p>
+                The catastrophe version is obvious: you lose a client,
+                miss a deadline, someone good quits. By then it has been
+                compounding for months. The earlier signals are quieter.
+              </p>
+
+              <p>
+                Look at your calendar for the last two weeks. Count the
+                meetings where you were deciding something that someone
+                else on the team could have decided — a vendor choice,
+                a hiring call for a role you will not manage, a process
+                question where the answer should already be written down
+                somewhere. If that number is more than half your
+                meetings, your calendar is telling you something about
+                where you are spending your processing capacity versus
+                where the company actually needs it.
+              </p>
+
+              <p>
+                Look at your response time. When someone on the team
+                asks you a question and the answer sits in your inbox
+                for two days behind forty other things, the team adapts.
+                They either make the decision without you (sometimes
+                well, sometimes badly) or they wait. Both of these
+                produce second-order problems that show up weeks later
+                and look like someone else&apos;s mistake.
+              </p>
+
+              <p>
+                Look at what you do not know. At 15 people you can sense
+                when something is off because you are close to everything.
+                At 30, things accumulate that you have no way of learning
+                about unless someone walks into your office and tells
+                you, or unless the problem gets big enough to become
+                visible on its own. If you do not have a reporting
+                system, a standup, a dashboard — some mechanism that
+                surfaces information without requiring your direct
+                involvement — you are running on the same information
+                architecture that Prussia used at Jena.
+              </p>
+
+              <p>
+                Your most experienced direct reports probably already
+                know where the bottleneck is. They have been hinting.
+                You have been reading the hints as complaints. An
+                outside operator — fractional COO, board advisor,
+                someone who has watched this transition happen at other
+                companies — can name it faster because they are not
+                inside the thing they are diagnosing.
+              </p>
+
               <p>
                 If you are the founder in this situation, here are the
-                questions that actually matter, in roughly the order they
-                become urgent:
+                questions that matter, in roughly the order they become
+                urgent:
               </p>
 
               <div className="my-8 space-y-4">
