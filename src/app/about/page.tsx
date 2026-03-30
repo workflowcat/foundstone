@@ -75,9 +75,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Governance principles — dark */}
+      {/* Governance principles — dark with strata */}
       <section className="relative py-24 md:py-32 px-6 md:px-12">
-        <GeometricSection variant="lines" />
+        <GeometricSection variant="strata" />
         <div className="relative z-10 max-w-[1400px] mx-auto">
           <FadeIn>
             <p className="text-xs tracking-[0.3em] uppercase text-stone-600 mb-16">

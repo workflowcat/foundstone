@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FadeIn, StaggerChildren, StaggerItem, CountUp } from "@/components/animate";
-import { GeometricHero } from "@/components/geometric-bg";
+import { GeometricHero, StrataDivider } from "@/components/geometric-bg";
 
 const cards = [
   {
@@ -128,9 +128,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Statement section */}
-      <section className="relative py-32 md:py-48 px-6 md:px-12">
-        <div className="max-w-3xl mx-auto text-center">
+      {/* Strata divider */}
+      <StrataDivider />
+
+      {/* Statement section — with geological photo backdrop */}
+      <section className="relative py-32 md:py-48 px-6 md:px-12 overflow-hidden">
+        {/* Dark stone texture background */}
+        <div
+          className="absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1635776062127-d379bfcba9f8?w=1920&q=80&auto=format&fit=crop')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/80 via-transparent to-stone-950/80" />
+
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
             <p className="font-serif text-2xl sm:text-3xl md:text-4xl leading-relaxed text-cream/90">
               The boring parts, it turns out, are most of the parts. We got

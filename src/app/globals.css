@@ -1,20 +1,29 @@
 @import "tailwindcss";
 
 @theme inline {
+  /* ── Primary surfaces (cold stone) ── */
   --color-stone-950: #0A0A0F;
-  --color-stone-900: #111118;
-  --color-stone-800: #1a1a24;
-  --color-stone-700: #2a2a36;
-  --color-stone-600: #4a4a58;
-  --color-stone-400: #8a8a98;
-  --color-stone-300: #b0b0bc;
-  --color-cream: #FAFAF8;
-  --color-cream-dark: #F0F0EC;
-  --color-amber: #C9975B;
-  --color-amber-glow: rgba(201, 151, 91, 0.15);
-  --color-amber-dim: rgba(201, 151, 91, 0.08);
+  --color-stone-900: #111116;
+  --color-stone-800: #1A1A21;
+  --color-stone-700: #282832;
+  --color-stone-600: #44444F;
+  --color-stone-500: #5C5C68;
+  --color-stone-400: #8A8A96;
+  --color-stone-300: #AEAEB8;
 
-  /* V2 Renaissance palette */
+  /* ── Text (warm off-white against cold backgrounds) ── */
+  --color-cream: #E8E6E3;
+  --color-cream-bright: #F5F3F0;
+  --color-cream-dark: #D4D2CF;
+
+  /* ── Accent (oxidized bronze / deep amber) ── */
+  --color-amber: #C49A6C;
+  --color-amber-bright: #D4AA7C;
+  --color-amber-deep: #8B7355;
+  --color-amber-glow: rgba(196, 154, 108, 0.12);
+  --color-amber-dim: rgba(196, 154, 108, 0.06);
+
+  /* ── V2 Renaissance tokens (kept for /v2 route) ── */
   --color-parchment: #F5F0E8;
   --color-parchment-dark: #E8E0D4;
   --color-ink: #1C1A17;
@@ -43,6 +52,18 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle noise grain — prevents dead-screen look on dark backgrounds */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
 }
 
 /* Selection color */
