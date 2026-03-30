@@ -13,7 +13,7 @@ export default function VenetianBookkeepingNote() {
             <div className="flex items-center gap-4 mb-8">
               <time className="text-xs tracking-wider text-stone-600">March 2025</time>
               <span className="text-stone-800">&middot;</span>
-              <span className="text-xs tracking-wider text-stone-600">12 min read</span>
+              <span className="text-xs tracking-wider text-stone-600">14 min read</span>
             </div>
           </FadeIn>
           <FadeIn delay={0.1}>
@@ -23,8 +23,8 @@ export default function VenetianBookkeepingNote() {
           </FadeIn>
           <FadeIn delay={0.15}>
             <p className="mt-6 text-stone-400 text-lg leading-relaxed">
-              The longest-lived operational technology in business is 530 years
-              old, and you use it every day without thinking about it.
+              27 pages from 1494 are still, functionally, how bookkeeping
+              works. Everything else from that year is in a museum.
             </p>
           </FadeIn>
         </div>
@@ -48,39 +48,34 @@ export default function VenetianBookkeepingNote() {
       <article className="relative px-6 md:px-12 pb-24 md:pb-32">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <div className="prose-foundstone space-y-6 text-stone-300 leading-relaxed text-[16px]">
+            <div className="space-y-6 text-stone-300 leading-relaxed text-[16px]">
               <p>
                 In November 1494, a Franciscan friar named Luca Pacioli
-                published a 615-page mathematics textbook in Venice. 27
-                pages described how to do bookkeeping. Those 27 pages are
-                still, functionally, how bookkeeping works. Everything else
-                from 1494 is in a museum.
+                published a 615-page mathematics textbook in Venice. 27 pages
+                described how to do bookkeeping. He called it &ldquo;the
+                method of Venice&rdquo; — a system the merchants had been
+                running for at least two centuries. The earliest surviving
+                double-entry records are from 1299, kept by a Florentine
+                firm called
+                Farolfi.<sup className="text-stone-500 text-xs">1</sup> What
+                Pacioli did was write it down clearly enough that you could
+                learn it from the book instead of from a Venetian merchant.
               </p>
 
               <p>
-                Pacioli did not invent double-entry. He documented what he
-                called &ldquo;the method of Venice&rdquo; — a system the
-                merchants had been running for at least two centuries. The
-                earliest surviving records are from 1299, a Florentine firm
-                called Farolfi. What Pacioli did was write it down clearly
-                enough that you could learn it from the book instead of from
-                a Venetian merchant. Venice had the printing press. Within
-                decades the method had spread across Europe.
-              </p>
-
-              <p>
-                The same thing happens with spreadsheets, cloud accounting,
-                now probably automated bookkeeping. Working knowledge exists
-                in practice for a long time, then someone packages it with
-                a distribution technology and suddenly everyone has it. We
-                don&apos;t have great data yet on what the current cycle
-                changes. But the pattern is old.
+                Venice had the printing press. Within decades the method had
+                spread across Europe. The same distribution pattern repeats:
+                spreadsheets made financial modelling accessible, cloud
+                accounting made bookkeeping accessible, and something
+                similar is probably happening now with automated revenue
+                recognition. We don&apos;t have great data yet on what the
+                current cycle changes.
               </p>
 
               <NoteFigure
                 src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Pacioli.jpg"
-                alt="Portrait of Luca Pacioli with geometric instruments, attributed to Jacopo de' Barbari, c. 1495"
-                caption="Luca Pacioli, attr. Jacopo de&rsquo; Barbari, c. 1495. Museo di Capodimonte, Naples."
+                alt="Portrait of Luca Pacioli with geometric instruments, c. 1495"
+                caption="Luca Pacioli, attr. Jacopo de' Barbari, c. 1495. Museo di Capodimonte, Naples."
                 aspect="landscape"
               />
 
@@ -90,31 +85,30 @@ export default function VenetianBookkeepingNote() {
 
               <p>
                 Venetian bookkeeping used three books. The <em>memoriale</em> was
-                a diary — every transaction as it happened, in plain
-                language. The <em>giornale</em> translated those into
-                formal entries with explicit debits and credits.
-                The <em>quaderno</em>, the master ledger, organized
-                everything by account.
+                a diary — every transaction in plain language as it happened.
+                The <em>giornale</em> translated those into formal entries
+                with explicit debits and credits. The <em>quaderno</em>, the
+                master ledger, organized everything by account.
               </p>
 
               <p>
-                Every account had two columns: <em>dare</em> (to give,
-                the left side) and <em>avere</em> (to have, the right
-                side). Every transaction touched at least two accounts.
-                You buy spices for cash: spice inventory goes up on the
-                left, cash goes down on the right. The sum of all left
-                columns always equals the sum of all right columns.
+                Every account had two columns: <em>dare</em> (to give, left)
+                and <em>avere</em> (to have, right). Every transaction
+                touched at least two accounts. You buy spices for cash:
+                spice inventory goes up on the left, cash goes down on the
+                right. The sum of all left columns always equals the sum of
+                all right columns.
               </p>
 
               <p>
-                This is not a convention someone decided on. It is a
-                mathematical identity: assets = liabilities + equity. Every
-                transaction preserves the equation. If your books do not
-                balance, there is an error, and you can find it without
-                understanding any of the individual entries. Your bookkeeper
-                does not need to know what the business does in order to
-                tell you something is wrong. Most software built in the
-                last twenty years does not self-check this cleanly.
+                This is a mathematical identity: assets = liabilities +
+                equity. Every transaction preserves the equation. If your
+                books do not balance, there is an error, and you can find it
+                without understanding any of the individual entries. Your
+                bookkeeper does not need to know what the business does to
+                tell you something is wrong. Most software built in the last
+                twenty years does not self-check this
+                cleanly.<sup className="text-stone-500 text-xs">2</sup>
               </p>
 
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
@@ -125,22 +119,95 @@ export default function VenetianBookkeepingNote() {
                 If you have run a company, you have probably looked at your
                 bank balance and felt good about it, and then someone in
                 finance told you that most of that money is not actually
-                yours yet. This is the deferred revenue problem, and the
-                Venetians had already solved it.
+                yours yet.
               </p>
 
               <p>
-                A merchant who received advance payment for goods he had not
-                yet delivered recorded it as a liability — an obligation.
-                The cash went into one account. The obligation went into
-                another. They only met when he actually shipped the goods.
-                In SaaS terms: you get a $120,000 annual prepayment, cash
+                A Venetian merchant who got paid in advance for goods he had
+                not shipped recorded it as a liability. The cash went into
+                one account. The obligation went into another. They only met
+                when he delivered. This is what SaaS accounting calls
+                deferred revenue. You get a $120,000 annual prepayment: cash
                 goes up $120,000, deferred revenue (a liability) goes up
                 $120,000. Each month you deliver the service, $10,000 moves
-                from the liability column to recognized revenue. Salesforce
-                carries billions in deferred revenue at any given time.
-                The accounting structure that makes this trackable is
-                Pacioli&apos;s.
+                from the liability to recognized revenue.
+              </p>
+
+              <p>
+                Salesforce had $20.7 billion in deferred revenue on its
+                balance sheet at the end of FY2025 — roughly 55% of annual
+                revenue sitting as a liability at any given
+                moment.<sup className="text-stone-500 text-xs">3</sup> Their
+                total remaining performance obligations (contracted revenue
+                not yet delivered) were $63.4 billion. The accounting
+                structure that makes this trackable across millions of
+                subscriptions is Pacioli&apos;s.
+              </p>
+
+              <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
+                What goes wrong
+              </h2>
+
+              <p>
+                The temptation to confuse cash with revenue is not
+                hypothetical. In 2021, the SEC charged three executives at
+                Pareteum Corp. for recognizing revenue from non-binding
+                purchase orders — overstating revenue by 60% for FY2018 and
+                91% for the first half of 2019. The CFO pleaded guilty. The
+                CCO went to
+                prison.<sup className="text-stone-500 text-xs">4</sup>
+              </p>
+
+              <p>
+                Groupon&apos;s 2011 S-1 introduced a metric called
+                &ldquo;Adjusted Consolidated Segment Operating Income&rdquo;
+                which excluded customer acquisition costs and turned a $420
+                million GAAP loss into a positive $61
+                million.<sup className="text-stone-500 text-xs">5</sup> The
+                SEC made them remove it. WeWork went further in 2019 with
+                &ldquo;community-adjusted EBITDA&rdquo; — essentially rent
+                collected minus rent paid, with everything else
+                excluded.<sup className="text-stone-500 text-xs">6</sup> Neither
+                ARR nor MRR is a GAAP metric. There is no mandated
+                calculation methodology. Companies can define them to their
+                advantage, and they do.
+              </p>
+
+              <p>
+                A 2021 SEC analysis of 500+ enforcement actions between 2014
+                and 2019 found that improper revenue recognition accounted
+                for 43% of all accounting fraud
+                cases.<sup className="text-stone-500 text-xs">7</sup> The
+                Venetian system was designed to make this kind of error
+                detectable. The modern version of the system is much more
+                complex, but the detection mechanism — every entry recorded
+                in two places, books that must balance — is the same one
+                Pacioli described.
+              </p>
+
+              <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
+                ASC 606
+              </h2>
+
+              <p>
+                The current US revenue recognition standard, ASC 606, took
+                effect in 2018 for public companies. It replaced a patchwork
+                of industry-specific rules with a single five-step model:
+                identify the contract, identify what you owe (performance
+                obligations), set the price, allocate the price across
+                obligations, recognize revenue when you
+                deliver.<sup className="text-stone-500 text-xs">8</sup>
+              </p>
+
+              <p>
+                For SaaS companies this matters because a subscription
+                bundled with onboarding and API access is at least two
+                performance obligations, possibly three. Each has to be
+                priced separately. Revenue for each is recognized on its own
+                schedule. A Venetian merchant doing the same exercise — a
+                cargo of spices sold with a shipping guarantee and an
+                insurance arrangement — would have opened three voyage
+                accounts.
               </p>
 
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
@@ -157,11 +224,11 @@ export default function VenetianBookkeepingNote() {
 
               <p>
                 A SaaS subscription works the same way. Start date, billing
-                cycle, defined revenue amount, can be expanded or cancelled.
-                New MRR, expansion MRR, churned MRR, net revenue retention —
+                cycle, defined revenue, can be expanded or cancelled. New
+                MRR, expansion MRR, churned MRR, net revenue retention —
                 these are categories for flows into and out of what are
-                essentially subscription voyage accounts. The vocabulary is
-                different. The ledger entries would look the same.
+                essentially subscription voyage accounts. The vocabulary
+                changed. The ledger entries would look the same.
               </p>
 
               <NoteFigure
@@ -176,47 +243,106 @@ export default function VenetianBookkeepingNote() {
               </h2>
 
               <p>
-                If you showed Pacioli the general ledger of a modern B2B
-                company, he would know what he was looking at. Chart of
-                accounts, trial balance (he called it the <em>summa
-                summarum</em>), receivables, payables, capital account
-                (his <em>conto del cavedal</em>). Stock-based compensation
-                would confuse him. The mechanic of recording every event
-                twice so the system catches its own errors would not.
+                If you showed Pacioli a modern general ledger he would know
+                what he was looking at. Chart of accounts. Trial balance (he
+                called it the <em>summa summarum</em>). Receivables,
+                payables, capital account (his <em>conto del
+                cavedal</em>). Stock-based compensation would confuse him.
+                The core mechanic — record every event twice so the system
+                catches its own errors — would not.
               </p>
 
               <p>
-                ASC 606, the current US revenue recognition standard, works
-                like this: identify the contract, identify what you owe,
-                set the price, allocate it, recognize revenue when you
-                deliver. A Venetian merchant following Pacioli&apos;s
-                instructions would recognize every step. The compliance
-                paperwork around it is new. The accounting is not.
-              </p>
-
-              <p>
-                Venice ran on infrastructure the merchants themselves did
-                not build: the colleganza partnership structure, the Banco
-                di Rialto (a public bank for transfers between accounts),
-                regulated marine insurance, mandatory bookkeeping.
-                Individual merchants came and went. In 1587 the state
-                established the Banco della Piazza di Rialto — full-reserve,
-                no loans allowed, mandated for wholesale settlement. The
-                merchants used it. They did not maintain it. It outlasted
-                all of them.
+                Venice ran on infrastructure the merchants did not build:
+                the colleganza partnership structure, the Banco di Rialto (a
+                public bank for giro transfers, established
+                1587),<sup className="text-stone-500 text-xs">9</sup> regulated
+                marine insurance, mandatory bookkeeping. In 1593, Venetian
+                law required citizens to settle all bills of exchange
+                through the Banco. The merchants used it. They did not
+                maintain it. It outlasted all of them.
               </p>
 
               <p>
                 GAAP, auditing standards, stock exchanges, banking
-                regulation — different words for the same function. The
-                plumbing changes. The need for plumbing does not.
+                regulation. The plumbing changes. The need for plumbing
+                does not.
               </p>
+
+              {/* Sources */}
+              <div className="mt-16 pt-8 border-t border-white/[0.06]">
+                <h3 className="text-xs tracking-[0.2em] uppercase text-stone-600 mb-6">
+                  Sources &amp; references
+                </h3>
+                <div className="space-y-3 text-stone-500 text-[13px] leading-relaxed">
+                  <p>
+                    <sup className="text-stone-600">1</sup>{" "}
+                    Lee, G.A. (1977). &ldquo;The Coming of Age of Double
+                    Entry: The Giovanni Farolfi Ledger of
+                    1299&ndash;1300.&rdquo;{" "}
+                    <em>Accounting Historians Journal</em>, 4(2).
+                    The earliest known complete double-entry records.
+                  </p>
+                  <p>
+                    <sup className="text-stone-600">2</sup>{" "}
+                    Gleeson-White, J. (2012). <em>Double Entry: How the
+                    Merchants of Venice Created Modern Finance.</em> W.W. Norton.
+                    On the self-checking property and its durability.
+                  </p>
+                  <p>
+                    <sup className="text-stone-600">3</sup>{" "}
+                    Salesforce Q4 FY2025 earnings release. $20.7B
+                    unearned revenue, $63.4B total RPO.
+                  </p>
+                  <p>
+                    <sup className="text-stone-600">4</sup>{" "}
+                    SEC Press Release 2023-205. Pareteum Corp. executives
+                    charged with fraudulent revenue recognition. Revenue
+                    overstated 60% (FY2018), 91% (H1 2019).
+                  </p>
+                  <p>
+                    <sup className="text-stone-600">5</sup>{" "}
+                    Groupon S-1 (June 2011). &ldquo;Adjusted CSOI&rdquo;
+                    excluded customer acquisition costs, turning a $420M
+                    GAAP loss into +$61M. Removed from amended filing
+                    August 2011 after SEC review.
+                  </p>
+                  <p>
+                    <sup className="text-stone-600">6</sup>{" "}
+                    WeWork S-1 (2019). &ldquo;Community-adjusted
+                    EBITDA&rdquo; excluded marketing, G&amp;A, and
+                    development costs.
+                  </p>
+                  <p>
+                    <sup className="text-stone-600">7</sup>{" "}
+                    Vinson &amp; Elkins (2021). SEC enforcement analysis:
+                    improper revenue recognition = 43% of accounting fraud
+                    actions, 2014&ndash;2019.
+                  </p>
+                  <p>
+                    <sup className="text-stone-600">8</sup>{" "}
+                    ASC 606, effective for public companies fiscal years
+                    beginning after Dec 15, 2017. Replaced ASC 605 and
+                    industry-specific standards. See Deloitte,
+                    &ldquo;Revenue recognition for SaaS and software
+                    companies.&rdquo;
+                  </p>
+                  <p>
+                    <sup className="text-stone-600">9</sup>{" "}
+                    Dunbar, C.F. (1892). &ldquo;The Bank of
+                    Venice.&rdquo; <em>Quarterly Journal of Economics</em>,
+                    6(3), 308&ndash;335. On giro transfers and the
+                    full-reserve mandate.
+                  </p>
+                </div>
+              </div>
+
             </div>
           </FadeIn>
 
           {/* Back link */}
           <FadeIn>
-            <div className="mt-16 pt-8 border-t border-white/[0.04]">
+            <div className="mt-12 pt-8 border-t border-white/[0.04]">
               <Link
                 href="/notes"
                 className="inline-flex items-center gap-2 text-stone-600 hover:text-stone-400 transition-colors text-sm tracking-wider uppercase"
