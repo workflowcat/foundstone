@@ -1,6 +1,6 @@
 import { FadeIn } from "@/components/animate";
 import { NoteFigure } from "@/components/note-figure";
-import { ArsenalAssemblyLine, CommandStructure, CynefinDiagram } from "@/components/scaling-illustrations";
+import { CommunicationPaths, ArsenalAssemblyLine, CommandStructure, CynefinDiagram } from "@/components/scaling-illustrations";
 import Link from "next/link";
 
 export default function MasterCraftsmanNote() {
@@ -70,6 +70,12 @@ export default function MasterCraftsmanNote() {
                 realizing it.&rdquo;
               </p>
 
+              <FadeIn>
+                <div className="my-10 py-6 border-t border-b border-white/[0.04]">
+                  <CommunicationPaths className="w-full h-auto" />
+                </div>
+              </FadeIn>
+
               <p>
                 At 30, the founder is fielding questions they cannot
                 answer because they no longer have first-hand knowledge
@@ -123,7 +129,7 @@ export default function MasterCraftsmanNote() {
               </p>
 
               <NoteFigure
-                src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Venetian_Arsenal_by_Canaletto%2C_1732.jpg"
+                src="https://upload.wikimedia.org/wikipedia/commons/2/2e/View_of_the_entrance_to_the_Arsenal_by_Canaletto%2C_1732.jpg"
                 alt="The Venetian Arsenal by Canaletto, 1732"
                 caption="The entrance to the Arsenale di Venezia, Canaletto (1732). 45 hectares, 15% of Venice. The largest industrial complex in pre-industrial Europe."
                 aspect="landscape"
@@ -272,7 +278,7 @@ export default function MasterCraftsmanNote() {
               </p>
 
               <NoteFigure
-                src="https://upload.wikimedia.org/wikipedia/commons/d/dc/Iena.jpg"
+                src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Iena.jpg"
                 alt="Battle of Jena, 1806"
                 caption="The Battle of Jena, October 14, 1806. Davout's 26,000 defeated 60,500 Prussians at Auerstedt the same day. The command structure was the bottleneck."
                 aspect="landscape"

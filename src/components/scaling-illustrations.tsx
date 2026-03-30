@@ -9,6 +9,86 @@ const G = "rgba(196,154,108,0.55)";
 const GL = "rgba(196,154,108,0.3)";
 const W = "rgba(107,133,160,0.25)";
 
+/* ═══ Communication Pathways — why 3x headcount = ~10x complexity ═══ */
+export function CommunicationPaths({ className = "" }: { className?: string }) {
+  // n(n-1)/2 formula for communication lines
+  const groups = [
+    { n: 5, cx: 80, cy: 100, r: 35, label: "5 people", paths: 10 },
+    { n: 15, cx: 240, cy: 100, r: 50, label: "15 people", paths: 105 },
+    { n: 30, cx: 430, cy: 100, r: 60, label: "30 people", paths: 435 },
+  ];
+
+  function getPoints(n: number, cx: number, cy: number, r: number) {
+    return Array.from({ length: n }, (_, i) => {
+      const angle = (i * 2 * Math.PI) / n - Math.PI / 2;
+      return { x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle) };
+    });
+  }
+
+  return (
+    <svg viewBox="0 0 540 220" className={className} fill="none">
+      <text x="270" y="16" fill={SM} fontSize="8" fontFamily="var(--font-humanist), Georgia, serif" fontStyle="italic" textAnchor="middle">
+        Communication pathways: n(n−1)/2
+      </text>
+
+      {groups.map((group) => {
+        const pts = getPoints(group.n, group.cx, group.cy, group.r);
+        const lines: Array<[number, number, number, number]> = [];
+        // Only draw a subset for 30 to avoid visual noise
+        const maxLines = group.n <= 15 ? pts.length * (pts.length - 1) / 2 : 80;
+        let count = 0;
+        for (let i = 0; i < pts.length && count < maxLines; i++) {
+          for (let j = i + 1; j < pts.length && count < maxLines; j++) {
+            lines.push([pts[i].x, pts[i].y, pts[j].x, pts[j].y]);
+            count++;
+          }
+        }
+
+        return (
+          <g key={group.n}>
+            {/* Connection lines */}
+            {lines.map(([x1, y1, x2, y2], i) => (
+              <line key={i} x1={x1} y1={y1} x2={x2} y2={y2}
+                stroke={group.n <= 5 ? SL : group.n <= 15 ? SF : "rgba(139,115,85,0.06)"}
+                strokeWidth="0.3"
+              />
+            ))}
+            {/* Nodes */}
+            {pts.map((p, i) => (
+              <circle key={i} cx={p.x} cy={p.y} r={group.n <= 5 ? 3 : group.n <= 15 ? 2 : 1.5}
+                stroke={S} strokeWidth="0.5" fill="rgba(17,17,22,0.8)"
+              />
+            ))}
+            {/* Label */}
+            <text x={group.cx} y={group.cy + group.r + 22} fill={SM} fontSize="8"
+              fontFamily="var(--font-humanist), Georgia, serif" textAnchor="middle">
+              {group.label}
+            </text>
+            {/* Path count */}
+            <text x={group.cx} y={group.cy + group.r + 34} fill={G} fontSize="7"
+              fontFamily="var(--font-sans), system-ui" textAnchor="middle">
+              {group.paths} paths
+            </text>
+          </g>
+        );
+      })}
+
+      {/* Multiplier annotations */}
+      <text x="160" y="190" fill={SL} fontSize="7" fontFamily="var(--font-sans), system-ui" textAnchor="middle">×10</text>
+      <path d="M120 185 L145 185" stroke={SL} strokeWidth="0.4" />
+      <path d="M175 185 L200 185" stroke={SL} strokeWidth="0.4" />
+
+      <text x="340" y="190" fill={SL} fontSize="7" fontFamily="var(--font-sans), system-ui" textAnchor="middle">×4</text>
+      <path d="M300 185 L325 185" stroke={SL} strokeWidth="0.4" />
+      <path d="M355 185 L380 185" stroke={SL} strokeWidth="0.4" />
+
+      <text x="270" y="210" fill={SL} fontSize="6" fontFamily="var(--font-humanist), Georgia, serif" fontStyle="italic" textAnchor="middle">
+        6× the people. 43× the communication lines.
+      </text>
+    </svg>
+  );
+}
+
 /* ═══ Arsenal Assembly Line — top-down canal view ═══ */
 export function ArsenalAssemblyLine({ className = "" }: { className?: string }) {
   const stages = [
