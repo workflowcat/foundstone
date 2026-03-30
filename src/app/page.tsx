@@ -1,32 +1,61 @@
 import Link from "next/link";
-import { FadeIn, StaggerChildren, StaggerItem, CountUp } from "@/components/animate";
+import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animate";
 import { GeometricHero, StrataDivider } from "@/components/geometric-bg";
 
-const cards = [
+const notes = [
   {
-    href: "/portfolio",
-    label: "Portfolio",
-    description:
-      "Four operating businesses across social data, geocoding, and SaaS infrastructure.",
+    slug: "what-your-bank-sees",
+    date: "Mar 2025",
+    title: "What your bank actually sees when they open your file",
+    readTime: "16 min",
   },
   {
-    href: "/services",
-    label: "Services",
-    description:
-      "Fractional COO, CFO, and CMO on retainer. We run the functions you can't afford to staff full-time.",
+    slug: "venetian-bookkeeping",
+    date: "Mar 2025",
+    title: "Why the Venetian Republic\u2019s bookkeeping system matters for modern SaaS companies",
+    readTime: "12 min",
   },
   {
-    href: "/notes",
-    label: "Notes",
-    description:
-      "Things we've learned from running companies, managing money across borders, and automating the boring parts.",
+    slug: "risk-management-1556",
+    date: "Feb 2025",
+    title: "What mining engineers knew about risk management in 1556 that startup founders don\u2019t",
+    readTime: "9 min",
+  },
+  {
+    slug: "dutch-east-india-holding",
+    date: "Jan 2025",
+    title: "How the Dutch East India Company invented the holding company structure",
+    readTime: "11 min",
+  },
+];
+
+const services = [
+  {
+    title: "Operations",
+    roles: "Fractional COO",
+    desc: "Operating cadence, vendor management, reporting, process design. The 40% of the CEO\u2019s time that isn\u2019t their job.",
+  },
+  {
+    title: "Finance",
+    roles: "Fractional CFO \u00b7 Treasury",
+    desc: "Cash flow forecasting, board-ready financials, multi-entity consolidation, bank relationships. The thinking layer on top of the recording layer.",
+  },
+  {
+    title: "Marketing",
+    roles: "Fractional CMO",
+    desc: "Positioning, channel strategy, content systems. Where the next 50 customers come from, measured with numbers.",
+  },
+  {
+    title: "Infrastructure",
+    roles: "CTO \u00b7 Data Ops \u00b7 People Ops \u00b7 Governance",
+    desc: "Technical operations, data warehousing, HR systems, compliance frameworks, entity management. The load-bearing functions.",
   },
 ];
 
 export default function Home() {
   return (
     <>
-      {/* Hero — full viewport, dark */}
+      {/* ═══ Hero ═══ */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-12">
         <GeometricHero />
 
@@ -60,7 +89,6 @@ export default function Home() {
           </FadeIn>
         </div>
 
-        {/* Scroll indicator */}
         <FadeIn delay={1.4} className="absolute bottom-12">
           <div className="flex flex-col items-center gap-3">
             <span className="text-[10px] tracking-[0.3em] uppercase text-stone-600">
@@ -71,124 +99,109 @@ export default function Home() {
         </FadeIn>
       </section>
 
-      {/* Cards section */}
-      <section className="relative py-32 md:py-40 px-6 md:px-12 bg-stone-900">
-        <div className="max-w-[1400px] mx-auto">
-          <StaggerChildren
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
-            stagger={0.15}
-          >
-            {cards.map((card) => (
-              <StaggerItem key={card.href}>
-                <Link href={card.href} className="group block">
-                  <div className="relative p-8 md:p-10 border border-white/[0.04] rounded-sm bg-stone-950/50 transition-all duration-500 hover:border-amber/30">
-                    {/* Amber top line */}
-                    <div className="absolute top-0 left-0 right-0 h-px bg-amber/40 transition-all duration-500 group-hover:h-[2px] group-hover:bg-amber/70" />
+      {/* ═══ Notes — content leads ═══ */}
+      <section className="relative py-24 md:py-32 px-6 md:px-12">
+        <div className="max-w-4xl mx-auto">
+          <FadeIn>
+            <p className="text-xs tracking-[0.3em] uppercase text-amber/60 mb-4">
+              Notes from the back office
+            </p>
+            <p className="text-stone-400 leading-relaxed max-w-2xl mb-16">
+              Things we&apos;ve learned from running companies, managing
+              money across borders, and automating processes that
+              shouldn&apos;t require a human.
+            </p>
+          </FadeIn>
 
-                    <p className="text-xs tracking-[0.25em] uppercase text-amber mb-6">
-                      {card.label}
-                    </p>
-                    <p className="text-stone-300 leading-relaxed text-[15px]">
-                      {card.description}
-                    </p>
-
-                    <div className="mt-8 flex items-center gap-2 text-stone-600 group-hover:text-stone-400 transition-colors">
-                      <span className="text-xs tracking-wider uppercase">
-                        Explore
-                      </span>
-                      <svg
-                        className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={1.5}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                        />
-                      </svg>
+          <StaggerChildren className="space-y-0" stagger={0.08}>
+            {notes.map((note) => (
+              <StaggerItem key={note.slug}>
+                <Link href={`/notes/${note.slug}`} className="group block">
+                  <article className="py-8 md:py-10 border-t border-white/[0.04] group-hover:border-amber/15 transition-colors">
+                    <div className="flex items-start justify-between gap-6">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-serif text-xl md:text-2xl text-cream group-hover:text-amber/90 transition-colors leading-snug">
+                          {note.title}
+                        </h3>
+                      </div>
+                      <div className="hidden sm:flex flex-col items-end shrink-0 pt-1">
+                        <span className="text-xs text-stone-600">{note.date}</span>
+                        <span className="text-xs text-stone-700 mt-1">{note.readTime}</span>
+                      </div>
                     </div>
-                  </div>
+                  </article>
                 </Link>
               </StaggerItem>
             ))}
           </StaggerChildren>
-        </div>
-      </section>
 
-      {/* Strata divider */}
-      <StrataDivider />
-
-      {/* Statement section — with geological photo backdrop */}
-      <section className="relative py-32 md:py-48 px-6 md:px-12 overflow-hidden">
-        {/* Dark stone texture background */}
-        <div
-          className="absolute inset-0 opacity-[0.07]"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1635776062127-d379bfcba9f8?w=1920&q=80&auto=format&fit=crop')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/80 via-transparent to-stone-950/80" />
-
-        <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>
-            <p className="font-serif text-2xl sm:text-3xl md:text-4xl leading-relaxed text-cream/90">
-              The boring parts, it turns out, are most of the parts. We got
-              unreasonably good at them so you don&apos;t have to.
-            </p>
+            <div className="pt-8">
+              <Link
+                href="/notes"
+                className="inline-flex items-center gap-2 text-stone-600 hover:text-stone-400 transition-colors text-xs tracking-wider uppercase"
+              >
+                All notes
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                </svg>
+              </Link>
+            </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* Stats section */}
-      <section className="relative py-24 md:py-32 px-6 md:px-12 border-t border-b border-white/[0.04]">
-        <div className="max-w-[1400px] mx-auto">
-          <StaggerChildren
-            className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8"
-            stagger={0.1}
-          >
-            {[
-              { value: 4, label: "Operating\nBusinesses" },
-              { value: 2018, label: "Building\nSince", noCount: true },
-              { value: 3, label: "Jurisdictions", suffix: "" },
-              { value: 100, label: "Enterprise\nClients", suffix: "+" },
-            ].map((stat) => (
-              <StaggerItem
-                key={stat.label}
-                className="text-center md:text-left"
-              >
-                <p className="font-serif text-4xl md:text-5xl text-cream mb-3">
-                  {stat.noCount ? (
-                    stat.value
-                  ) : (
-                    <CountUp
-                      target={stat.value}
-                      suffix={stat.suffix || ""}
-                      duration={1.5}
-                    />
-                  )}
-                </p>
-                <p className="text-xs tracking-widest uppercase text-stone-500 whitespace-pre-line">
-                  {stat.label}
-                </p>
+      <StrataDivider />
+
+      {/* ═══ Services — simplified to 4 groups ═══ */}
+      <section className="relative py-24 md:py-32 px-6 md:px-12">
+        <div className="max-w-4xl mx-auto">
+          <FadeIn>
+            <p className="text-xs tracking-[0.3em] uppercase text-amber/60 mb-4">
+              Services
+            </p>
+            <p className="text-stone-400 leading-relaxed max-w-2xl mb-16">
+              Monthly retainer, 3&ndash;12 month engagements. We embed into
+              your tools, attend your standups, and do the actual work.
+            </p>
+          </FadeIn>
+
+          <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/[0.03]" stagger={0.1}>
+            {services.map((s) => (
+              <StaggerItem key={s.title}>
+                <div className="bg-stone-950 p-8 md:p-10 h-full">
+                  <p className="text-xs tracking-[0.2em] uppercase text-amber/50 mb-2">
+                    {s.title}
+                  </p>
+                  <p className="text-cream/80 text-sm mb-3">{s.roles}</p>
+                  <p className="text-stone-400 text-[15px] leading-relaxed">
+                    {s.desc}
+                  </p>
+                </div>
               </StaggerItem>
             ))}
           </StaggerChildren>
+
+          <FadeIn>
+            <div className="pt-10">
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 text-stone-600 hover:text-stone-400 transition-colors text-xs tracking-wider uppercase"
+              >
+                All services
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                </svg>
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
-      {/* CTA section */}
-      <section className="relative py-32 md:py-40 px-6 md:px-12">
+      {/* ═══ Contact ═══ */}
+      <section className="relative py-24 md:py-32 px-6 md:px-12 border-t border-white/[0.04]">
         <div className="max-w-2xl mx-auto text-center">
           <FadeIn>
-            <p className="text-xs tracking-[0.3em] uppercase text-stone-600 mb-8">
-              Get in touch
-            </p>
             <p className="font-serif text-3xl md:text-4xl text-cream mb-10">
               Interested in working with us?
             </p>
@@ -197,18 +210,8 @@ export default function Home() {
               className="inline-flex items-center gap-3 px-8 py-4 border border-amber/40 text-amber text-sm tracking-wider uppercase hover:bg-amber/10 transition-all duration-300"
             >
               Contact Foundstone
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={1.5}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                />
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
               </svg>
             </Link>
           </FadeIn>
