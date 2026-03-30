@@ -3,6 +3,14 @@ import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animate";
 
 const notes = [
   {
+    slug: "what-your-bank-sees",
+    date: "March 2025",
+    title: "What Your Bank Actually Sees When They Open Your File",
+    excerpt:
+      "A compliance officer has between 40 and 200 corporate files on their desk. The difference between approval in a day and a three-month escalation is not the quality of the business. It is the quality of the documentation.",
+    readTime: "16 min read",
+  },
+  {
     slug: "venetian-bookkeeping",
     date: "March 2025",
     title: "Why the Venetian Republic\u2019s Bookkeeping System Matters for Modern SaaS Companies",
