@@ -3,19 +3,19 @@ import { GeometricSection } from "@/components/geometric-bg";
 
 const principles = [
   {
-    title: "Centralized Capital Allocation",
+    title: "Repeatable Systems",
     description:
-      "All investment and reinvestment decisions flow through a single governance layer, ensuring discipline and coherence across the group.",
+      "We formalized our internal processes into repeatable infrastructure — payment controls, management reporting, compliance tracking, operational automation. Built once, maintained permanently, available to every client.",
   },
   {
-    title: "Operational Services at Group Level",
+    title: "Embedded, Not Layered",
     description:
-      "Finance, legal, compliance, HR, and technology infrastructure are shared services — built once, maintained permanently, available to every portfolio company.",
+      "We join your tools, attend your standups, and own the outcomes. This isn't advisory. This is someone waking up in the morning and deciding your accounts payable is their problem.",
   },
   {
-    title: "Compliance-First Structure",
+    title: "Compliance-First",
     description:
-      "Regulatory requirements are embedded into operations from day one, not bolted on after the fact. Every process, every tool, every decision considers the compliance context.",
+      "Regulatory requirements are embedded from day one, not bolted on after the fact. We know what banks want to see because we've been through the process ourselves — recently, multiple times, across multiple jurisdictions.",
   },
 ];
 
@@ -23,7 +23,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-40 pb-24 md:pt-48 md:pb-32 px-6 md:px-12">
+      <section className="relative pt-40 pb-16 md:pt-48 md:pb-24 px-6 md:px-12">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <p className="text-xs tracking-[0.3em] uppercase text-amber mb-6">
@@ -32,8 +32,7 @@ export default function AboutPage() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.15] text-cream">
-              We build the infrastructure
-              <br className="hidden md:block" /> that holding companies need.
+              How we got here
             </h1>
           </FadeIn>
         </div>
@@ -45,26 +44,31 @@ export default function AboutPage() {
           <FadeIn>
             <div className="space-y-6 text-stone-950">
               <p className="text-lg md:text-xl leading-relaxed">
-                We built our first data product in 2018. What started as a
-                single API serving social media data to enterprise clients
-                grew into a group of interconnected B2B technology businesses
-                — each one solving a specific infrastructure problem for
-                companies that process data at scale.
+                Foundstone started as the management company for a group of B2B
+                data and API businesses. Someone had to handle the finance,
+                compliance, contracts, vendor relationships, and general
+                operational overhead that accumulates when you run multiple
+                companies across multiple countries. We were that someone.
               </p>
               <p className="text-lg md:text-xl leading-relaxed">
-                Foundstone Capital Ltd was established in Cyprus in 2025 to
-                centralize governance, capital allocation, and operational
-                services across the group. The goal was straightforward: let
-                each portfolio company focus entirely on its product and
-                customers, while Foundstone handles everything else — finance,
-                compliance, legal, technology infrastructure, and
-                organizational design.
+                Over time, we got unreasonably good at the boring parts of
+                running companies. (The boring parts, it turns out, are most of
+                the parts.) We built internal systems for payment controls,
+                management reporting, compliance tracking, and operational
+                automation. We formalized them into repeatable processes. Then we
+                started noticing that every founder we talked to was solving the
+                same problems from scratch, usually badly, usually while also
+                trying to build product.
               </p>
               <p className="text-lg md:text-xl leading-relaxed text-stone-700">
-                Operating companies in Estonia and Cyprus cover social media
-                data APIs, geocoding and distance APIs, and adjacent B2B SaaS
-                products. The group serves enterprise clients across the EU
-                and North America.
+                So we opened the door. Same team, same systems, same operational
+                infrastructure &mdash; now available on retainer to companies
+                that aren&apos;t ours.
+              </p>
+              <p className="text-lg md:text-xl leading-relaxed text-stone-700">
+                We&apos;re registered in Cyprus (HE&nbsp;483648, Limassol). We
+                have a real office, real employees, and strong opinions about
+                accounts payable workflows.
               </p>
             </div>
           </FadeIn>
@@ -81,7 +85,10 @@ export default function AboutPage() {
             </p>
           </FadeIn>
 
-          <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12" stagger={0.15}>
+          <StaggerChildren
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
+            stagger={0.15}
+          >
             {principles.map((principle) => (
               <StaggerItem key={principle.title}>
                 <div className="relative pl-6 border-l border-amber/30">
@@ -98,14 +105,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values / philosophy */}
+      {/* Philosophy */}
       <section className="relative py-24 md:py-32 px-6 md:px-12 border-t border-white/[0.04]">
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn>
             <p className="font-serif text-2xl md:text-3xl leading-relaxed text-cream/90">
-              A management company should be invisible to the end customer
-              and indispensable to the businesses it serves. That is the
-              standard we hold ourselves to.
+              The stone is natural. The structure is human. Someone had to
+              choose it, shape it, place it. That&apos;s what we do &mdash; the
+              craft in how a foundation gets laid.
             </p>
           </FadeIn>
         </div>

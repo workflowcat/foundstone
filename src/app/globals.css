@@ -14,7 +14,21 @@
   --color-amber-glow: rgba(201, 151, 91, 0.15);
   --color-amber-dim: rgba(201, 151, 91, 0.08);
 
+  /* V2 Renaissance palette */
+  --color-parchment: #F5F0E8;
+  --color-parchment-dark: #E8E0D4;
+  --color-ink: #1C1A17;
+  --color-ink-light: #2D2A25;
+  --color-sepia: #8B7355;
+  --color-copper: #B87333;
+  --color-copper-glow: rgba(184, 115, 51, 0.12);
+  --color-sandstone: #C4A882;
+  --color-clay: #A0826D;
+  --color-slate: #6B6560;
+  --color-umber: #483C32;
+
   --font-serif: var(--font-playfair);
+  --font-humanist: var(--font-garamond);
   --font-sans: var(--font-inter);
 }
 

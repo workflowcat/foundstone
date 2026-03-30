@@ -41,13 +41,15 @@ export default function NotesPage() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.15] text-cream">
-              Working observations.
+              Notes from the back office.
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="mt-8 text-stone-400 text-lg max-w-2xl leading-relaxed">
-              Short-form notes on group governance, financial controls,
-              service design, and what we&apos;re seeing in the market.
+              Things we&apos;ve learned from running companies, managing money
+              across borders, and automating processes that shouldn&apos;t
+              require a human. Updated when we have something to say, not on a
+              content calendar.
             </p>
           </FadeIn>
         </div>

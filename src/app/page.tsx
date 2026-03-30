@@ -13,13 +13,13 @@ const cards = [
     href: "/services",
     label: "Services",
     description:
-      "Operational management, financial operations, AI advisory, and corporate governance.",
+      "Fractional COO, CFO, and CMO on retainer. We run the functions you can't afford to staff full-time.",
   },
   {
     href: "/notes",
     label: "Notes",
     description:
-      "Working observations on group operations, markets, and technology.",
+      "Things we've learned from running companies, managing money across borders, and automating the boring parts.",
   },
 ];
 
@@ -32,21 +32,46 @@ export default function Home() {
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <FadeIn delay={0.2}>
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] tracking-tight text-cream">
-              Management company for a group of B2B technology businesses
-              in data, APIs, and infrastructure.
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] tracking-tight text-cream italic">
+              &ldquo;Every company between 15 and 150 people has the same problem.&rdquo;
             </h1>
           </FadeIn>
 
-          <FadeIn delay={0.6}>
-            <p className="mt-8 text-sm tracking-widest uppercase text-stone-400">
-              Limassol, Cyprus &mdash; Est. 2025
-            </p>
+          <FadeIn delay={0.5}>
+            <div className="mt-10 max-w-2xl mx-auto space-y-5 text-stone-400 text-lg leading-relaxed text-left sm:text-center">
+              <p>
+                You need a COO, a CFO, and probably someone running marketing
+                who actually understands unit economics. You can&apos;t afford
+                three senior hires. You definitely can&apos;t afford three bad
+                senior hires, which is what happens when you rush it.
+              </p>
+              <p>
+                We provide fractional operations, finance, and marketing
+                leadership on retainer. We&apos;ve been running these functions
+                for our own group of B2B technology companies since 2018. At
+                some point we noticed everyone else needed the same thing, so
+                here we are.
+              </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.8}>
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-3 px-8 py-4 border border-amber/40 text-amber text-sm tracking-wider uppercase hover:bg-amber/10 transition-all duration-300"
+              >
+                How it works
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                </svg>
+              </Link>
+            </div>
           </FadeIn>
         </div>
 
         {/* Scroll indicator */}
-        <FadeIn delay={1.2} className="absolute bottom-12">
+        <FadeIn delay={1.4} className="absolute bottom-12">
           <div className="flex flex-col items-center gap-3">
             <span className="text-[10px] tracking-[0.3em] uppercase text-stone-600">
               Scroll
@@ -108,8 +133,8 @@ export default function Home() {
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn>
             <p className="font-serif text-2xl sm:text-3xl md:text-4xl leading-relaxed text-cream/90">
-              We centralize governance, capital, and operational services
-              so our portfolio companies can focus entirely on building.
+              The boring parts, it turns out, are most of the parts. We got
+              unreasonably good at them so you don&apos;t have to.
             </p>
           </FadeIn>
         </div>
