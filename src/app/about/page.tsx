@@ -1,22 +1,37 @@
 import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animate";
 import { GeometricSection } from "@/components/geometric-bg";
-import { PortraitAndrii, PortraitJana, PortraitMarina } from "@/components/team-portraits";
+import Link from "next/link";
 
-const principles = [
+const team = [
   {
-    title: "Repeatable Systems",
-    description:
-      "We formalized our internal processes into repeatable infrastructure — payment controls, management reporting, compliance tracking, operational automation. Built once, maintained permanently, available to every client.",
+    name: "Andrii",
+    role: "Chief of Staff",
+    initial: "A",
+    lines: [
+      "Operations, compliance, automation.",
+      "Three jurisdictions, one operating cadence.",
+      "Writes the notes.",
+    ],
   },
   {
-    title: "Embedded, Not Layered",
-    description:
-      "We join your tools, attend your standups, and own the outcomes. This isn't advisory. This is someone waking up in the morning and deciding your accounts payable is their problem.",
+    name: "Jana",
+    role: "CFO",
+    initial: "J",
+    lines: [
+      "Multi-entity finance. Estonia, Cyprus, Ukraine.",
+      "Closes the books in five days.",
+      "Knows what your bank wants before they ask.",
+    ],
   },
   {
-    title: "Compliance-First",
-    description:
-      "Regulatory requirements are embedded from day one, not bolted on after the fact. We know what banks want to see because we've been through the process ourselves — recently, multiple times, across multiple jurisdictions.",
+    name: "Marina",
+    role: "CMO",
+    initial: "M",
+    lines: [
+      "B2B positioning and channel strategy.",
+      "Builds systems that compound.",
+      "Measures with numbers.",
+    ],
   },
 ];
 
@@ -39,42 +54,47 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Origin story — light section */}
-      <section className="relative py-24 md:py-32 px-6 md:px-12 bg-cream">
+      {/* Origin story — dark, no cream section */}
+      <section className="relative py-16 md:py-24 px-6 md:px-12">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <div className="space-y-6 text-stone-950">
-              <p className="text-lg md:text-xl leading-relaxed">
-                Foundstone started because someone had to handle the finance,
-                compliance, contracts, vendor relationships, and operational
-                overhead that accumulates when you run multiple B2B technology
-                companies across multiple countries. We built the first data
-                product in 2018. The management infrastructure came after,
-                because it had to.
+            <div className="space-y-6 text-stone-300 leading-relaxed text-[16px]">
+              <p>
+                Foundstone exists because running multiple companies across
+                multiple countries produces a specific kind of operational
+                overhead that nobody warns you about. Finance, compliance,
+                contracts, vendor relationships, payroll in three
+                jurisdictions, bank due diligence that arrives on its own
+                schedule. Someone has to handle it. For our group of B2B
+                data and API businesses, we were that someone.
               </p>
-              <p className="text-lg md:text-xl leading-relaxed">
-                We built internal systems for payment controls, management
-                reporting, compliance tracking, operational automation. Then
-                we noticed that every founder we talked to was solving the
-                same problems from scratch — usually badly, usually while
-                trying to build product, usually discovering the compliance
-                gap when a bank asked for documentation they did not have.
+              <p>
+                Over a few years we built internal systems for payment
+                controls, management reporting, compliance tracking,
+                operational automation. Formalized them into repeatable
+                processes. Then started noticing that every founder we
+                talked to was solving the same problems from scratch —
+                usually while also trying to build product, usually
+                discovering the compliance gap when a bank asked for
+                documentation that did not exist.
               </p>
-              <p className="text-lg md:text-xl leading-relaxed text-stone-700">
-                Same team, same systems, same infrastructure. Now available
-                on retainer to companies that are not ours. Registered in
-                Cyprus (HE&nbsp;483648, Limassol). Real office, real
-                employees, strong opinions about accounts payable.
+              <p>
+                Same team, same systems. Now on retainer for companies
+                that are not ours.
+              </p>
+              <p className="text-stone-500 text-sm">
+                Registered in Cyprus (HE&nbsp;483648, Limassol). Real
+                office. Real employees.
               </p>
             </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* Governance principles — dark with strata */}
-      <section className="relative py-24 md:py-32 px-6 md:px-12">
+      {/* How we operate */}
+      <section className="relative py-24 md:py-32 px-6 md:px-12 border-t border-white/[0.04]">
         <GeometricSection variant="strata" />
-        <div className="relative z-10 max-w-[1400px] mx-auto">
+        <div className="relative z-10 max-w-[1200px] mx-auto">
           <FadeIn>
             <p className="text-xs tracking-[0.3em] uppercase text-stone-600 mb-16">
               How we operate
@@ -85,18 +105,46 @@ export default function AboutPage() {
             className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
             stagger={0.15}
           >
-            {principles.map((principle) => (
-              <StaggerItem key={principle.title}>
-                <div className="relative pl-6 border-l border-amber/30">
-                  <h3 className="font-serif text-xl md:text-2xl text-cream mb-4">
-                    {principle.title}
-                  </h3>
-                  <p className="text-stone-400 leading-relaxed text-[15px]">
-                    {principle.description}
-                  </p>
-                </div>
-              </StaggerItem>
-            ))}
+            <StaggerItem>
+              <div className="relative pl-6 border-l border-amber/30">
+                <h3 className="font-serif text-xl md:text-2xl text-cream mb-4">
+                  Embedded
+                </h3>
+                <p className="text-stone-400 leading-relaxed text-[15px]">
+                  We join your Slack, your standups, your board prep. The
+                  deliverable is not a report — it is the thing getting done.
+                  If your AP workflow is broken, we fix the workflow. If
+                  nobody is closing the books, we close the books.
+                </p>
+              </div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="relative pl-6 border-l border-amber/30">
+                <h3 className="font-serif text-xl md:text-2xl text-cream mb-4">
+                  Repeatable
+                </h3>
+                <p className="text-stone-400 leading-relaxed text-[15px]">
+                  Every process we run for our own companies is documented,
+                  version-controlled, and available to every client. Payment
+                  controls, management reporting templates, compliance
+                  checklists, vendor evaluation frameworks. Built once,
+                  maintained permanently.
+                </p>
+              </div>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="relative pl-6 border-l border-amber/30">
+                <h3 className="font-serif text-xl md:text-2xl text-cream mb-4">
+                  Compliance-native
+                </h3>
+                <p className="text-stone-400 leading-relaxed text-[15px]">
+                  We have been through enhanced due diligence recently,
+                  multiple times, across multiple jurisdictions. We know
+                  what banks want to see because we produce it for ourselves.
+                  This is not a service we added. It is how we operate.
+                </p>
+              </div>
+            </StaggerItem>
           </StaggerChildren>
         </div>
       </section>
@@ -111,53 +159,54 @@ export default function AboutPage() {
           </FadeIn>
 
           <StaggerChildren
-            className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
             stagger={0.12}
           >
-            <StaggerItem>
-              <div className="text-center">
-                <PortraitAndrii className="w-44 h-56 md:w-52 md:h-64 mx-auto mb-8" />
-                <p className="font-serif text-xl text-cream mb-1">Andrii</p>
-                <p className="text-xs tracking-[0.2em] uppercase text-amber/50 mb-4">
-                  Chief of Staff
-                </p>
-                <p className="text-stone-400 text-sm leading-relaxed max-w-xs mx-auto">
-                  Built the group&apos;s first data product in 2018.
-                  Runs operations, compliance, and automation across three
-                  jurisdictions. Writes the notes.
-                </p>
-              </div>
-            </StaggerItem>
+            {team.map((person) => (
+              <StaggerItem key={person.name}>
+                <div className="relative p-8 border border-white/[0.04] bg-stone-900/30">
+                  {/* Geometric initial */}
+                  <div className="w-12 h-12 flex items-center justify-center border border-amber/30 mb-6">
+                    <span className="font-serif text-xl text-amber/70">
+                      {person.initial}
+                    </span>
+                  </div>
 
-            <StaggerItem>
-              <div className="text-center">
-                <PortraitJana className="w-44 h-56 md:w-52 md:h-64 mx-auto mb-8" />
-                <p className="font-serif text-xl text-cream mb-1">Jana</p>
-                <p className="text-xs tracking-[0.2em] uppercase text-amber/50 mb-4">
-                  CFO
-                </p>
-                <p className="text-stone-400 text-sm leading-relaxed max-w-xs mx-auto">
-                  Multi-entity finance across Estonia, Cyprus, and Ukraine.
-                  Cash flow forecasting, management reporting, bank
-                  relationships. Closes the books in five days.
-                </p>
-              </div>
-            </StaggerItem>
+                  <p className="font-serif text-xl text-cream mb-1">
+                    {person.name}
+                  </p>
+                  <p className="text-xs tracking-[0.2em] uppercase text-amber/40 mb-5">
+                    {person.role}
+                  </p>
 
-            <StaggerItem>
-              <div className="text-center">
-                <PortraitMarina className="w-44 h-56 md:w-52 md:h-64 mx-auto mb-8" />
-                <p className="font-serif text-xl text-cream mb-1">Marina</p>
-                <p className="text-xs tracking-[0.2em] uppercase text-amber/50 mb-4">
-                  CMO
-                </p>
-                <p className="text-stone-400 text-sm leading-relaxed max-w-xs mx-auto">
-                  B2B positioning and channel strategy. Builds systems
-                  that compound. Measures with numbers.
-                </p>
-              </div>
-            </StaggerItem>
+                  <div className="space-y-2">
+                    {person.lines.map((line) => (
+                      <p key={line} className="text-stone-400 text-sm leading-relaxed">
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
           </StaggerChildren>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="relative py-24 md:py-32 px-6 md:px-12 border-t border-white/[0.04]">
+        <div className="max-w-2xl mx-auto text-center">
+          <FadeIn>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-3 px-8 py-4 border border-amber/40 text-amber text-sm tracking-wider uppercase hover:bg-amber/10 transition-all duration-300"
+            >
+              Get in touch
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+              </svg>
+            </Link>
+          </FadeIn>
         </div>
       </section>
     </>
