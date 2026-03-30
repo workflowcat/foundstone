@@ -1,13 +1,13 @@
 /* ─── Illustrations for the scaling/craftsman article ─── */
 /* Full-width, detailed, architectural drawing style */
 
-const S = "rgba(139,115,85,0.8)";
-const SM = "rgba(139,115,85,0.55)";
-const SL = "rgba(139,115,85,0.3)";
-const SF = "rgba(139,115,85,0.12)";
-const G = "rgba(196,154,108,0.55)";
-const GL = "rgba(196,154,108,0.3)";
-const W = "rgba(107,133,160,0.25)";
+const S = "rgba(139,115,85,0.9)";
+const SM = "rgba(139,115,85,0.65)";
+const SL = "rgba(139,115,85,0.4)";
+const SF = "rgba(139,115,85,0.18)";
+const G = "rgba(196,154,108,0.7)";
+const GL = "rgba(196,154,108,0.4)";
+const W = "rgba(107,133,160,0.3)";
 
 /* ═══ Communication Pathways — why 3x headcount = ~10x complexity ═══ */
 export function CommunicationPaths({ className = "" }: { className?: string }) {

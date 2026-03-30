@@ -37,7 +37,7 @@ export default function MasterCraftsmanNote() {
           <FadeIn>
             <div className="space-y-6 text-stone-300 leading-relaxed text-[16px]">
 
-              {/* ─── Segment 1: The feeling ─── */}
+              {/* ─── The feeling ─── */}
 
               <p>
                 At 15 people, the founder can hold the whole company in
@@ -70,12 +70,6 @@ export default function MasterCraftsmanNote() {
                 realizing it.&rdquo;
               </p>
 
-              <FadeIn>
-                <div className="my-10 py-6 border-t border-b border-white/[0.04]">
-                  <CommunicationPaths className="w-full h-auto" />
-                </div>
-              </FadeIn>
-
               <p>
                 At 30, the founder is fielding questions they cannot
                 answer because they no longer have first-hand knowledge
@@ -85,6 +79,12 @@ export default function MasterCraftsmanNote() {
                 The founder finds out on Friday. The thing happened on
                 Tuesday.
               </p>
+
+              <FadeIn>
+                <div className="my-12 py-8 border-t border-b border-white/[0.06]">
+                  <CommunicationPaths className="w-full h-auto" />
+                </div>
+              </FadeIn>
 
               <p>
                 The founder is the most capable person in the company and
@@ -96,17 +96,11 @@ export default function MasterCraftsmanNote() {
                 company stays stuck between them, sometimes for years.
               </p>
 
-              {/* ─── Segment 2: The Arsenal ─── */}
+              {/* ─── The Arsenal ─── */}
 
-              <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
+              <h2 className="font-serif text-2xl text-cream mt-16 mb-6">
                 The Arsenal
               </h2>
-
-              <FadeIn>
-                <div className="my-10 py-6 border-t border-b border-white/[0.04]">
-                  <ArsenalAssemblyLine className="w-full h-auto" />
-                </div>
-              </FadeIn>
 
               <p>
                 The Arsenale di Venezia was established around 1104 and
@@ -128,13 +122,6 @@ export default function MasterCraftsmanNote() {
                 production around a canal-based sequential system.
               </p>
 
-              <NoteFigure
-                src="https://upload.wikimedia.org/wikipedia/commons/2/2e/View_of_the_entrance_to_the_Arsenal_by_Canaletto%2C_1732.jpg"
-                alt="The Venetian Arsenal by Canaletto, 1732"
-                caption="The entrance to the Arsenale di Venezia, Canaletto (1732). 45 hectares, 15% of Venice. The largest industrial complex in pre-industrial Europe."
-                aspect="landscape"
-              />
-
               <p>
                 The production sequence had roughly ten stages: hull
                 framing, planking, caulking, decking, mast fitting,
@@ -146,6 +133,12 @@ export default function MasterCraftsmanNote() {
                 zone of the Arsenal produced one type of part: hulls,
                 oars, masts, rigging, rope, munitions.
               </p>
+
+              <FadeIn>
+                <div className="my-12 py-8 border-t border-b border-white/[0.06]">
+                  <ArsenalAssemblyLine className="w-full h-auto" />
+                </div>
+              </FadeIn>
 
               <p>
                 In July 1574, when Henry III of France visited Venice,
@@ -159,6 +152,13 @@ export default function MasterCraftsmanNote() {
                 possible was real. It was the first moving assembly line,
                 three centuries before Henry Ford.
               </p>
+
+              <NoteFigure
+                src="https://upload.wikimedia.org/wikipedia/commons/2/2e/View_of_the_entrance_to_the_Arsenal_by_Canaletto%2C_1732.jpg"
+                alt="The Venetian Arsenal by Canaletto, 1732"
+                caption="Entrance to the Arsenale, Canaletto (1732). Woburn Abbey collection."
+                aspect="landscape"
+              />
 
               <p>
                 The transition from craft to assembly required the
@@ -174,14 +174,12 @@ export default function MasterCraftsmanNote() {
               </p>
 
               <p>
-                The arsenalotti — the Arsenal workers — were state
-                employees, not freelance craftsmen. They had stable
-                wages, exemption from civic burdens, access to state
-                patronage, and were described as &ldquo;aristocrats
-                among workingmen.&rdquo; Caulkers were regularly posted
-                on warships for emergency repairs at sea. These were not
-                interchangeable labourers. They were specialists whose
-                value came from depth in one function.
+                The arsenalotti were state employees with stable wages,
+                exemption from civic burdens, and were described as
+                &ldquo;aristocrats among workingmen.&rdquo; Caulkers were
+                regularly posted on warships for emergency repairs at
+                sea. Specialists whose value came from depth in one
+                function.
               </p>
 
               <p>
@@ -191,18 +189,18 @@ export default function MasterCraftsmanNote() {
                 applied. Robert C. Davis, studying Arsenal workers from
                 1620 to 1670 through nearly 1,000 petitions to the
                 Venetian government, documents a workforce that was
-                simultaneously highly skilled and deeply specialized —
-                each person excellent at their stage, none capable of
-                building a whole
+                highly skilled and deeply specialized — each person
+                excellent at their stage, none capable of building a
+                whole
                 ship.<sup className="text-stone-500 text-xs">5</sup> The
                 skills that made a great marangone were different from
                 the skills that made a great protomaestro. The Arsenal
                 needed both. It had to grow the second from the first.
               </p>
 
-              {/* ─── Segment 3: The bandwidth problem ─── */}
+              {/* ─── The bandwidth problem ─── */}
 
-              <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
+              <h2 className="font-serif text-2xl text-cream mt-16 mb-6">
                 The bandwidth problem
               </h2>
 
@@ -226,6 +224,13 @@ export default function MasterCraftsmanNote() {
                 that brain could assess — and at Auerstedt it moved very
                 fast — the system locked up.
               </p>
+
+              <NoteFigure
+                src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Iena.jpg"
+                alt="Battle of Jena, 1806"
+                caption="The Battle of Jena, Horace Vernet. October 14, 1806."
+                aspect="landscape"
+              />
 
               <p>
                 Gerhard von Scharnhorst was appointed to chair the
@@ -266,6 +271,12 @@ export default function MasterCraftsmanNote() {
                 ground.<sup className="text-stone-500 text-xs">8</sup>
               </p>
 
+              <FadeIn>
+                <div className="my-12 py-8 border-t border-b border-white/[0.06]">
+                  <CommandStructure className="w-full h-auto" />
+                </div>
+              </FadeIn>
+
               <p>
                 Scharnhorst was wounded at Lützen, May 2, 1813. Infected
                 wound. Died June 28 in Prague, negotiating Austria&apos;s
@@ -277,22 +288,9 @@ export default function MasterCraftsmanNote() {
                 worked without its architect.
               </p>
 
-              <NoteFigure
-                src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Iena.jpg"
-                alt="Battle of Jena, 1806"
-                caption="The Battle of Jena, October 14, 1806. Davout's 26,000 defeated 60,500 Prussians at Auerstedt the same day. The command structure was the bottleneck."
-                aspect="landscape"
-              />
+              {/* ─── When the domain shifts ─── */}
 
-              <FadeIn>
-                <div className="my-10 py-6 border-t border-b border-white/[0.04]">
-                  <CommandStructure className="w-full h-auto" />
-                </div>
-              </FadeIn>
-
-              {/* ─── Segment 4: Complicated vs. Complex ─── */}
-
-              <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
+              <h2 className="font-serif text-2xl text-cream mt-16 mb-6">
                 When the domain shifts
               </h2>
 
@@ -304,12 +302,6 @@ export default function MasterCraftsmanNote() {
                 draws a line between two kinds of problems that most
                 people — and most organizations — conflate.
               </p>
-
-              <FadeIn>
-                <div className="my-10 py-6 border-t border-b border-white/[0.04]">
-                  <CynefinDiagram className="w-full h-auto" />
-                </div>
-              </FadeIn>
 
               <p>
                 <strong className="text-cream/80">Complicated</strong> problems
@@ -332,6 +324,12 @@ export default function MasterCraftsmanNote() {
                 what works.
               </p>
 
+              <FadeIn>
+                <div className="my-12 py-8 border-t border-b border-white/[0.06]">
+                  <CynefinDiagram className="w-full h-auto" />
+                </div>
+              </FadeIn>
+
               <p>
                 At 15 people, most operational problems are Complicated.
                 The founder can analyze them. At 30, many have shifted to
@@ -353,9 +351,9 @@ export default function MasterCraftsmanNote() {
                 advance finds hardest to accept.
               </p>
 
-              {/* ─── Segment 5: Concurrent workflows ─── */}
+              {/* ─── The split ─── */}
 
-              <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
+              <h2 className="font-serif text-2xl text-cream mt-16 mb-6">
                 The split
               </h2>
 
@@ -381,16 +379,6 @@ export default function MasterCraftsmanNote() {
               </p>
 
               <p>
-                The Arsenal&apos;s arsenalotti were described as
-                &ldquo;aristocrats among workingmen&rdquo; — state
-                employees with stable wages, privileges, and direct
-                contact with centres of power. They were not
-                interchangeable labour. They were specialists whose
-                value came from depth in one function, not breadth
-                across many.
-              </p>
-
-              <p>
                 The marangone who could build a whole ship was replaced
                 by a team that could build a ship in an hour. Whether
                 that was a gain or a loss depends on what you are
@@ -404,64 +392,21 @@ export default function MasterCraftsmanNote() {
                   Sources &amp; references
                 </h3>
                 <div className="space-y-3 text-stone-500 text-[13px] leading-relaxed">
-                  <p>
-                    <sup className="text-stone-600">1</sup>{" "}
-                    Dunbar, R. (2010). <em>How Many Friends Does One Person
-                    Need?</em> Group size layers: 5, 15, 50, 150.
-                  </p>
-                  <p>
-                    <sup className="text-stone-600">2</sup>{" "}
-                    Libin, P. (2019). Interview, <em>Inc. Magazine.</em> The
-                    rule of 3 and 10, learned from Hiroshi Mikitani (Rakuten).
-                  </p>
-                  <p>
-                    <sup className="text-stone-600">3</sup>{" "}
-                    Davis, R.C. (1991). <em>Shipbuilders of the Venetian
-                    Arsenal: Workers and Workplace in the Preindustrial
-                    City.</em> Johns Hopkins University Press.
-                  </p>
-                  <p>
-                    <sup className="text-stone-600">4</sup>{" "}
-                    The Henry III demonstration (July 1574) is documented
-                    in multiple contemporary sources. Likely used pre-staged
-                    standardized parts.
-                  </p>
-                  <p>
-                    <sup className="text-stone-600">5</sup>{" "}
-                    Davis (1991), pp. 45&ndash;89. Based on nearly 1,000
-                    petitions from shipbuilders to the Venetian government.
-                  </p>
-                  <p>
-                    <sup className="text-stone-600">6</sup>{" "}
-                    Paret, P. (1976). <em>Clausewitz and the State.</em> Princeton
-                    University Press. Chapter on &ldquo;Scharnhorst&apos;s
-                    Mediation between Old and New.&rdquo;
-                  </p>
-                  <p>
-                    <sup className="text-stone-600">7</sup>{" "}
-                    Scharnhorst: born 1755 Bordenau, Hanover. Son of an
-                    independent farmer. Military Reorganization Commission
-                    appointed July 25, 1807.
-                  </p>
-                  <p>
-                    <sup className="text-stone-600">8</sup>{" "}
-                    Auftragstaktik formalized by Moltke the Elder in his
-                    1869 Instructions. Adopted in Prussian field manual 1888.
-                    Term itself first used c. 1919&ndash;1920.
-                  </p>
-                  <p>
-                    <sup className="text-stone-600">9</sup>{" "}
-                    Snowden, D.J. &amp; Boone, M.E. (2007). &ldquo;A
-                    Leader&apos;s Framework for Decision Making.&rdquo;
-                    <em> Harvard Business Review</em>, November 2007.
-                  </p>
+                  <p><sup className="text-stone-600">1</sup> Dunbar, R. (2010). <em>How Many Friends Does One Person Need?</em> Group size layers: 5, 15, 50, 150.</p>
+                  <p><sup className="text-stone-600">2</sup> Libin, P. (2019). Interview, <em>Inc. Magazine.</em> The rule of 3 and 10, learned from Hiroshi Mikitani (Rakuten).</p>
+                  <p><sup className="text-stone-600">3</sup> Davis, R.C. (1991). <em>Shipbuilders of the Venetian Arsenal.</em> Johns Hopkins University Press.</p>
+                  <p><sup className="text-stone-600">4</sup> Henry III demonstration (July 1574). Likely used pre-staged standardized parts.</p>
+                  <p><sup className="text-stone-600">5</sup> Davis (1991), pp. 45&ndash;89. Based on nearly 1,000 petitions from shipbuilders.</p>
+                  <p><sup className="text-stone-600">6</sup> Paret, P. (1976). <em>Clausewitz and the State.</em> Princeton University Press.</p>
+                  <p><sup className="text-stone-600">7</sup> Scharnhorst: born 1755, Bordenau. Military Reorganization Commission appointed July 25, 1807.</p>
+                  <p><sup className="text-stone-600">8</sup> Auftragstaktik formalized by Moltke the Elder, 1869. Prussian field manual 1888.</p>
+                  <p><sup className="text-stone-600">9</sup> Snowden, D.J. &amp; Boone, M.E. (2007). <em>Harvard Business Review</em>, November 2007.</p>
                 </div>
               </div>
 
             </div>
           </FadeIn>
 
-          {/* Back link */}
           <FadeIn>
             <div className="mt-12 pt-8 border-t border-white/[0.04]">
               <Link
