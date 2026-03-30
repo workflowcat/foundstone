@@ -1,65 +1,189 @@
-import Image from "next/image";
+import Link from "next/link";
+import { FadeIn, StaggerChildren, StaggerItem, CountUp } from "@/components/animate";
+import { GeometricHero } from "@/components/geometric-bg";
+
+const cards = [
+  {
+    href: "/portfolio",
+    label: "Portfolio",
+    description:
+      "Four operating businesses across social data, geocoding, and SaaS infrastructure.",
+  },
+  {
+    href: "/services",
+    label: "Services",
+    description:
+      "Operational management, financial operations, AI advisory, and corporate governance.",
+  },
+  {
+    href: "/notes",
+    label: "Notes",
+    description:
+      "Working observations on group operations, markets, and technology.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* Hero — full viewport, dark */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-12">
+        <GeometricHero />
+
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <FadeIn delay={0.2}>
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] tracking-tight text-cream">
+              Management company for a group of B2B technology businesses
+              in data, APIs, and infrastructure.
+            </h1>
+          </FadeIn>
+
+          <FadeIn delay={0.6}>
+            <p className="mt-8 text-sm tracking-widest uppercase text-stone-400">
+              Limassol, Cyprus &mdash; Est. 2025
+            </p>
+          </FadeIn>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        {/* Scroll indicator */}
+        <FadeIn delay={1.2} className="absolute bottom-12">
+          <div className="flex flex-col items-center gap-3">
+            <span className="text-[10px] tracking-[0.3em] uppercase text-stone-600">
+              Scroll
+            </span>
+            <div className="w-px h-8 bg-gradient-to-b from-stone-600 to-transparent" />
+          </div>
+        </FadeIn>
+      </section>
+
+      {/* Cards section */}
+      <section className="relative py-32 md:py-40 px-6 md:px-12 bg-stone-900">
+        <div className="max-w-[1400px] mx-auto">
+          <StaggerChildren
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
+            stagger={0.15}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            {cards.map((card) => (
+              <StaggerItem key={card.href}>
+                <Link href={card.href} className="group block">
+                  <div className="relative p-8 md:p-10 border border-white/[0.04] rounded-sm bg-stone-950/50 transition-all duration-500 hover:border-amber/30">
+                    {/* Amber top line */}
+                    <div className="absolute top-0 left-0 right-0 h-px bg-amber/40 transition-all duration-500 group-hover:h-[2px] group-hover:bg-amber/70" />
+
+                    <p className="text-xs tracking-[0.25em] uppercase text-amber mb-6">
+                      {card.label}
+                    </p>
+                    <p className="text-stone-300 leading-relaxed text-[15px]">
+                      {card.description}
+                    </p>
+
+                    <div className="mt-8 flex items-center gap-2 text-stone-600 group-hover:text-stone-400 transition-colors">
+                      <span className="text-xs tracking-wider uppercase">
+                        Explore
+                      </span>
+                      <svg
+                        className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={1.5}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </Link>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Statement section */}
+      <section className="relative py-32 md:py-48 px-6 md:px-12">
+        <div className="max-w-3xl mx-auto text-center">
+          <FadeIn>
+            <p className="font-serif text-2xl sm:text-3xl md:text-4xl leading-relaxed text-cream/90">
+              We centralize governance, capital, and operational services
+              so our portfolio companies can focus entirely on building.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Stats section */}
+      <section className="relative py-24 md:py-32 px-6 md:px-12 border-t border-b border-white/[0.04]">
+        <div className="max-w-[1400px] mx-auto">
+          <StaggerChildren
+            className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8"
+            stagger={0.1}
+          >
+            {[
+              { value: 4, label: "Operating\nBusinesses" },
+              { value: 2018, label: "Building\nSince", noCount: true },
+              { value: 3, label: "Jurisdictions", suffix: "" },
+              { value: 100, label: "Enterprise\nClients", suffix: "+" },
+            ].map((stat) => (
+              <StaggerItem
+                key={stat.label}
+                className="text-center md:text-left"
+              >
+                <p className="font-serif text-4xl md:text-5xl text-cream mb-3">
+                  {stat.noCount ? (
+                    stat.value
+                  ) : (
+                    <CountUp
+                      target={stat.value}
+                      suffix={stat.suffix || ""}
+                      duration={1.5}
+                    />
+                  )}
+                </p>
+                <p className="text-xs tracking-widest uppercase text-stone-500 whitespace-pre-line">
+                  {stat.label}
+                </p>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+        </div>
+      </section>
+
+      {/* CTA section */}
+      <section className="relative py-32 md:py-40 px-6 md:px-12">
+        <div className="max-w-2xl mx-auto text-center">
+          <FadeIn>
+            <p className="text-xs tracking-[0.3em] uppercase text-stone-600 mb-8">
+              Get in touch
+            </p>
+            <p className="font-serif text-3xl md:text-4xl text-cream mb-10">
+              Interested in working with us?
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-3 px-8 py-4 border border-amber/40 text-amber text-sm tracking-wider uppercase hover:bg-amber/10 transition-all duration-300"
+            >
+              Contact Foundstone
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={1.5}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                />
+              </svg>
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+    </>
   );
 }
