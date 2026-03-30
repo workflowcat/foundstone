@@ -1,5 +1,6 @@
 import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animate";
 import { GeometricSection } from "@/components/geometric-bg";
+import { PortraitAndrii, PortraitJana, PortraitMarina } from "@/components/team-portraits";
 
 const principles = [
   {
@@ -105,16 +106,63 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Philosophy */}
+      {/* Team */}
       <section className="relative py-24 md:py-32 px-6 md:px-12 border-t border-white/[0.04]">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-[1200px] mx-auto">
           <FadeIn>
-            <p className="font-serif text-2xl md:text-3xl leading-relaxed text-cream/90">
-              The stone is natural. The structure is human. Someone had to
-              choose it, shape it, place it. That&apos;s what we do &mdash; the
-              craft in how a foundation gets laid.
+            <p className="text-xs tracking-[0.3em] uppercase text-stone-600 mb-16">
+              Team
             </p>
           </FadeIn>
+
+          <StaggerChildren
+            className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16"
+            stagger={0.12}
+          >
+            <StaggerItem>
+              <div className="text-center">
+                <PortraitAndrii className="w-32 h-40 mx-auto mb-6 opacity-80" />
+                <p className="font-serif text-xl text-cream mb-1">Andrii</p>
+                <p className="text-xs tracking-[0.2em] uppercase text-amber/50 mb-4">
+                  Chief of Staff
+                </p>
+                <p className="text-stone-400 text-sm leading-relaxed max-w-xs mx-auto">
+                  Built the group&apos;s first data product in 2018.
+                  Runs operations, compliance, and automation across three
+                  jurisdictions. Writes the notes.
+                </p>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="text-center">
+                <PortraitJana className="w-32 h-40 mx-auto mb-6 opacity-80" />
+                <p className="font-serif text-xl text-cream mb-1">Jana</p>
+                <p className="text-xs tracking-[0.2em] uppercase text-amber/50 mb-4">
+                  CFO
+                </p>
+                <p className="text-stone-400 text-sm leading-relaxed max-w-xs mx-auto">
+                  Multi-entity finance across Estonia, Cyprus, and Ukraine.
+                  Cash flow forecasting, management reporting, bank
+                  relationships. Closes the books in five days.
+                </p>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="text-center">
+                <PortraitMarina className="w-32 h-40 mx-auto mb-6 opacity-80" />
+                <p className="font-serif text-xl text-cream mb-1">Marina</p>
+                <p className="text-xs tracking-[0.2em] uppercase text-amber/50 mb-4">
+                  CMO
+                </p>
+                <p className="text-stone-400 text-sm leading-relaxed max-w-xs mx-auto">
+                  B2B positioning and channel strategy. Builds systems
+                  that compound. Measures with numbers.
+                </p>
+              </div>
+            </StaggerItem>
+          </StaggerChildren>
         </div>
       </section>
     </>
