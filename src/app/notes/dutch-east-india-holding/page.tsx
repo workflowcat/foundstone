@@ -60,12 +60,10 @@ export default function DutchEastIndiaNote() {
               </p>
 
               <p>
-                What emerged was an organizational form that had never existed
-                before. The VOC was not a partnership, not a one-voyage
-                venture, and not a government agency. It was a permanent,
-                multi-subsidiary entity with transferable shares, limited
-                liability, decentralized operations, and centralized
-                strategy. It was, in other words, a holding company.
+                What emerged was something new: a permanent, multi-subsidiary
+                entity with transferable shares, limited liability,
+                decentralized operations, and centralized strategy. In other
+                words, a holding company.
               </p>
 
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
@@ -126,56 +124,31 @@ export default function DutchEastIndiaNote() {
               <p>
                 <strong className="text-cream/90">Governance opacity.</strong>{" "}
                 The Heeren XVII refused to share detailed financials with
-                shareholders. They argued that disclosure would benefit
-                competitors. The actual reason was that it would reveal how
-                much the directors were paying themselves and how poorly some
-                investments had performed.
-              </p>
-
-              <p>
-                This created principal-agent problems that compounded over
-                decades. By the 18th century, corruption was systemic.
-                Directors enriched themselves while shareholders received
-                declining returns. The modern equivalent: companies with poor
-                disclosure practices that erode investor trust until a crisis
-                forces transparency.
+                shareholders. They said disclosure would benefit competitors.
+                It would also reveal how much the directors were paying
+                themselves. By the 18th century, corruption was systemic
+                and returns were declining. Sound familiar?
               </p>
 
               <p>
                 <strong className="text-cream/90">Intercompany complexity.</strong>{" "}
                 The VOC never solved multi-entity accounting. Each chamber
-                kept its own books in its own way. The Asian operations,
-                managed from Batavia, kept yet another set. A consolidated
-                picture of the entire company&apos;s financial position was
-                rarely if ever produced.
+                kept its own books. The Asian operations in Batavia kept
+                yet another set. A consolidated picture of the company was
+                rarely produced. This is still the central challenge for
+                holding companies: intercompany eliminations, transfer
+                pricing, multi-currency translation. The VOC invented the
+                structure but failed at the accounting. Four centuries
+                later, the accounting is still the hard part.
               </p>
 
               <p>
-                This remains the central challenge for holding companies.
-                Intercompany eliminations, transfer pricing, multi-currency
-                translation, and producing consolidated accounts that
-                reflect economic reality &mdash; these are difficult
-                problems, and most companies solve them badly. The VOC
-                invented the structure but failed at the accounting. Four
-                centuries later, the accounting is still the hard part.
-              </p>
-
-              <p>
-                <strong className="text-cream/90">Mission creep into sovereignty.</strong>{" "}
-                The VOC&apos;s charter granted it the power to negotiate
-                treaties, wage war, establish colonies, and mint currency. It
-                became a quasi-governmental entity &mdash; a private company
-                with sovereign powers. This entangled it in military and
-                colonial obligations that consumed capital and distracted from
-                commercial objectives.
-              </p>
-
-              <p>
-                Modern companies that take on regulatory, quasi-governmental,
-                or expansive social roles beyond their commercial mandate face
-                analogous dilution of focus. The VOC shows that scope creep
-                is not a modern phenomenon. The temptation to do everything,
-                because you can, has been destroying companies for 400 years.
+                <strong className="text-cream/90">Mission creep.</strong>{" "}
+                The charter granted the VOC power to negotiate treaties, wage
+                war, establish colonies, mint currency. A private company with
+                sovereign powers. It spent capital on military obligations
+                instead of trade. The temptation to do everything, because
+                you can, has been destroying companies for 400 years.
               </p>
 
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
@@ -187,17 +160,15 @@ export default function DutchEastIndiaNote() {
                 by the Dutch state. It lasted 197 years. But its institutional
                 innovations &mdash; joint-stock ownership, limited liability,
                 transferable shares, the multi-subsidiary holding structure,
-                and the separation of ownership from management &mdash;
-                remain the foundational architecture of modern corporate
-                capitalism.
+                the separation of ownership from management &mdash; are
+                still the architecture of modern corporate capitalism.
               </p>
 
               <p>
-                Every holding company operating today is a descendant of the
-                VOC. Every stock exchange is a descendant of the Amsterdam
-                Beurs. Every shareholder who can lose their investment but
-                not their house is benefiting from a principle the Dutch
-                established in 1602.
+                Every holding company operating today descends from the VOC.
+                So does every stock exchange. If you can lose your investment
+                but not your house, you are benefiting from a principle the
+                Dutch established in 1602.
               </p>
 
               <p className="text-amber/70 italic">

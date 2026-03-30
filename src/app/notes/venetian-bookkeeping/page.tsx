@@ -110,8 +110,7 @@ export default function VenetianBookkeepingNote() {
               </h2>
 
               <p>
-                The most important idea in the Venetian system is one that
-                most people still get wrong: <strong className="text-cream/90">receiving money
+                Most people still get this wrong: <strong className="text-cream/90">receiving money
                 is not the same as earning it.</strong>
               </p>
 
@@ -124,8 +123,7 @@ export default function VenetianBookkeepingNote() {
               </p>
 
               <p>
-                This is precisely what modern SaaS accounting calls deferred
-                revenue. When a company receives an annual prepayment of
+                Modern SaaS accounting calls this deferred revenue. When a company receives an annual prepayment of
                 $120,000 for a subscription, cash increases by $120,000 and
                 deferred revenue (a liability) increases by $120,000. Each
                 month, as the service is delivered, $10,000 moves from
@@ -152,12 +150,11 @@ export default function VenetianBookkeepingNote() {
               </p>
 
               <p>
-                A SaaS subscription is structurally the same thing. It has a
-                start date, a cycle, a defined revenue amount, and can be
-                expanded, contracted, or terminated. The modern metrics
-                ecosystem &mdash; new MRR, expansion MRR, churned MRR, net
-                revenue retention &mdash; is a categorization scheme for
-                flows into and out of these subscription voyage accounts.
+                A SaaS subscription is structurally the same thing: start
+                date, cycle, defined revenue, expandable or terminable.
+                New MRR, expansion MRR, churned MRR, net revenue
+                retention? A categorization scheme for flows into and out
+                of subscription voyage accounts.
               </p>
 
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
@@ -168,17 +165,11 @@ export default function VenetianBookkeepingNote() {
                 Show Pacioli the general ledger of a modern B2B company and
                 he would recognize the chart of accounts, the trial balance
                 (his <em>summa summarum</em>), accounts receivable and
-                payable, the capital account (his <em>conto del cavedal</em>),
-                and the requirement that debits equal credits.
-              </p>
-
-              <p>
-                What would confuse him: depreciation, stock-based
-                compensation, goodwill, tax accounting. The abstractions we
-                have layered onto his framework. But the framework itself
-                &mdash; the mechanical discipline of recording every economic
-                event in two places, so the system checks itself &mdash; has
-                not changed in 530 years.
+                payable, the capital account (his <em>conto del cavedal</em>).
+                Depreciation, stock-based compensation, goodwill, tax
+                accounting would confuse him. But the mechanical discipline
+                of recording every economic event in two places, so the
+                system checks itself? Unchanged in 530 years.
               </p>
 
               <p>
@@ -187,7 +178,7 @@ export default function VenetianBookkeepingNote() {
                 identify performance obligations, determine the price,
                 allocate it, recognize revenue when obligations are
                 satisfied. A Venetian merchant would recognize every step.
-                The formalization is modern. The logic is 500 years old.
+                The formalization is modern. The logic is not.
               </p>
 
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
@@ -195,28 +186,18 @@ export default function VenetianBookkeepingNote() {
               </h2>
 
               <p>
-                Venice&apos;s commercial success wasn&apos;t built on any
-                single merchant or voyage. It was built on infrastructure: the
-                colleganza partnership structure, the Banco di Rialto (a
-                public bank that facilitated giro transfers between
-                accounts), regulated marine insurance, and mandatory
-                bookkeeping. These systems created an environment where trade
-                could scale.
-              </p>
-
-              <p>
-                Modern financial infrastructure &mdash; GAAP, auditing
-                standards, stock exchanges, banking regulation &mdash; serves
-                the same function. The lesson is that commercial innovation
-                depends on institutional infrastructure, and the
-                infrastructure is often more important than any individual
-                transaction.
+                Venice&apos;s commercial success ran on infrastructure: the
+                colleganza partnership structure, the Banco di Rialto
+                (a public bank for giro transfers between accounts),
+                regulated marine insurance, mandatory bookkeeping. These
+                systems let trade scale. GAAP, auditing standards, stock
+                exchanges, banking regulation serve the same function today.
+                Commercial innovation depends on institutional plumbing.
               </p>
 
               <p className="text-amber/70 italic">
-                Which is, if you think about it, the entire argument for
-                what we do at Foundstone. Someone has to build the
-                infrastructure. The merchants want to trade.
+                Someone has to build the infrastructure. The merchants
+                want to trade.
               </p>
             </div>
           </FadeIn>

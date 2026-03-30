@@ -50,22 +50,19 @@ export default function RiskManagementNote() {
             <div className="space-y-6 text-stone-300 leading-relaxed text-[16px]">
               <p>
                 In 1556, a German physician named Georgius Agricola published
-                <em> De Re Metallica</em> &mdash; a comprehensive treatise on
-                mining and metallurgy that would remain the standard reference
-                for nearly 200 years. In 1912, it was translated into English
-                by Herbert Hoover, who before becoming the 31st President of
-                the United States was a mining engineer, and who recognized
-                the book as the first systematic treatment of industrial risk.
+                <em> De Re Metallica</em> &mdash; a treatise on mining and
+                metallurgy that would remain the standard reference for
+                nearly 200 years. Herbert Hoover translated it into English
+                in 1912, before he became president and while he was still a
+                mining engineer. He recognized it as the first systematic
+                treatment of industrial risk.
               </p>
 
               <p>
-                What makes the book remarkable is not the technical content,
-                though that is impressive. It is that Agricola treated mining
-                as a system of categorized risks, each requiring specific
-                mitigations. He did not describe mining as an art to be
-                learned through apprenticeship. He described it as an
-                engineering discipline to be managed through rational
-                analysis.
+                Agricola treated mining as a system of categorized risks,
+                each requiring specific mitigations. Where his predecessors
+                described an art learned through apprenticeship, he described
+                an engineering discipline managed through rational analysis.
               </p>
 
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
@@ -73,9 +70,8 @@ export default function RiskManagementNote() {
               </h2>
 
               <p>
-                Agricola identified what we would now call a risk taxonomy.
                 His categories map directly to modern enterprise risk
-                management frameworks:
+                management:
               </p>
 
               <div className="my-8 space-y-4">
@@ -111,46 +107,32 @@ export default function RiskManagementNote() {
               </p>
 
               <p>
-                This is structurally identical to modern equity financing, and
-                it predates the Dutch East India Company&apos;s stock offering
-                by half a century. The 128-share convention was a risk
-                management strategy: no single investor needed to bear the
-                full cost of a mine that might produce nothing.
-              </p>
-
-              <p>
-                Agricola also described what we now call stage-gate
-                investment: committing small amounts of capital to
-                exploration, then larger amounts only if initial results were
-                promising. This is the logic behind modern venture capital
-                staging. The mining engineers of Saxony were using it in the
-                1500s.
+                Structurally identical to modern equity financing, and it
+                predates the Dutch East India Company&apos;s stock offering
+                by half a century. He also described stage-gate investment:
+                small capital for exploration, larger amounts only if results
+                were promising. Venture capital staging. Saxon miners were
+                doing it in the 1500s.
               </p>
 
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
-                Risk as a category of knowledge
+                Risk as information
               </h2>
 
               <p>
-                The deeper insight is methodological. Agricola insisted that
-                risk was not fate &mdash; it was information. It could be
-                identified, categorized, measured, and mitigated through
-                rational analysis. He did not accept the medieval framing of
-                mining as a gamble against nature. He reframed it as an
-                engineering problem.
+                Agricola insisted that risk was information, not fate. It
+                could be identified, categorized, measured, and mitigated
+                through rational analysis. Mining was an engineering problem,
+                not a gamble against nature.
               </p>
 
               <p>
-                Modern risk registers &mdash; the kind required by ISO 31000,
-                COSO ERM, or SOC 2 compliance &mdash; follow exactly this
-                structure: identify risks, categorize them, assess likelihood
-                and impact, document mitigations, assign owners, review
-                periodically.
-              </p>
-
-              <p>
-                Agricola would recognize the framework. He would wonder why it
-                took 450 years for everyone else to adopt it.
+                Modern risk registers required by ISO 31000, COSO ERM, or
+                SOC 2 follow the same structure: identify risks, categorize
+                them, assess likelihood and impact, document mitigations,
+                assign owners, review periodically. Agricola would recognize
+                the process. He would wonder why it took 470 years for
+                everyone else to adopt it.
               </p>
 
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
@@ -158,20 +140,12 @@ export default function RiskManagementNote() {
               </h2>
 
               <p>
-                Most startup founders treat compliance and risk management as
-                overhead &mdash; a tax imposed by regulators that diverts
-                resources from building product. This is the same attitude
-                that medieval miners had: risk is the price of doing business,
-                you accept it and move on.
-              </p>
-
-              <p>
-                Agricola&apos;s argument was that systematic risk management
-                is not overhead. It is competitive advantage. The mine
-                operator who understood geology, engineering, and finance
-                could invest more efficiently, lose fewer workers, avoid
-                catastrophic failures, and produce more ore per ducat of
-                capital deployed.
+                Most startup founders treat compliance as a tax that diverts
+                resources from building product. Medieval miners had the same
+                attitude. Agricola&apos;s counterargument: the mine operator
+                who understood geology, engineering, and finance produced more
+                ore per ducat of capital deployed. Systematic risk management
+                was competitive advantage, not overhead.
               </p>
 
               <p className="text-amber/70 italic">
