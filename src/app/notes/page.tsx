@@ -79,7 +79,7 @@ export default function NotesPage() {
                     <div className="flex gap-6 md:gap-8">
                       {/* SVG icon */}
                       <div className="hidden sm:block shrink-0 pt-2">
-                        <note.Icon className="w-16 h-16 md:w-20 md:h-20 opacity-60 group-hover:opacity-90 transition-opacity" />
+                        <note.Icon className="w-20 h-20 md:w-24 md:h-24 opacity-80 group-hover:opacity-100 transition-opacity" />
                       </div>
 
                       <div className="flex-1 min-w-0">

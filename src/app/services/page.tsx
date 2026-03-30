@@ -48,16 +48,20 @@ export default function ServicesPage() {
               </h2>
               <div className="space-y-5 text-stone-400 leading-relaxed text-[15px] md:text-base">
                 <p>
-                  Your CEO is spending 40% of their time on things that
-                  aren&apos;t their job. Vendor contracts. Hiring logistics.
-                  Making sure payroll actually happened. Internal tooling
-                  decisions that someone needs to own but nobody wants to.
+                  Your CEO is spending 40% of their time on vendor
+                  contracts, hiring logistics, payroll, and internal
+                  tooling decisions that someone needs to own. They know
+                  this. They also know that hiring a full-time COO at this
+                  stage is a $200K+ commitment they cannot evaluate because
+                  they have never had one. Both things are true, and the
+                  company stays stuck between them.
                 </p>
                 <p>
-                  We build your operating cadence, clean up the vendor
-                  stack, set up reporting that humans actually read, and
-                  either hand it off to a full-time hire when you&apos;re
-                  ready or keep running it.
+                  We build the operating cadence, clean up the vendor
+                  stack, set up reporting that people actually read, and
+                  run it until you hire someone permanent or decide you
+                  would rather we kept going. Most engagements start here
+                  because this is where the pain is most visible.
                 </p>
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
@@ -77,17 +81,21 @@ export default function ServicesPage() {
               </h2>
               <div className="space-y-5 text-stone-400 leading-relaxed text-[15px] md:text-base">
                 <p>
-                  You have a bookkeeper. The bookkeeper records what
-                  happened. You do not have anyone who tells you what the
-                  numbers mean, whether you&apos;re going to run out of
-                  money, or why your margins look like that.
+                  Your bookkeeper records what happened. Nobody tells you
+                  what the numbers mean, whether you will run out of money
+                  in four months, or why margins dropped 8 points since
+                  Q2. The data exists. The interpretation does not.
                 </p>
                 <p>
-                  Cash flow forecasting. Budget vs. actuals that explain
-                  variance instead of just displaying it. Board-ready
-                  financials. Multi-entity consolidation. The conversation
-                  with your bank where someone needs to know what EBITDA
-                  is because they do.
+                  Cash flow forecasting that actually forecasts. Budget
+                  vs. actuals that explain variance. Board-ready financials.
+                  Multi-entity consolidation across jurisdictions. The
+                  conversation with your bank where someone needs to sound
+                  like they understand what EBITDA is, because they do.
+                  We have run this across Estonia, Cyprus, and Ukraine
+                  simultaneously. Multi-currency, multi-entity,
+                  intercompany flows. If your situation is complicated,
+                  ours is worse and we handle it.
                 </p>
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
@@ -112,14 +120,19 @@ export default function ServicesPage() {
               </h2>
               <div className="space-y-5 text-stone-400 leading-relaxed text-[15px] md:text-base">
                 <p>
-                  Positioning that maps to how customers actually buy.
-                  Channel strategy based on your unit economics. Content
-                  that compounds instead of evaporating.
+                  Most B2B companies between seed and profitability have a
+                  founder writing occasional LinkedIn posts, a junior hire
+                  running paid ads with unclear attribution, and a website
+                  from eighteen months ago. Everybody knows this is not
+                  enough. Nobody has time to fix it because fixing it
+                  requires decisions about positioning that the founder
+                  keeps postponing.
                 </p>
                 <p>
-                  We figure out where your next 50 customers are coming
-                  from, build the system to reach them, and measure whether
-                  it&apos;s working with numbers.
+                  We figure out where your next 50 customers come from,
+                  build the system to reach them, and measure it. Channel
+                  strategy based on your unit economics. Content that
+                  compounds. Numbers, not vibes.
                 </p>
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
@@ -139,16 +152,26 @@ export default function ServicesPage() {
               </h2>
               <div className="space-y-5 text-stone-400 leading-relaxed text-[15px] md:text-base">
                 <p>
-                  The load-bearing functions. Technical operations (CI/CD,
-                  monitoring, SOC 2 prep). Data warehousing and analytics
-                  infrastructure. People operations (payroll across
-                  jurisdictions, contracts, onboarding). Compliance
-                  frameworks and entity management.
+                  The functions nobody wants to think about and everybody
+                  needs. Technical operations: CI/CD pipelines, monitoring,
+                  incident response, SOC 2 prep ($30K&ndash;$150K and
+                  6&ndash;12 months — 29% of companies report losing deals
+                  without it). Data infrastructure: warehouse, dashboards,
+                  the ability for the CEO to answer &ldquo;how are we
+                  doing?&rdquo; without asking three people.
                 </p>
                 <p>
-                  These can be scoped individually or bundled. Most
-                  companies need at least two of them and have none of
-                  them systematized.
+                  People operations: payroll across jurisdictions,
+                  employment contracts, onboarding workflows. Compliance:
+                  risk registers, corporate housekeeping, the documentation
+                  that banks ask for during enhanced due diligence and
+                  you have 72 hours to produce. Entity management: the
+                  literal corporate foundation.
+                </p>
+                <p>
+                  Most companies need at least two of these. Most have
+                  none of them systematized. Whether that is a problem
+                  depends on whether anyone has asked yet.
                 </p>
               </div>
               <div className="mt-6 flex flex-wrap gap-3">

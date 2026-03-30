@@ -3,11 +3,11 @@
    More anatomical detail, natural proportions, distinct faces.
    Still construction-line aesthetic but reads as a person, not a diagram. */
 
-const S = "rgba(139,115,85,0.6)";
-const SM = "rgba(139,115,85,0.45)";
-const SL = "rgba(139,115,85,0.25)";
-const SF = "rgba(139,115,85,0.1)";
-const G = "rgba(196,154,108,0.4)";
+const S = "rgba(139,115,85,0.85)";
+const SM = "rgba(139,115,85,0.65)";
+const SL = "rgba(139,115,85,0.42)";
+const SF = "rgba(139,115,85,0.18)";
+const G = "rgba(196,154,108,0.6)";
 
 /* Andrii — angular features, short hair, direct gaze, slight stubble suggestion */
 export function PortraitAndrii({ className = "" }: { className?: string }) {

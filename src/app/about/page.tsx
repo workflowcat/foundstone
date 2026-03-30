@@ -45,31 +45,26 @@ export default function AboutPage() {
           <FadeIn>
             <div className="space-y-6 text-stone-950">
               <p className="text-lg md:text-xl leading-relaxed">
-                Foundstone started as the management company for a group of B2B
-                data and API businesses. Someone had to handle the finance,
-                compliance, contracts, vendor relationships, and general
-                operational overhead that accumulates when you run multiple
-                companies across multiple countries. We were that someone.
+                Foundstone started because someone had to handle the finance,
+                compliance, contracts, vendor relationships, and operational
+                overhead that accumulates when you run multiple B2B technology
+                companies across multiple countries. We built the first data
+                product in 2018. The management infrastructure came after,
+                because it had to.
               </p>
               <p className="text-lg md:text-xl leading-relaxed">
-                Over time, we got unreasonably good at the boring parts of
-                running companies. (The boring parts, it turns out, are most of
-                the parts.) We built internal systems for payment controls,
-                management reporting, compliance tracking, and operational
-                automation. We formalized them into repeatable processes. Then we
-                started noticing that every founder we talked to was solving the
-                same problems from scratch, usually badly, usually while also
-                trying to build product.
+                We built internal systems for payment controls, management
+                reporting, compliance tracking, operational automation. Then
+                we noticed that every founder we talked to was solving the
+                same problems from scratch — usually badly, usually while
+                trying to build product, usually discovering the compliance
+                gap when a bank asked for documentation they did not have.
               </p>
               <p className="text-lg md:text-xl leading-relaxed text-stone-700">
-                So we opened the door. Same team, same systems, same operational
-                infrastructure &mdash; now available on retainer to companies
-                that aren&apos;t ours.
-              </p>
-              <p className="text-lg md:text-xl leading-relaxed text-stone-700">
-                We&apos;re registered in Cyprus (HE&nbsp;483648, Limassol). We
-                have a real office, real employees, and strong opinions about
-                accounts payable workflows.
+                Same team, same systems, same infrastructure. Now available
+                on retainer to companies that are not ours. Registered in
+                Cyprus (HE&nbsp;483648, Limassol). Real office, real
+                employees, strong opinions about accounts payable.
               </p>
             </div>
           </FadeIn>
@@ -121,7 +116,7 @@ export default function AboutPage() {
           >
             <StaggerItem>
               <div className="text-center">
-                <PortraitAndrii className="w-32 h-40 mx-auto mb-6 opacity-80" />
+                <PortraitAndrii className="w-44 h-56 md:w-52 md:h-64 mx-auto mb-8" />
                 <p className="font-serif text-xl text-cream mb-1">Andrii</p>
                 <p className="text-xs tracking-[0.2em] uppercase text-amber/50 mb-4">
                   Chief of Staff
@@ -136,7 +131,7 @@ export default function AboutPage() {
 
             <StaggerItem>
               <div className="text-center">
-                <PortraitJana className="w-32 h-40 mx-auto mb-6 opacity-80" />
+                <PortraitJana className="w-44 h-56 md:w-52 md:h-64 mx-auto mb-8" />
                 <p className="font-serif text-xl text-cream mb-1">Jana</p>
                 <p className="text-xs tracking-[0.2em] uppercase text-amber/50 mb-4">
                   CFO
@@ -151,7 +146,7 @@ export default function AboutPage() {
 
             <StaggerItem>
               <div className="text-center">
-                <PortraitMarina className="w-32 h-40 mx-auto mb-6 opacity-80" />
+                <PortraitMarina className="w-44 h-56 md:w-52 md:h-64 mx-auto mb-8" />
                 <p className="font-serif text-xl text-cream mb-1">Marina</p>
                 <p className="text-xs tracking-[0.2em] uppercase text-amber/50 mb-4">
                   CMO

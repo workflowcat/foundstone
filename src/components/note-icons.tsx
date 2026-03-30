@@ -1,9 +1,9 @@
 /* ─── Compact SVG icons for notes index ─── */
 /* ~80x80, same sepia line language as full illustrations */
 
-const S = "rgba(139,115,85,0.55)";
-const SL = "rgba(139,115,85,0.25)";
-const G = "rgba(196,154,108,0.45)";
+const S = "rgba(139,115,85,0.8)";
+const SL = "rgba(139,115,85,0.4)";
+const G = "rgba(196,154,108,0.65)";
 
 export function IconLedger({ className = "" }: { className?: string }) {
   return (

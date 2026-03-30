@@ -124,7 +124,7 @@ export default function Home() {
                 <Link href={`/notes/${note.slug}`} className="group block">
                   <article className="py-8 md:py-10 border-t border-white/[0.04] group-hover:border-amber/15 transition-colors">
                     <div className="flex items-start gap-5">
-                      <note.Icon className="w-12 h-12 shrink-0 opacity-40 group-hover:opacity-70 transition-opacity hidden sm:block mt-1" />
+                      <note.Icon className="w-12 h-12 shrink-0 opacity-70 group-hover:opacity-100 transition-opacity hidden sm:block mt-1" />
                       <div className="flex-1 min-w-0 flex items-start justify-between gap-4">
                         <h3 className="font-serif text-xl md:text-2xl text-cream group-hover:text-amber/90 transition-colors leading-snug">
                           {note.title}
