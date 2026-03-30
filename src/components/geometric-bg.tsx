@@ -25,86 +25,46 @@ const DIAMOND_SEGMENTS = [
 // Each zone has: position, crack paths, inscription text, and a kintsugi repair line
 const INSCRIPTION_ZONES = [
   {
-    // Top-left quadrant — Latin / governance
-    cx: 320, cy: 240,
-    radius: 200,
+    cx: 320, cy: 240, radius: 200,
     text: "fundamentum",
-    lang: "Latin — foundation",
-    textX: 270, textY: 255,
-    cracks: [
-      "M260 210 L285 225 L278 248 L300 260",
-      "M310 200 L325 218 L318 240",
-      "M280 248 L265 275 L278 290",
-    ],
-    repair: "M278 248 L300 260 L318 240",
+    textX: 280, textY: 248,
+    cracks: ["M290 225 L298 238 L305 248", "M308 232 L302 244"],
+    repair: "M298 238 L305 248",
   },
   {
-    // Center-right — Italian / Renaissance craft
-    cx: 1050, cy: 350,
-    radius: 190,
+    cx: 1050, cy: 350, radius: 190,
     text: "pietra angolare",
-    lang: "Italian — cornerstone",
-    textX: 980, textY: 365,
-    cracks: [
-      "M1020 310 L1040 330 L1035 355 L1055 370",
-      "M1070 320 L1055 345 L1065 365",
-      "M1035 355 L1015 378 L1030 395",
-    ],
-    repair: "M1035 355 L1055 370 L1065 365",
+    textX: 995, textY: 358,
+    cracks: ["M1030 335 L1038 348 L1045 355", "M1048 340 L1040 352"],
+    repair: "M1038 348 L1045 355",
   },
   {
-    // Lower-left — Greek / structure
-    cx: 400, cy: 550,
-    radius: 180,
+    cx: 400, cy: 550, radius: 180,
     text: "θεμέλιος",
-    lang: "Greek — foundational",
-    textX: 360, textY: 565,
-    cracks: [
-      "M370 520 L390 540 L385 558 L405 570",
-      "M410 515 L400 538 L412 555",
-      "M385 558 L368 580 L380 595",
-    ],
-    repair: "M385 558 L405 570 L412 555",
+    textX: 368, textY: 558,
+    cracks: ["M382 538 L389 550 L396 558", "M398 542 L392 554"],
+    repair: "M389 550 L396 558",
   },
   {
-    // Center — Dutch / trade
-    cx: 700, cy: 450,
-    radius: 190,
+    cx: 700, cy: 450, radius: 190,
     text: "grondslag",
-    lang: "Dutch — groundwork",
-    textX: 658, textY: 465,
-    cracks: [
-      "M670 420 L688 438 L682 460 L705 472",
-      "M715 415 L700 440 L712 458",
-      "M682 460 L665 482 L678 498",
-    ],
-    repair: "M682 460 L705 472 L712 458",
+    textX: 666, textY: 458,
+    cracks: ["M680 435 L688 448 L696 455", "M698 440 L690 452"],
+    repair: "M688 448 L696 455",
   },
   {
-    // Upper-right — Arabic / masonry
-    cx: 1100, cy: 180,
-    radius: 180,
+    cx: 1100, cy: 180, radius: 180,
     text: "أساس",
-    lang: "Arabic — foundation",
-    textX: 1078, textY: 195,
-    cracks: [
-      "M1070 155 L1090 170 L1085 190 L1108 200",
-      "M1115 148 L1100 168 L1110 188",
-    ],
-    repair: "M1085 190 L1108 200 L1110 188",
+    textX: 1082, textY: 188,
+    cracks: ["M1088 168 L1094 178 L1100 185", "M1096 172 L1090 182"],
+    repair: "M1094 178 L1100 185",
   },
   {
-    // Bottom-center — Japanese / bedrock
-    cx: 800, cy: 680,
-    radius: 180,
+    cx: 800, cy: 680, radius: 180,
     text: "礎石",
-    lang: "Japanese — foundation stone",
-    textX: 780, textY: 695,
-    cracks: [
-      "M770 655 L788 668 L782 690 L805 698",
-      "M810 650 L798 672 L808 688",
-    ],
-    repair: "M782 690 L805 698 L808 688",
+    textX: 786, textY: 688,
+    cracks: ["M790 668 L796 678 L802 685", "M800 672 L794 682"],
+    repair: "M796 678 L802 685",
   },
 ];
 
@@ -125,8 +85,8 @@ export function GeometricHero() {
   const dwellStart = useRef(0);
   const dwellTimerId = useRef<ReturnType<typeof setInterval>>(0 as unknown as ReturnType<typeof setInterval>);
   const activeZones = useRef<Set<number>>(new Set());
-  const DWELL_RADIUS = 120; // SVG units — generous drift allowance
-  const DWELL_TIME = 900; // ms — quicker reveal so people actually find them
+  const DWELL_RADIUS = 120;
+  const DWELL_TIME = 600; // cracks start fast, text follows
 
   /* ── Dwell checker: runs on interval while cursor is in hero ── */
   const checkDwell = useCallback(() => {
@@ -153,19 +113,19 @@ export function GeometricHero() {
         const zoneStrength = Math.min(1, dwellStrength * (1 - dist / zone.radius) * 2);
         g.style.opacity = String(zoneStrength);
 
-        // Stagger: cracks first, then text, then kintsugi repair
+        // Stagger: cracks appear early + subtle, text fades in after, repair last
         const children = g.children;
         for (let c = 0; c < children.length; c++) {
           const child = children[c] as SVGElement;
           const role = child.getAttribute("data-role");
           if (role === "crack") {
-            child.style.opacity = String(Math.min(1, zoneStrength * 2.5));
+            // Early, subtle — max out at ~0.6 so they stay hairline
+            child.style.opacity = String(Math.min(0.6, zoneStrength * 3));
           } else if (role === "text") {
-            child.style.opacity = String(Math.min(1, Math.max(0, zoneStrength * 2 - 0.15)));
-          } else if (role === "lang") {
-            child.style.opacity = String(Math.min(1, Math.max(0, zoneStrength * 2 - 0.4)));
+            // Delayed but high contrast when it lands
+            child.style.opacity = String(Math.min(1, Math.max(0, zoneStrength - 0.3) * 2.5));
           } else if (role === "repair") {
-            child.style.opacity = String(Math.min(1, Math.max(0, zoneStrength - 0.35) * 3));
+            child.style.opacity = String(Math.min(1, Math.max(0, zoneStrength - 0.5) * 3));
           }
         }
       } else if (activeZones.current.has(i)) {
@@ -401,55 +361,41 @@ export function GeometricHero() {
             ref={(el) => { zoneGroupRefs.current[i] = el; }}
             style={{ opacity: 0, transition: "opacity 0.4s ease-out" }}
           >
-            {/* Cracks — fine fissure lines */}
+            {/* Hairline cracks — small, subtle */}
             {zone.cracks.map((d, j) => (
               <path
                 key={`crack-${j}`}
                 d={d}
-                stroke="rgba(232,230,227,0.25)"
-                strokeWidth="0.8"
+                stroke="rgba(232,230,227,0.12)"
+                strokeWidth="0.5"
                 strokeLinecap="round"
                 data-role="crack"
-                style={{ opacity: 0, transition: "opacity 0.6s ease-out" }}
+                style={{ opacity: 0, transition: "opacity 0.4s ease-out" }}
               />
             ))}
 
-            {/* Kintsugi repair — gold filling the crack */}
+            {/* Gold repair */}
             <path
               d={zone.repair}
-              stroke="rgba(196,154,108,0.7)"
-              strokeWidth="1.5"
+              stroke="rgba(196,154,108,0.55)"
+              strokeWidth="1"
               strokeLinecap="round"
               data-role="repair"
-              style={{ opacity: 0, transition: "opacity 1s ease-out 0.3s" }}
+              style={{ opacity: 0, transition: "opacity 0.8s ease-out" }}
             />
 
-            {/* Inscription text */}
+            {/* Inscription — high contrast */}
             <text
               x={zone.textX}
               y={zone.textY}
-              fill="rgba(196,154,108,0.6)"
-              fontSize="18"
+              fill="rgba(232,230,227,0.85)"
+              fontSize="17"
               fontFamily="var(--font-humanist), Georgia, serif"
               fontStyle="italic"
               data-role="text"
-              style={{ opacity: 0, transition: "opacity 0.8s ease-out 0.2s" }}
+              style={{ opacity: 0, transition: "opacity 0.6s ease-out" }}
             >
               {zone.text}
-            </text>
-
-            {/* Language label — tiny */}
-            <text
-              x={zone.textX}
-              y={zone.textY + 18}
-              fill="rgba(232,230,227,0.3)"
-              fontSize="9"
-              fontFamily="var(--font-sans), system-ui, sans-serif"
-              letterSpacing="0.1em"
-              data-role="lang"
-              style={{ opacity: 0, transition: "opacity 0.8s ease-out 0.5s" }}
-            >
-              {zone.lang}
             </text>
           </g>
         ))}
