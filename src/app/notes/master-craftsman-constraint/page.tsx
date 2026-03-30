@@ -1,5 +1,6 @@
 import { FadeIn } from "@/components/animate";
 import { NoteFigure } from "@/components/note-figure";
+import { ConstraintHero } from "@/components/constraint-illustration";
 import { CommunicationPaths, ArsenalAssemblyLine, CommandStructure, CynefinDiagram } from "@/components/scaling-illustrations";
 import Link from "next/link";
 
@@ -27,6 +28,17 @@ export default function MasterCraftsmanNote() {
               The person who was best at every function is now the
               bottleneck at every function. They know this.
             </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Hero illustration */}
+      <section className="relative px-6 md:px-12 pb-12">
+        <div className="max-w-3xl mx-auto">
+          <FadeIn delay={0.2}>
+            <div className="relative py-8 border-t border-b border-white/[0.04]">
+              <ConstraintHero className="w-full max-w-lg mx-auto h-auto" />
+            </div>
           </FadeIn>
         </div>
       </section>
