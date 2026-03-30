@@ -3,28 +3,28 @@ import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animate";
 
 const notes = [
   {
-    slug: "operational-discipline",
+    slug: "venetian-bookkeeping",
     date: "March 2025",
-    title: "On Operational Discipline in Small Groups",
+    title: "Why the Venetian Republic\u2019s Bookkeeping System Matters for Modern SaaS Companies",
     excerpt:
-      "The temptation in a five-person company is to skip process. Everything is fast, everyone knows everything, and formality feels like friction. But process isn't about control — it's about not having to think about the same problem twice.",
-    readTime: "4 min read",
+      "The longest-lived operational technology in business is 530 years old, and you use it every day without thinking about it. Luca Pacioli documented the method of Venice in 1494. ASC 606 is Pacioli in a suit.",
+    readTime: "12 min read",
   },
   {
-    slug: "fractional-ops-market",
+    slug: "risk-management-1556",
     date: "February 2025",
-    title: "The Fractional Operations Market Is Mispriced",
+    title: "What Mining Engineers Knew About Risk Management in 1556 That Startup Founders Don\u2019t",
     excerpt:
-      "Most fractional COO offerings are consulting dressed up as operations. Real operational management means you own the outcome, not just the recommendation. The market hasn't figured out the difference yet.",
-    readTime: "3 min read",
+      "Georgius Agricola catalogued six categories of risk 470 years ago. Modern compliance frameworks \u2014 SOC 2, ISO 31000, COSO ERM \u2014 follow the same structure. He would wonder why it took everyone else so long.",
+    readTime: "9 min read",
   },
   {
-    slug: "ai-implementation-reality",
+    slug: "dutch-east-india-holding",
     date: "January 2025",
-    title: "AI Implementation: What We're Actually Seeing",
+    title: "How the Dutch East India Company Invented the Holding Company Structure",
     excerpt:
-      "After 18 months of AI advisory work across B2B companies, the pattern is clear: the bottleneck is never the technology. It's the organizational willingness to change a process that currently works well enough.",
-    readTime: "5 min read",
+      "The VOC lasted 197 years. It invented joint-stock ownership, limited liability, and the multi-subsidiary holding structure. It also failed at intercompany accounting. Four centuries later, the accounting is still the hard part.",
+    readTime: "11 min read",
   },
 ];
 
