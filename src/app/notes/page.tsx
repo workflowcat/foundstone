@@ -1,38 +1,43 @@
 import Link from "next/link";
 import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animate";
+import { IconFile, IconLedger, IconMineShaft, IconShip } from "@/components/note-icons";
 
 const notes = [
   {
     slug: "what-your-bank-sees",
-    date: "March 2025",
+    date: "March 2026",
     title: "What Your Bank Actually Sees When They Open Your File",
     excerpt:
-      "A compliance officer has between 40 and 200 corporate files on their desk. The difference between approval in a day and a three-month escalation is not the quality of the business. It is the quality of the documentation.",
+      "A compliance officer has between 40 and 200 corporate files on their desk. The difference between approval in a day and a three-month escalation is the quality of the documentation.",
     readTime: "16 min read",
+    Icon: IconFile,
   },
   {
     slug: "venetian-bookkeeping",
-    date: "March 2025",
+    date: "February 2026",
     title: "Why the Venetian Republic\u2019s Bookkeeping System Matters for Modern SaaS Companies",
     excerpt:
-      "The longest-lived operational technology in business is 530 years old, and you use it every day without thinking about it. Luca Pacioli documented the method of Venice in 1494. ASC 606 is Pacioli in a suit.",
-    readTime: "12 min read",
+      "27 pages from 1494 are still how bookkeeping works. Pacioli documented the method of Venice. ASC 606 follows the same five steps a Venetian merchant would recognize.",
+    readTime: "14 min read",
+    Icon: IconLedger,
   },
   {
     slug: "risk-management-1556",
-    date: "February 2025",
+    date: "January 2026",
     title: "What Mining Engineers Knew About Risk Management in 1556 That Startup Founders Don\u2019t",
     excerpt:
-      "Georgius Agricola catalogued six categories of risk 470 years ago. Modern compliance frameworks \u2014 SOC 2, ISO 31000, COSO ERM \u2014 follow the same structure. He would wonder why it took everyone else so long.",
-    readTime: "9 min read",
+      "Agricola catalogued six categories of risk, described six types of drainage pumps, and documented a share trading system that predates the stock market by 130 years. 69% of modern organizations still lack comprehensive risk management.",
+    readTime: "14 min read",
+    Icon: IconMineShaft,
   },
   {
     slug: "dutch-east-india-holding",
-    date: "January 2025",
+    date: "December 2025",
     title: "How the Dutch East India Company Invented the Holding Company Structure",
     excerpt:
-      "The VOC lasted 197 years. It invented joint-stock ownership, limited liability, and the multi-subsidiary holding structure. It also failed at intercompany accounting. Four centuries later, the accounting is still the hard part.",
+      "The VOC lasted 197 years. It invented joint-stock ownership, limited liability, and the multi-subsidiary structure. It also failed at intercompany accounting. The accounting is still the hard part.",
     readTime: "11 min read",
+    Icon: IconShip,
   },
 ];
 
@@ -71,28 +76,35 @@ export default function NotesPage() {
               <StaggerItem key={note.slug}>
                 <Link href={`/notes/${note.slug}`} className="group block">
                   <article className="py-12 md:py-16 border-t border-white/[0.04] group-hover:border-amber/20 transition-colors">
-                    <div className="flex items-center gap-4 mb-6">
-                      <time className="text-xs tracking-wider text-stone-600">
-                        {note.date}
-                      </time>
-                      <span className="text-stone-800">&middot;</span>
-                      <span className="text-xs tracking-wider text-stone-600">
-                        {note.readTime}
-                      </span>
-                    </div>
+                    <div className="flex gap-6 md:gap-8">
+                      {/* SVG icon */}
+                      <div className="hidden sm:block shrink-0 pt-2">
+                        <note.Icon className="w-16 h-16 md:w-20 md:h-20 opacity-60 group-hover:opacity-90 transition-opacity" />
+                      </div>
 
-                    <h2 className="font-serif text-2xl md:text-3xl text-cream group-hover:text-amber/90 transition-colors mb-4">
-                      {note.title}
-                    </h2>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-4 mb-4">
+                          <time className="text-xs tracking-wider text-stone-600">
+                            {note.date}
+                          </time>
+                          <span className="text-stone-800">&middot;</span>
+                          <span className="text-xs tracking-wider text-stone-600">
+                            {note.readTime}
+                          </span>
+                        </div>
 
-                    <p className="text-stone-400 leading-relaxed max-w-2xl text-[15px]">
-                      {note.excerpt}
-                    </p>
+                        <h2 className="font-serif text-2xl md:text-3xl text-cream group-hover:text-amber/90 transition-colors mb-3">
+                          {note.title}
+                        </h2>
 
-                    <div className="mt-6 flex items-center gap-2 text-stone-600 group-hover:text-stone-400 transition-colors">
-                      <span className="text-xs tracking-wider uppercase">
-                        Read note
-                      </span>
+                        <p className="text-stone-400 leading-relaxed max-w-2xl text-[15px]">
+                          {note.excerpt}
+                        </p>
+
+                        <div className="mt-5 flex items-center gap-2 text-stone-600 group-hover:text-stone-400 transition-colors">
+                          <span className="text-xs tracking-wider uppercase">
+                            Read note
+                          </span>
                       <svg
                         className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
                         fill="none"
@@ -106,6 +118,8 @@ export default function NotesPage() {
                           d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
                         />
                       </svg>
+                        </div>
+                      </div>
                     </div>
                   </article>
                 </Link>

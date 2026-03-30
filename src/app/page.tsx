@@ -1,31 +1,36 @@
 import Link from "next/link";
 import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animate";
 import { GeometricHero, StrataDivider } from "@/components/geometric-bg";
+import { IconFile, IconLedger, IconMineShaft, IconShip } from "@/components/note-icons";
 
 const notes = [
   {
     slug: "what-your-bank-sees",
-    date: "Mar 2025",
+    date: "Mar 2026",
     title: "What your bank actually sees when they open your file",
     readTime: "16 min",
+    Icon: IconFile,
   },
   {
     slug: "venetian-bookkeeping",
-    date: "Mar 2025",
+    date: "Feb 2026",
     title: "Why the Venetian Republic\u2019s bookkeeping system matters for modern SaaS companies",
-    readTime: "12 min",
+    readTime: "14 min",
+    Icon: IconLedger,
   },
   {
     slug: "risk-management-1556",
-    date: "Feb 2025",
+    date: "Jan 2026",
     title: "What mining engineers knew about risk management in 1556 that startup founders don\u2019t",
-    readTime: "9 min",
+    readTime: "14 min",
+    Icon: IconMineShaft,
   },
   {
     slug: "dutch-east-india-holding",
-    date: "Jan 2025",
+    date: "Dec 2025",
     title: "How the Dutch East India Company invented the holding company structure",
     readTime: "11 min",
+    Icon: IconShip,
   },
 ];
 
@@ -118,15 +123,16 @@ export default function Home() {
               <StaggerItem key={note.slug}>
                 <Link href={`/notes/${note.slug}`} className="group block">
                   <article className="py-8 md:py-10 border-t border-white/[0.04] group-hover:border-amber/15 transition-colors">
-                    <div className="flex items-start justify-between gap-6">
-                      <div className="flex-1 min-w-0">
+                    <div className="flex items-start gap-5">
+                      <note.Icon className="w-12 h-12 shrink-0 opacity-40 group-hover:opacity-70 transition-opacity hidden sm:block mt-1" />
+                      <div className="flex-1 min-w-0 flex items-start justify-between gap-4">
                         <h3 className="font-serif text-xl md:text-2xl text-cream group-hover:text-amber/90 transition-colors leading-snug">
                           {note.title}
                         </h3>
-                      </div>
-                      <div className="hidden sm:flex flex-col items-end shrink-0 pt-1">
-                        <span className="text-xs text-stone-600">{note.date}</span>
-                        <span className="text-xs text-stone-700 mt-1">{note.readTime}</span>
+                        <div className="hidden md:flex flex-col items-end shrink-0 pt-1">
+                          <span className="text-xs text-stone-600">{note.date}</span>
+                          <span className="text-xs text-stone-700 mt-1">{note.readTime}</span>
+                        </div>
                       </div>
                     </div>
                   </article>
