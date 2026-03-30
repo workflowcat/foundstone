@@ -5,6 +5,13 @@ import { IconFile, IconLedger, IconMineShaft, IconShip } from "@/components/note
 
 const notes = [
   {
+    slug: "master-craftsman-constraint",
+    date: "Mar 2026",
+    title: "When the master craftsman becomes the constraint",
+    readTime: "15 min",
+    Icon: IconFile,
+  },
+  {
     slug: "what-your-bank-sees",
     date: "Mar 2026",
     title: "What your bank actually sees when they open your file",

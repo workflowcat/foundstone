@@ -4,6 +4,15 @@ import { IconFile, IconLedger, IconMineShaft, IconShip } from "@/components/note
 
 const notes = [
   {
+    slug: "master-craftsman-constraint",
+    date: "March 2026",
+    title: "When the Master Craftsman Becomes the Constraint",
+    excerpt:
+      "A company doubles in size. The founder who was best at every function is now the bottleneck at every function. The Arsenal of Venice, the Prussian General Staff, and Cynefin — three lenses on the same problem.",
+    readTime: "15 min read",
+    Icon: IconFile,
+  },
+  {
     slug: "what-your-bank-sees",
     date: "March 2026",
     title: "What Your Bank Actually Sees When They Open Your File",
