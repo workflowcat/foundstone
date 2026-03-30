@@ -145,29 +145,24 @@ export default function RiskManagementNote() {
                 Modern risk registers required by ISO 31000, COSO ERM, or
                 SOC 2 follow the same structure: identify risks, categorize
                 them, assess likelihood and impact, document mitigations,
-                assign owners, review periodically. Agricola would recognize
-                the process. He would wonder why it took 470 years for
-                everyone else to adopt it.
+                assign owners, review periodically.
               </p>
-
-              <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
-                What this means now
-              </h2>
 
               <p>
-                Most startup founders treat compliance as a tax that diverts
-                resources from building product. Medieval miners had the same
-                attitude. Agricola&apos;s counterargument: the mine operator
-                who understood geology, engineering, and finance produced more
-                ore per ducat of capital deployed. Systematic risk management
-                was competitive advantage, not overhead.
+                Agricola&apos;s mine operators who understood geology,
+                engineering, and finance produced more ore per ducat of
+                capital deployed than operators who relied on luck. The
+                Kuxe investors who diversified across multiple mines lost
+                less money than those who concentrated. The engineers who
+                documented their drainage systems could rebuild after a
+                flood. Those who didn&apos;t could not.
               </p>
 
-              <p className="text-amber/70 italic">
-                The founder who treats compliance as infrastructure rather
-                than overhead will make better capital allocation decisions,
-                keep their bank account open, and sleep better. Agricola knew
-                this. The question is why we keep having to re-learn it.
+              <p>
+                <em>De Re Metallica</em> went through multiple editions
+                across Germany, Italy, and eventually England. It was the
+                standard text until the late 18th century. Herbert Hoover
+                kept a copy on his desk for the rest of his life.
               </p>
             </div>
           </FadeIn>

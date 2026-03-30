@@ -186,7 +186,6 @@ export default function VenetianBookkeepingNote() {
                 identify performance obligations, determine the price,
                 allocate it, recognize revenue when obligations are
                 satisfied. A Venetian merchant would recognize every step.
-                The formalization is modern. The logic is not.
               </p>
 
               <NoteFigure
@@ -196,23 +195,28 @@ export default function VenetianBookkeepingNote() {
                 aspect="portrait"
               />
 
-              <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
-                The infrastructure lesson
-              </h2>
-
               <p>
-                Venice&apos;s commercial success ran on infrastructure: the
-                colleganza partnership structure, the Banco di Rialto
-                (a public bank for giro transfers between accounts),
-                regulated marine insurance, mandatory bookkeeping. These
-                systems let trade scale. GAAP, auditing standards, stock
-                exchanges, banking regulation serve the same function today.
-                Commercial innovation depends on institutional plumbing.
+                Venice&apos;s commercial success ran on infrastructure that
+                most merchants never thought about: the colleganza
+                partnership structure, the Banco di Rialto (a public bank
+                for giro transfers between accounts), regulated marine
+                insurance, mandatory bookkeeping. Individual merchants came
+                and went. The infrastructure outlasted all of them.
               </p>
 
-              <p className="text-amber/70 italic">
-                Someone has to build the infrastructure. The merchants
-                want to trade.
+              <p>
+                The Banco della Piazza di Rialto was established in 1587,
+                almost a century after Pacioli. It was a full-reserve public
+                bank — forbidden from making loans, required to hold every
+                ducat deposited. Government decrees mandated that wholesale
+                transactions above certain thresholds settle through the
+                Banco. The state built the plumbing. Commerce flowed through
+                it.
+              </p>
+
+              <p>
+                GAAP, auditing standards, stock exchanges, banking regulation.
+                The vocabulary changed. The function did not.
               </p>
             </div>
           </FadeIn>

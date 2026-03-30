@@ -167,30 +167,34 @@ export default function DutchEastIndiaNote() {
               </p>
 
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
-                The architecture survives
+                Dissolution and inheritance
               </h2>
 
               <p>
-                The VOC was dissolved on December 31, 1799, its debts assumed
-                by the Dutch state. It lasted 197 years. But its institutional
-                innovations &mdash; joint-stock ownership, limited liability,
-                transferable shares, the multi-subsidiary holding structure,
-                the separation of ownership from management &mdash; are
-                still the architecture of modern corporate capitalism.
+                The VOC was dissolved on December 31, 1799. Its debts were
+                assumed by the Batavian Republic, which had replaced the
+                Dutch Republic under French revolutionary influence. The
+                company&apos;s Asian possessions became state colonies. Its
+                Amsterdam headquarters was repurposed. The shares became
+                worthless.
               </p>
 
               <p>
-                Every holding company operating today descends from the VOC.
-                So does every stock exchange. If you can lose your investment
-                but not your house, you are benefiting from a principle the
-                Dutch established in 1602.
+                But the institutional machinery survived. Joint-stock
+                ownership, limited liability, transferable shares, the
+                multi-subsidiary holding structure, the separation of
+                ownership from management. The British East India Company
+                adopted elements of the model. The American corporation
+                borrowed from the British version. The chain is unbroken.
               </p>
 
-              <p className="text-amber/70 italic">
-                The structure works. It has worked for four centuries. The
-                challenge has never been the architecture &mdash; it has been
-                the execution. Governance, accounting, and knowing when to
-                stop expanding. The same three problems, since 1602.
+              <p>
+                The Amsterdam Beurs building was demolished in 1835 and
+                replaced by a larger exchange. That one was demolished in
+                1903. The current Beurs van Berlage, completed that year,
+                still stands on the Damrak. The building changed. The
+                function did not. Shares in something resembling the VOC
+                trade there every day.
               </p>
             </div>
           </FadeIn>
