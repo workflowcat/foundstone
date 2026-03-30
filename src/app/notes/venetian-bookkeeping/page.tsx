@@ -1,5 +1,6 @@
 import { FadeIn } from "@/components/animate";
 import { LedgerIllustration } from "@/components/note-illustrations";
+import { NoteFigure } from "@/components/note-figure";
 import Link from "next/link";
 
 export default function VenetianBookkeepingNote() {
@@ -72,6 +73,13 @@ export default function VenetianBookkeepingNote() {
                 practice met a new distribution technology. Within decades,
                 the Venetian method had spread across Europe.
               </p>
+
+              <NoteFigure
+                src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Pacioli.jpg"
+                alt="Portrait of Luca Pacioli with geometric instruments, attributed to Jacopo de' Barbari, c. 1495"
+                caption="Luca Pacioli demonstrating Euclid with geometric instruments, attr. Jacopo de&rsquo; Barbari, c. 1495. Museo di Capodimonte, Naples."
+                aspect="landscape"
+              />
 
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
                 The three books
@@ -180,6 +188,13 @@ export default function VenetianBookkeepingNote() {
                 satisfied. A Venetian merchant would recognize every step.
                 The formalization is modern. The logic is not.
               </p>
+
+              <NoteFigure
+                src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Pacioli_-_Summa_de_arithmetica_geometria%2C_1523_-_1363187.jpeg"
+                alt="Page from Pacioli's Summa de Arithmetica"
+                caption="Interior page from the Summa de Arithmetica. The section on bookkeeping occupied 27 of 615 pages."
+                aspect="portrait"
+              />
 
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
                 The infrastructure lesson

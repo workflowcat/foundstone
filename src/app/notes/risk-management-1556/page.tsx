@@ -1,5 +1,6 @@
 import { FadeIn } from "@/components/animate";
 import { MineShaftIllustration } from "@/components/note-illustrations";
+import { NoteFigure } from "@/components/note-figure";
 import Link from "next/link";
 
 export default function RiskManagementNote() {
@@ -65,6 +66,13 @@ export default function RiskManagementNote() {
                 an engineering discipline managed through rational analysis.
               </p>
 
+              <NoteFigure
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a6/DeReMetallicaShaft.jpg"
+                alt="Woodcut of a mine shaft from De Re Metallica, 1556"
+                caption="Mine shaft cross-section from De Re Metallica (1556), showing underground workings, timber supports, and drainage systems."
+                aspect="portrait"
+              />
+
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
                 Six categories of risk
               </h2>
@@ -114,6 +122,13 @@ export default function RiskManagementNote() {
                 were promising. Venture capital staging. Saxon miners were
                 doing it in the 1500s.
               </p>
+
+              <NoteFigure
+                src="https://upload.wikimedia.org/wikipedia/commons/2/25/Agricola-1.png"
+                alt="Technical illustration from De Re Metallica showing mining equipment"
+                caption="Technical illustration from De Re Metallica. Every mechanism drawn with the precision of an engineering manual, not a history book."
+                aspect="landscape"
+              />
 
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
                 Risk as information

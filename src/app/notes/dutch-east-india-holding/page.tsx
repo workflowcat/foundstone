@@ -1,5 +1,6 @@
 import { FadeIn } from "@/components/animate";
 import { ShipCrossSection } from "@/components/note-illustrations";
+import { NoteFigure } from "@/components/note-figure";
 import Link from "next/link";
 
 export default function DutchEastIndiaNote() {
@@ -66,6 +67,13 @@ export default function DutchEastIndiaNote() {
                 words, a holding company.
               </p>
 
+              <NoteFigure
+                src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Hendrick_Cornelisz._Vroom_001.jpg"
+                alt="VOC ships departing by Hendrick Cornelisz. Vroom"
+                caption="Departure of East India Company vessels, Hendrick Cornelisz. Vroom. Six chambers, hundreds of ships, one balance sheet nobody could read."
+                aspect="landscape"
+              />
+
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
                 Three things the VOC invented
               </h2>
@@ -116,6 +124,13 @@ export default function DutchEastIndiaNote() {
                 survived. This is the fundamental logic of diversification,
                 and it is why holding companies exist.
               </p>
+
+              <NoteFigure
+                src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Emanuel_de_Witte_-_De_binnenplaats_van_de_beurs_te_Amsterdam.jpg"
+                alt="The courtyard of the Amsterdam Stock Exchange by Emanuel de Witte, 1653"
+                caption="The Beurs van Hendrick de Keyser, Amsterdam, by Emanuel de Witte (1653). The world&rsquo;s first stock exchange. VOC shares traded here from 1602."
+                aspect="square"
+              />
 
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
                 Three things the VOC got wrong
