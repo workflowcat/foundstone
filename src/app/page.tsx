@@ -38,21 +38,11 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.5}>
-            <div className="mt-10 max-w-2xl mx-auto space-y-5 text-stone-400 text-lg leading-relaxed text-left sm:text-center">
-              <p>
-                You need a COO, a CFO, and probably someone running marketing
-                who actually understands unit economics. You can&apos;t afford
-                three senior hires. You definitely can&apos;t afford three bad
-                senior hires, which is what happens when you rush it.
-              </p>
-              <p>
-                We provide fractional operations, finance, and marketing
-                leadership on retainer. We&apos;ve been running these functions
-                for our own group of B2B technology companies since 2018. At
-                some point we noticed everyone else needed the same thing, so
-                here we are.
-              </p>
-            </div>
+            <p className="mt-10 max-w-2xl mx-auto text-stone-400 text-lg leading-relaxed text-center">
+              Fractional COO, CFO, and CMO on retainer. We&apos;ve been
+              running these functions for our own companies since 2018.
+              Now we run them for yours.
+            </p>
           </FadeIn>
 
           <FadeIn delay={0.8}>

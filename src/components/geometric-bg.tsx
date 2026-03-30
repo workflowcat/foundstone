@@ -27,7 +27,7 @@ const INSCRIPTION_ZONES = [
   {
     // Top-left quadrant — Latin / governance
     cx: 320, cy: 240,
-    radius: 140,
+    radius: 200,
     text: "fundamentum",
     lang: "Latin — foundation",
     textX: 270, textY: 255,
@@ -41,7 +41,7 @@ const INSCRIPTION_ZONES = [
   {
     // Center-right — Italian / Renaissance craft
     cx: 1050, cy: 350,
-    radius: 130,
+    radius: 190,
     text: "pietra angolare",
     lang: "Italian — cornerstone",
     textX: 980, textY: 365,
@@ -55,7 +55,7 @@ const INSCRIPTION_ZONES = [
   {
     // Lower-left — Greek / structure
     cx: 400, cy: 550,
-    radius: 120,
+    radius: 180,
     text: "θεμέλιος",
     lang: "Greek — foundational",
     textX: 360, textY: 565,
@@ -69,7 +69,7 @@ const INSCRIPTION_ZONES = [
   {
     // Center — Dutch / trade
     cx: 700, cy: 450,
-    radius: 130,
+    radius: 190,
     text: "grondslag",
     lang: "Dutch — groundwork",
     textX: 658, textY: 465,
@@ -83,7 +83,7 @@ const INSCRIPTION_ZONES = [
   {
     // Upper-right — Arabic / masonry
     cx: 1100, cy: 180,
-    radius: 120,
+    radius: 180,
     text: "أساس",
     lang: "Arabic — foundation",
     textX: 1078, textY: 195,
@@ -96,7 +96,7 @@ const INSCRIPTION_ZONES = [
   {
     // Bottom-center — Japanese / bedrock
     cx: 800, cy: 680,
-    radius: 115,
+    radius: 180,
     text: "礎石",
     lang: "Japanese — foundation stone",
     textX: 780, textY: 695,
@@ -125,8 +125,8 @@ export function GeometricHero() {
   const dwellStart = useRef(0);
   const dwellTimerId = useRef<ReturnType<typeof setInterval>>(0 as unknown as ReturnType<typeof setInterval>);
   const activeZones = useRef<Set<number>>(new Set());
-  const DWELL_RADIUS = 80; // SVG units — how far you can drift and still count as "dwelling"
-  const DWELL_TIME = 1800; // ms before inscriptions start appearing
+  const DWELL_RADIUS = 120; // SVG units — generous drift allowance
+  const DWELL_TIME = 900; // ms — quicker reveal so people actually find them
 
   /* ── Dwell checker: runs on interval while cursor is in hero ── */
   const checkDwell = useCallback(() => {
@@ -134,8 +134,8 @@ export function GeometricHero() {
     const elapsed = now - dwellStart.current;
     if (elapsed < DWELL_TIME) return;
 
-    // Progressive reveal: the longer you dwell, the more zones can appear
-    const dwellStrength = Math.min(1, (elapsed - DWELL_TIME) / 2000);
+    // Progressive reveal — ramp up faster
+    const dwellStrength = Math.min(1, (elapsed - DWELL_TIME) / 1200);
 
     INSCRIPTION_ZONES.forEach((zone, i) => {
       const dx = dwellPos.current.x - zone.cx;
@@ -159,13 +159,13 @@ export function GeometricHero() {
           const child = children[c] as SVGElement;
           const role = child.getAttribute("data-role");
           if (role === "crack") {
-            child.style.opacity = String(Math.min(1, zoneStrength * 2));
+            child.style.opacity = String(Math.min(1, zoneStrength * 2.5));
           } else if (role === "text") {
-            child.style.opacity = String(Math.max(0, zoneStrength * 1.5 - 0.3));
+            child.style.opacity = String(Math.min(1, Math.max(0, zoneStrength * 2 - 0.15)));
           } else if (role === "lang") {
-            child.style.opacity = String(Math.max(0, zoneStrength * 1.5 - 0.5));
+            child.style.opacity = String(Math.min(1, Math.max(0, zoneStrength * 2 - 0.4)));
           } else if (role === "repair") {
-            child.style.opacity = String(Math.max(0, zoneStrength - 0.6) * 2.5);
+            child.style.opacity = String(Math.min(1, Math.max(0, zoneStrength - 0.35) * 3));
           }
         }
       } else if (activeZones.current.has(i)) {
@@ -406,8 +406,8 @@ export function GeometricHero() {
               <path
                 key={`crack-${j}`}
                 d={d}
-                stroke="rgba(232,230,227,0.15)"
-                strokeWidth="0.6"
+                stroke="rgba(232,230,227,0.25)"
+                strokeWidth="0.8"
                 strokeLinecap="round"
                 data-role="crack"
                 style={{ opacity: 0, transition: "opacity 0.6s ease-out" }}
@@ -417,8 +417,8 @@ export function GeometricHero() {
             {/* Kintsugi repair — gold filling the crack */}
             <path
               d={zone.repair}
-              stroke="rgba(196,154,108,0.5)"
-              strokeWidth="1.2"
+              stroke="rgba(196,154,108,0.7)"
+              strokeWidth="1.5"
               strokeLinecap="round"
               data-role="repair"
               style={{ opacity: 0, transition: "opacity 1s ease-out 0.3s" }}
@@ -428,8 +428,8 @@ export function GeometricHero() {
             <text
               x={zone.textX}
               y={zone.textY}
-              fill="rgba(196,154,108,0.4)"
-              fontSize="16"
+              fill="rgba(196,154,108,0.6)"
+              fontSize="18"
               fontFamily="var(--font-humanist), Georgia, serif"
               fontStyle="italic"
               data-role="text"
@@ -442,8 +442,8 @@ export function GeometricHero() {
             <text
               x={zone.textX}
               y={zone.textY + 18}
-              fill="rgba(232,230,227,0.15)"
-              fontSize="8"
+              fill="rgba(232,230,227,0.3)"
+              fontSize="9"
               fontFamily="var(--font-sans), system-ui, sans-serif"
               letterSpacing="0.1em"
               data-role="lang"
