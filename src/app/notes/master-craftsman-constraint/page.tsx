@@ -73,11 +73,13 @@ export default function MasterCraftsmanNote() {
               <p>
                 At 30, the founder is fielding questions they cannot
                 answer because they no longer have first-hand knowledge
-                of what happened. Someone made a promise to a vendor they
-                didn&apos;t know about. An engineer shipped a feature
-                that contradicts something the sales team told a client.
-                The founder finds out on Friday. The thing happened on
-                Tuesday.
+                of what happened. Someone made a promise to a vendor
+                the founder didn&apos;t know about, an engineer shipped a
+                feature that contradicts something the sales team told a
+                client three weeks ago, and the founder finds out about
+                all of it on Friday afternoon when the client emails
+                asking why the product does something they were told it
+                wouldn&apos;t.
               </p>
 
               <FadeIn>
@@ -88,12 +90,15 @@ export default function MasterCraftsmanNote() {
 
               <p>
                 The founder is the most capable person in the company and
-                the biggest constraint on its growth. Delegating means
-                accepting worse outcomes in the short term — the new hire
-                will not do it as well as the founder, at least not for
-                the first six months. The company cannot grow past what
-                one brain can process. Both of these are real. The
-                company stays stuck between them, sometimes for years.
+                the biggest constraint on its growth, and these two facts
+                coexist in a way that makes the situation genuinely
+                difficult to resolve. Delegating means accepting that a
+                new hire will not do it as well as the founder, at least
+                not for the first six months, while also accepting that
+                the company cannot grow past what one brain can process.
+                Both of these are real, and the company can stay stuck
+                between them for years while the founder tells themselves
+                they just need to work harder.
               </p>
 
               {/* ─── The Arsenal ─── */}
@@ -216,13 +221,15 @@ export default function MasterCraftsmanNote() {
               </p>
 
               <p>
-                Prussian soldiers and generals were competent. Prussian
-                command doctrine had not changed in fifty years. Every
-                decision flowed up to the commanding general. Every order
-                flowed back down. One brain processing all information,
-                making all decisions. When the ground moved faster than
-                that brain could assess — and at Auerstedt it moved very
-                fast — the system locked up.
+                Prussian soldiers and generals were competent, but
+                Prussian command doctrine had not changed in fifty years
+                and every decision still flowed up to the commanding
+                general while every order flowed back down through the
+                same single point of processing, which meant that when
+                the situation on the ground at Auerstedt started moving
+                faster than one person could assess it, the entire
+                command structure locked up and 60,000 soldiers stood
+                waiting for instructions that could not arrive in time.
               </p>
 
               <NoteFigure
@@ -236,12 +243,14 @@ export default function MasterCraftsmanNote() {
                 Gerhard von Scharnhorst was appointed to chair the
                 Military Reorganization Commission on July 25,
                 1807.<sup className="text-stone-500 text-xs">7</sup> His
-                background: born in Bordenau, Hanover. Son of an
-                independent small farmer. Two uncles sold fish to the
-                Elector&apos;s kitchen. He gained admission to a military
-                academy, published a handbook for officers, founded a
-                military journal. His writing income was his chief means
-                of support while still a lieutenant.
+                background is worth knowing: born in Bordenau, Hanover,
+                the son of an independent small farmer whose two brothers
+                sold fish to the Elector&apos;s kitchen — not the sort of
+                person who normally reformed a nation&apos;s military, but
+                he had gained admission to a military academy, published a
+                handbook for officers, founded a military journal, and his
+                writing income remained his chief means of support while
+                he was still a lieutenant.
               </p>
 
               <p>
@@ -291,37 +300,21 @@ export default function MasterCraftsmanNote() {
               {/* ─── When the domain shifts ─── */}
 
               <h2 className="font-serif text-2xl text-cream mt-16 mb-6">
-                When the domain shifts
+                When analysis stops working
               </h2>
 
               <p>
-                Dave Snowden developed the Cynefin framework at IBM in
-                the late 1990s and published it in Harvard Business
-                Review in
-                2007.<sup className="text-stone-500 text-xs">9</sup> It
-                draws a line between two kinds of problems that most
-                people — and most organizations — conflate.
-              </p>
-
-              <p>
-                <strong className="text-cream/80">Complicated</strong> problems
-                have cause-and-effect relationships that can be
-                discovered through analysis. You can hire an expert, do
-                enough research, and find the answer. Building a bridge.
-                Configuring a database. Closing the books. There may be
-                multiple right answers, but they are discoverable. The
-                approach: sense, analyze, respond.
-              </p>
-
-              <p>
-                <strong className="text-cream/80">Complex</strong> problems
-                have cause-and-effect relationships that are only visible
-                in retrospect. You cannot analyze your way to the answer
-                because the answer emerges from the interaction of too
-                many variables. Raising a child. Building a culture.
-                Hiring the 30th employee. The approach: probe, sense,
-                respond. Run small experiments, see what happens, amplify
-                what works.
+                Dave Snowden&apos;s Cynefin
+                framework<sup className="text-stone-500 text-xs">9</sup> makes
+                a distinction the Arsenal and Prussian cases already
+                demonstrate: there are problems you can analyze your way
+                through, and problems where the answer only becomes
+                visible after you act. At 15 people, most operational
+                problems are the first kind — the founder can think
+                through them and find the answer. At 30, many have shifted
+                to the second kind, and the founder is still trying to
+                analyze their way through situations that require
+                experimentation instead.
               </p>
 
               <FadeIn>
@@ -331,24 +324,14 @@ export default function MasterCraftsmanNote() {
               </FadeIn>
 
               <p>
-                At 15 people, most operational problems are Complicated.
-                The founder can analyze them. At 30, many have shifted to
-                Complex — and the founder is still trying to analyze.
                 Hiring is the clearest example. At 15, the founder
-                interviews everyone and makes every call based on direct
-                judgment. At 40, other people are interviewing using
-                criteria the founder has never articulated because they
-                never had to.
-              </p>
-
-              <p>
-                Snowden&apos;s recommendation for Complex domains:
-                safe-to-fail probes. Small experiments run in parallel.
-                If a probe works, amplify it. If it starts to fail,
-                dampen it. This requires accepting that you cannot know
-                the outcome in advance — which is exactly what the
-                founder who built the company by knowing the outcome in
-                advance finds hardest to accept.
+                interviews everyone and makes every call on direct
+                judgment. At 40, other people are interviewing candidates
+                using criteria the founder has never written down because
+                they never had to — the criteria lived in their head,
+                worked perfectly when they were the only interviewer, and
+                became invisible the moment someone else needed to apply
+                them.
               </p>
 
               {/* ─── The split ─── */}
@@ -380,10 +363,37 @@ export default function MasterCraftsmanNote() {
 
               <p>
                 The marangone who could build a whole ship was replaced
-                by a team that could build a ship in an hour. Whether
-                that was a gain or a loss depends on what you are
-                measuring and how much time you have. Both answers are
-                defensible. The Arsenal lasted 700 years.
+                by a team that could build a ship in an hour. The Arsenal
+                lasted 700 years.
+              </p>
+
+              <p>
+                If you are the founder in this situation, here are the
+                questions that actually matter, in roughly the order they
+                become urgent:
+              </p>
+
+              <div className="my-8 space-y-4">
+                {[
+                  "Which of the three workflows — product, commercial, operations — would suffer least if you stepped back from it for 90 days?",
+                  "Is there someone already in the company who could run that function if you gave them the authority and stopped overriding their decisions?",
+                  "What are you doing today that only you can do, and what are you doing today that you do only because you have always done it?",
+                  "If the bank called tomorrow asking for updated compliance documentation, could someone other than you produce it within 48 hours?",
+                  "When was the last time you learned about a problem in the company from a report rather than from being in the room when it happened?",
+                ].map((q, i) => (
+                  <div key={i} className="pl-5 border-l border-amber/20">
+                    <p className="text-stone-400 text-[15px]">{q}</p>
+                  </div>
+                ))}
+              </div>
+
+              <p>
+                The Arsenal lasted 700 years. Scharnhorst&apos;s staff
+                system outlived every general who used it. Both required
+                someone to make the transition from doing the work to
+                building the system that does the work. The transition
+                itself is the hard part, and there is no version of it
+                that feels comfortable while it is happening.
               </p>
 
               {/* ─── Sources ─── */}
