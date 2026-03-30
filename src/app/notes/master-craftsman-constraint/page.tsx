@@ -1,5 +1,6 @@
 import { FadeIn } from "@/components/animate";
 import { NoteFigure } from "@/components/note-figure";
+import { ArsenalAssemblyLine, CommandStructure, CynefinDiagram } from "@/components/scaling-illustrations";
 import Link from "next/link";
 
 export default function MasterCraftsmanNote() {
@@ -41,37 +42,52 @@ export default function MasterCraftsmanNote() {
               <p>
                 At 15 people, the founder can hold the whole company in
                 their head. Every customer relationship, every vendor
-                contract, every hire, every product decision. This works.
-                Robin Dunbar&apos;s research on group sizes suggests 15 is
-                near the upper limit of a social group where everyone can
-                maintain strong bonds with everyone
-                else.<sup className="text-stone-500 text-xs">1</sup> At
-                that size, a company runs on the founder&apos;s direct
-                knowledge. Formal processes feel like overhead because
-                they are.
+                contract, every hire, every product decision. They know
+                who said what to which client last Tuesday. They know the
+                deployment schedule because they wrote it. They know the
+                cash position because they check it every morning. This
+                works. Robin Dunbar&apos;s research on group cognition
+                suggests 15 is near the upper limit of a social group
+                where everyone can maintain strong personal bonds with
+                everyone
+                else.<sup className="text-stone-500 text-xs">1</sup> A
+                company of 15 runs on the founder&apos;s direct
+                knowledge. Formal processes feel like overhead because at
+                that size, they are.
               </p>
 
               <p>
-                Then the company grows to 30. Or it tries to. Phil Libin,
-                who ran Evernote and later learned this from Hiroshi
-                Mikitani at Rakuten, observed that everything about how a
-                company operates breaks at roughly every multiple of
-                three: 3, 10, 30, 100,
-                300.<sup className="text-stone-500 text-xs">2</sup> At
-                each threshold the communication lines multiply faster
-                than the headcount. The founder who could track everything
-                at 15 is fielding questions they cannot answer at 30
-                because they no longer have first-hand knowledge of what
-                happened.
+                Then the company tries to grow to 30. Phil Libin, who ran
+                Evernote, learned something from Hiroshi Mikitani at
+                Rakuten (which grew from 1 person to over 10,000):
+                everything about how a company operates breaks at roughly
+                every multiple of three. At 3, at 10, at 30, at 100, at
+                300.<sup className="text-stone-500 text-xs">2</sup> Each
+                time the headcount triples, the number of communication
+                pathways increases by roughly 10x. Libin&apos;s
+                observation: most CEOs of rapidly growing startups
+                &ldquo;blow right through these triplings without even
+                realizing it.&rdquo;
               </p>
 
               <p>
-                The founder is simultaneously the most capable person in
-                the company and the biggest constraint on its growth.
-                Delegating means accepting worse outcomes in the short
-                term. The company cannot grow past what one person can
-                process. Both of these are real. The company stays stuck
-                between them, sometimes for years.
+                At 30, the founder is fielding questions they cannot
+                answer because they no longer have first-hand knowledge
+                of what happened. Someone made a promise to a vendor they
+                didn&apos;t know about. An engineer shipped a feature
+                that contradicts something the sales team told a client.
+                The founder finds out on Friday. The thing happened on
+                Tuesday.
+              </p>
+
+              <p>
+                The founder is the most capable person in the company and
+                the biggest constraint on its growth. Delegating means
+                accepting worse outcomes in the short term — the new hire
+                will not do it as well as the founder, at least not for
+                the first six months. The company cannot grow past what
+                one brain can process. Both of these are real. The
+                company stays stuck between them, sometimes for years.
               </p>
 
               {/* ─── Segment 2: The Arsenal ─── */}
@@ -79,6 +95,12 @@ export default function MasterCraftsmanNote() {
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
                 The Arsenal
               </h2>
+
+              <FadeIn>
+                <div className="my-10 py-6 border-t border-b border-white/[0.04]">
+                  <ArsenalAssemblyLine className="w-full h-auto" />
+                </div>
+              </FadeIn>
 
               <p>
                 The Arsenale di Venezia was established around 1104 and
@@ -108,41 +130,68 @@ export default function MasterCraftsmanNote() {
               />
 
               <p>
-                The process had roughly ten stages: hull framing,
-                planking, caulking, decking, mast fitting, rigging, oar
-                fitting, arming, and provisioning. Galleys were towed
-                along an internal canal past outfitting stations — the
-                work came to the ship instead of the ship coming to the
-                work. Components were prefabricated to standard
-                specifications and stored in warehouses. When Henry III
-                of France visited in July 1574, the Arsenal demonstrated
-                the system by assembling, arming, and provisioning a
-                complete galley during a state banquet — reportedly in
-                under an
-                hour.<sup className="text-stone-500 text-xs">4</sup>
+                The production sequence had roughly ten stages: hull
+                framing, planking, caulking, decking, mast fitting,
+                rigging, oar fitting, arming, provisioning. Empty hulls
+                were launched into the Rio dell&apos;Arsenale — the
+                internal canal — and towed past outfitting stations. The
+                work came to the ship. Components were prefabricated to
+                standard specifications and warehoused by category. Each
+                zone of the Arsenal produced one type of part: hulls,
+                oars, masts, rigging, rope, munitions.
               </p>
 
               <p>
-                The transition required the marangone to stop building
-                ships and start supervising people who built parts of
-                ships. Each guild specialized: calafati (caulkers), remeri
-                (oar makers), alboranti (mast workers), each with their
-                own protomaestri (foremen). Quality inspectors checked
-                work daily. Caulkers were held accountable for split seams.
-                Rope spinners for weak lines.
+                In July 1574, when Henry III of France visited Venice,
+                the Arsenal staged a demonstration: workers assembled,
+                armed, and provisioned a complete galley during a state
+                banquet. Reportedly in under an
+                hour.<sup className="text-stone-500 text-xs">4</sup> Historians
+                note this was carefully orchestrated using pre-staged
+                parts — a proof of throughput capacity, not routine
+                operations. But the system that made the demonstration
+                possible was real. It was the first moving assembly line,
+                three centuries before Henry Ford.
               </p>
 
               <p>
-                Some marangoni made the transition. Some did not. The
-                ones who could not were not bad craftsmen. They were
-                specialists in an organizational form that no longer
-                applied. The Arsenal needed supervisors, not artisans.
-                The skills were different. Robert C. Davis, in his study
-                of Arsenal workers from 1620 to 1670, documents a
-                workforce that was simultaneously highly skilled and
-                deeply specialized — each person excellent at their
-                stage, none of them capable of building a whole
-                ship.<sup className="text-stone-500 text-xs">5</sup>
+                The transition from craft to assembly required the
+                marangone — the master carpenter who could build an
+                entire ship — to stop building and start supervising
+                people who built parts of ships. The guilds specialized:
+                calafati (caulkers), remeri (oar makers), alboranti (mast
+                workers), each with their own protomaestri (foremen).
+                Quality inspectors checked work daily. If a caulker
+                produced a split seam, it was traced back to them. If a
+                rope spinner produced a weak line, it was traced back to
+                them.
+              </p>
+
+              <p>
+                The arsenalotti — the Arsenal workers — were state
+                employees, not freelance craftsmen. They had stable
+                wages, exemption from civic burdens, access to state
+                patronage, and were described as &ldquo;aristocrats
+                among workingmen.&rdquo; Caulkers were regularly posted
+                on warships for emergency repairs at sea. These were not
+                interchangeable labourers. They were specialists whose
+                value came from depth in one function.
+              </p>
+
+              <p>
+                Some marangoni made the transition to supervisor. Some
+                did not. The ones who couldn&apos;t were competent
+                craftsmen in an organizational form that no longer
+                applied. Robert C. Davis, studying Arsenal workers from
+                1620 to 1670 through nearly 1,000 petitions to the
+                Venetian government, documents a workforce that was
+                simultaneously highly skilled and deeply specialized —
+                each person excellent at their stage, none capable of
+                building a whole
+                ship.<sup className="text-stone-500 text-xs">5</sup> The
+                skills that made a great marangone were different from
+                the skills that made a great protomaestro. The Arsenal
+                needed both. It had to grow the second from the first.
               </p>
 
               {/* ─── Segment 3: The bandwidth problem ─── */}
@@ -164,45 +213,62 @@ export default function MasterCraftsmanNote() {
 
               <p>
                 Prussian soldiers and generals were competent. Prussian
-                command doctrine had not changed in fifty years. Decisions flowed upward
-                to the commanding general and orders flowed back down.
-                The commanding general was a single point of processing.
-                When the situation moved faster than one brain could
-                assess, the system failed.
+                command doctrine had not changed in fifty years. Every
+                decision flowed up to the commanding general. Every order
+                flowed back down. One brain processing all information,
+                making all decisions. When the ground moved faster than
+                that brain could assess — and at Auerstedt it moved very
+                fast — the system locked up.
               </p>
 
               <p>
-                Gerhard von Scharnhorst, a commoner from Hanover whose
-                uncles sold fish, was appointed to chair the Military
-                Reorganization Commission in July
-                1807.<sup className="text-stone-500 text-xs">7</sup> He
-                re-founded the Kriegsakademie on October 15, 1810 with
-                an inaugural class of 20 captains. The curriculum
-                allocated 7 hours per week to military history — the most
-                of any subject — because Scharnhorst believed officers
-                needed to think analytically, not follow orders
-                mechanically.
+                Gerhard von Scharnhorst was appointed to chair the
+                Military Reorganization Commission on July 25,
+                1807.<sup className="text-stone-500 text-xs">7</sup> His
+                background: born in Bordenau, Hanover. Son of an
+                independent small farmer. Two uncles sold fish to the
+                Elector&apos;s kitchen. He gained admission to a military
+                academy, published a handbook for officers, founded a
+                military journal. His writing income was his chief means
+                of support while still a lieutenant.
               </p>
 
               <p>
-                The system he built extended the commander&apos;s
-                cognitive bandwidth. Staff officers trained in a common
-                analytical framework were assigned to field commanders.
-                They could develop plans, assess situations, and act
-                on the commander&apos;s intent without waiting for
-                instructions. Later formalized as Auftragstaktik —
-                mission-type tactics: specify the objective and the
-                reason, leave the method to the person on the
+                His core reform was the Kriegsakademie, re-founded
+                October 15, 1810 in Berlin. Inaugural class: 20
+                carefully vetted captains. 7 hours per week on military
+                history — the most of any subject. Scharnhorst believed
+                officers needed analytical judgment, not memorized
+                procedures. He also abolished corporal punishment, ended
+                the aristocratic monopoly on officer commissions, and
+                devised the Krümpersystem — a rotation scheme that
+                secretly expanded Prussia&apos;s trained manpower while
+                staying within the Treaty of Tilsit&apos;s 42,000-soldier
+                limit.
+              </p>
+
+              <p>
+                The organizational innovation: the General Staff. Officers
+                trained in a shared analytical framework, assigned to
+                field commanders, organized into sections — operations,
+                logistics, topography, intelligence, history. A staff
+                officer could develop contingency plans, assess an
+                unfolding situation, and act on the commander&apos;s
+                intent without waiting for specific instructions. Later
+                formalized as Auftragstaktik: specify the objective and
+                the reason. Leave the method to the person on the
                 ground.<sup className="text-stone-500 text-xs">8</sup>
               </p>
 
               <p>
-                Scharnhorst died of an infected wound in June 1813,
-                before his system was fully tested. His student
-                Clausewitz, his collaborator Gneisenau, and the officers
-                they trained won the Wars of Liberation without him.
-                The system worked because it did not depend on any single
-                person.
+                Scharnhorst was wounded at Lützen, May 2, 1813. Infected
+                wound. Died June 28 in Prague, negotiating Austria&apos;s
+                entry into the war. His student Clausewitz, his
+                collaborator Gneisenau — who became Blücher&apos;s chief
+                of staff, one of the great command partnerships in
+                military history — and the officers they trained together
+                won the Wars of Liberation and Waterloo. The system
+                worked without its architect.
               </p>
 
               <NoteFigure
@@ -212,6 +278,12 @@ export default function MasterCraftsmanNote() {
                 aspect="landscape"
               />
 
+              <FadeIn>
+                <div className="my-10 py-6 border-t border-b border-white/[0.04]">
+                  <CommandStructure className="w-full h-auto" />
+                </div>
+              </FadeIn>
+
               {/* ─── Segment 4: Complicated vs. Complex ─── */}
 
               <h2 className="font-serif text-2xl text-cream mt-12 mb-4">
@@ -219,12 +291,19 @@ export default function MasterCraftsmanNote() {
               </h2>
 
               <p>
-                Dave Snowden&apos;s Cynefin framework, developed at IBM
-                in the late 1990s and published in the Harvard Business
-                Review in 2007, draws a line between two kinds of
-                problems that most people
-                conflate.<sup className="text-stone-500 text-xs">9</sup>
+                Dave Snowden developed the Cynefin framework at IBM in
+                the late 1990s and published it in Harvard Business
+                Review in
+                2007.<sup className="text-stone-500 text-xs">9</sup> It
+                draws a line between two kinds of problems that most
+                people — and most organizations — conflate.
               </p>
+
+              <FadeIn>
+                <div className="my-10 py-6 border-t border-b border-white/[0.04]">
+                  <CynefinDiagram className="w-full h-auto" />
+                </div>
+              </FadeIn>
 
               <p>
                 <strong className="text-cream/80">Complicated</strong> problems
