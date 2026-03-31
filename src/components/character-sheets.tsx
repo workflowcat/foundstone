@@ -61,11 +61,11 @@ export function CharacterSheet({
                     className="h-2.5 flex-1 rounded-sm transition-all"
                     style={{
                       background: i < stat.value
-                        ? "rgba(196,154,108,0.5)"
-                        : "rgba(232,230,227,0.06)",
+                        ? "rgba(196,154,108,0.7)"
+                        : "rgba(232,230,227,0.08)",
                       border: i < stat.value
-                        ? "1px solid rgba(196,154,108,0.3)"
-                        : "1px solid rgba(232,230,227,0.04)",
+                        ? "1px solid rgba(196,154,108,0.5)"
+                        : "1px solid rgba(232,230,227,0.06)",
                     }}
                   />
                 ))}
@@ -132,9 +132,9 @@ export function PartyComposition({ className = "" }: { className?: string }) {
   ];
 
   const levelColor = (v: number) => {
-    if (v === 3) return G;
-    if (v === 2) return GL;
-    if (v === 1) return CL;
+    if (v === 3) return "rgba(196,154,108,0.85)";
+    if (v === 2) return "rgba(196,154,108,0.5)";
+    if (v === 1) return "rgba(232,230,227,0.25)";
     return "transparent";
   };
 
