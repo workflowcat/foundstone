@@ -177,7 +177,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ═══ The four functions ═══ */}
+      {/* ═══ The four functions — compact grid linking to subpages ═══ */}
       <section className="relative px-6 md:px-12 pb-16 md:pb-24 border-t border-white/[0.04]">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
@@ -186,182 +186,61 @@ export default function ServicesPage() {
             </p>
             <p className="text-stone-400 leading-relaxed mb-12 max-w-2xl">
               Four functional areas. Each one can be delivered in any
-              of the engagement shapes above — from a biweekly advisory
-              call to a full build-and-transition. What it looks like
-              depends on where you are and what is breaking.
+              of the engagement shapes above. Click through for
+              detailed descriptions, diagrams, deliverable examples,
+              and how the engagement scales from advisory to full
+              build-and-transition.
             </p>
           </FadeIn>
 
-          <div className="space-y-0">
-
-            {/* COO */}
-            <FadeIn>
-              <article className="py-16 md:py-20 border-t border-white/[0.06]">
-                <p className="text-amber/50 text-sm font-mono mb-2">01</p>
-                <h2 className="font-serif text-2xl md:text-3xl text-cream mb-6">
-                  Operations
-                </h2>
-                <div className="space-y-5 text-stone-400 leading-relaxed text-[15px] md:text-base">
-                  <p>
-                    The CEO is spending 40% of their time on vendor
-                    contracts, hiring logistics, payroll, and tooling
-                    decisions that someone needs to own, and they know
-                    that hiring a full-time COO is a $200K+ commitment
-                    they cannot evaluate because they have never had one.
-                  </p>
-                  <p>
-                    At the advisory level, this is a biweekly call where
-                    we review your operational dashboards, identify where
-                    the bottlenecks are forming, and help you decide
-                    which ones to address first. At the embedded level,
-                    we run the operating cadence — the weekly leadership
-                    meeting, the vendor review cycle, the hiring pipeline,
-                    the reporting rhythm. At the project level, it might
-                    be a 90-day engagement to{" "}
-                    <Link href="/notes/master-craftsman-constraint" className="text-amber/60 hover:text-amber/80 transition-colors">
-                      build the operating infrastructure
-                    </Link>{" "}
-                    that lets the founder step back from day-to-day
-                    operational decisions.
-                  </p>
-                </div>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {["Operating cadence", "Vendor management", "Hiring frameworks", "Process design", "Procurement", "Incident coordination"].map((t) => (
-                    <span key={t} className="text-xs tracking-wider text-stone-600 border border-white/[0.04] px-3 py-1">{t}</span>
-                  ))}
-                </div>
-              </article>
-            </FadeIn>
-
-            {/* CFO */}
-            <FadeIn>
-              <article className="py-16 md:py-20 border-t border-white/[0.06]">
-                <p className="text-amber/50 text-sm font-mono mb-2">02</p>
-                <h2 className="font-serif text-2xl md:text-3xl text-cream mb-6">
-                  Finance &amp; Treasury
-                </h2>
-                <div className="space-y-5 text-stone-400 leading-relaxed text-[15px] md:text-base">
-                  <p>
-                    Your bookkeeper records what happened. Nobody
-                    interprets what the numbers mean, whether you will
-                    run out of money in four months, or why margins
-                    dropped 8 points since Q2.
-                  </p>
-                  <p>
-                    Advisory: a monthly review of your management
-                    accounts with someone who will tell you what they
-                    see, including the things you do not want to hear.
-                    Embedded: cash flow forecasting, board-ready
-                    financials, bank relationship management, the{" "}
-                    <Link href="/notes/venetian-bookkeeping" className="text-amber/60 hover:text-amber/80 transition-colors">
-                      reconciliation between cash and revenue
-                    </Link>{" "}
-                    that usage-based businesses need and most do not
-                    have. Project: produce a complete financial model
-                    and reporting stack within 60 days, then hand it
-                    off. We run this function for our own companies
-                    across multiple entities and currencies — if your
-                    situation is complicated, ours is worse and we
-                    handle it.
-                  </p>
-                </div>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {["Cash flow forecasting", "Management reporting", "Multi-entity consolidation", "Bank relationships", "Board financials", "Revenue recognition"].map((t) => (
-                    <span key={t} className="text-xs tracking-wider text-stone-600 border border-white/[0.04] px-3 py-1">{t}</span>
-                  ))}
-                </div>
-              </article>
-            </FadeIn>
-
-            {/* CMO */}
-            <FadeIn>
-              <article className="py-16 md:py-20 border-t border-white/[0.06]">
-                <p className="text-amber/50 text-sm font-mono mb-2">03</p>
-                <h2 className="font-serif text-2xl md:text-3xl text-cream mb-6">
-                  Marketing
-                </h2>
-                <div className="space-y-5 text-stone-400 leading-relaxed text-[15px] md:text-base">
-                  <p>
-                    Most B2B companies between seed and profitability
-                    have a founder writing occasional LinkedIn posts, a
-                    junior hire running paid ads with unclear
-                    attribution, and a website from eighteen months ago.
-                    Everybody knows this is insufficient. Nobody has
-                    time to fix it because fixing it requires
-                    positioning decisions the founder keeps postponing.
-                  </p>
-                  <p>
-                    Advisory: biweekly sessions to work through
-                    positioning, review what the junior hire is doing,
-                    and set direction — the cheapest intervention and
-                    often the highest leverage one. Embedded: own the
-                    channel strategy, build the content pipeline, set
-                    up attribution, manage the marketing hire. Project:
-                    a 90-day positioning and channel audit that produces
-                    a documented strategy, an implementation plan, and
-                    the first round of execution — then hand off or
-                    continue as retained.
-                  </p>
-                </div>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {["Positioning", "Channel strategy", "Content systems", "Attribution", "Unit economics", "Team coaching"].map((t) => (
-                    <span key={t} className="text-xs tracking-wider text-stone-600 border border-white/[0.04] px-3 py-1">{t}</span>
-                  ))}
-                </div>
-              </article>
-            </FadeIn>
-
-            {/* Back Office */}
-            <FadeIn>
-              <article className="py-16 md:py-20 border-t border-white/[0.06]">
-                <p className="text-amber/50 text-sm font-mono mb-2">04</p>
-                <h2 className="font-serif text-2xl md:text-3xl text-cream mb-6">
-                  Back Office
-                </h2>
-                <div className="space-y-5 text-stone-400 leading-relaxed text-[15px] md:text-base">
-                  <p>
-                    Entity management: setting up companies, maintaining
-                    intercompany agreements, registered agent
-                    coordination, annual filings, the corporate
-                    housekeeping that nobody thinks about until a bank
-                    or a regulator asks for it. People operations:
-                    payroll across jurisdictions, employment contracts,
-                    onboarding workflows — three different employment
-                    law regimes if you are operating across the EU and
-                    Ukraine, each with its own expectations about how
-                    things work. Compliance: AML/EDD readiness,{" "}
-                    <Link href="/notes/what-your-bank-sees" className="text-amber/60 hover:text-amber/80 transition-colors">
-                      bank file maintenance
-                    </Link>,{" "}
-                    <Link href="/notes/risk-management-1556" className="text-amber/60 hover:text-amber/80 transition-colors">
-                      risk registers
-                    </Link>, document registers with expiry tracking.
-                  </p>
-                  <p>
-                    These usually start as project engagements — build
-                    the compliance package, set up payroll in a new
-                    jurisdiction, produce the corporate documentation
-                    set that a bank needs during enhanced due
-                    diligence — and then convert to a light retained
-                    function to maintain what was built. The governance
-                    office is a standing engagement by nature, because
-                    compliance documentation expires, bank reviews
-                    recur on their own schedule, and the{" "}
-                    <Link href="/notes/what-your-bank-sees" className="text-amber/60 hover:text-amber/80 transition-colors">
-                      72-hour documentation drill
-                    </Link>{" "}
-                    either works or it does not. You find out which one
-                    when the email arrives.
-                  </p>
-                </div>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {["Entity management", "People ops", "Compliance", "AML/EDD readiness", "Bank file maintenance", "Governance office"].map((t) => (
-                    <span key={t} className="text-xs tracking-wider text-stone-600 border border-white/[0.04] px-3 py-1">{t}</span>
-                  ))}
-                </div>
-              </article>
-            </FadeIn>
-
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/[0.03]">
+            {[
+              {
+                num: "01",
+                title: "Operations",
+                role: "Fractional COO",
+                desc: "Operating cadence, vendor management, hiring pipeline, process design. The 40% of the CEO\u2019s time that isn\u2019t their job.",
+                href: "/services/operations",
+              },
+              {
+                num: "02",
+                title: "Finance & Treasury",
+                role: "Fractional CFO",
+                desc: "Cash flow forecasting, board-ready financials, multi-entity consolidation, bank relationships. The interpretation layer.",
+                href: "/services/finance",
+              },
+              {
+                num: "03",
+                title: "Marketing",
+                role: "Fractional CMO",
+                desc: "Positioning, channel strategy, content systems, attribution. Where the next 50 customers come from.",
+                href: "/services/marketing",
+              },
+              {
+                num: "04",
+                title: "Back Office",
+                role: "Entity · Compliance · People Ops",
+                desc: "Entity management, AML/EDD readiness, bank file maintenance, payroll across jurisdictions, corporate housekeeping.",
+                href: "/services/back-office",
+              },
+            ].map((fn) => (
+              <FadeIn key={fn.num}>
+                <Link href={fn.href} className="group block bg-stone-950 p-8 md:p-10 h-full transition-colors hover:bg-stone-900/50">
+                  <p className="text-amber/50 text-sm font-mono mb-1">{fn.num}</p>
+                  <h3 className="font-serif text-xl md:text-2xl text-cream group-hover:text-amber/90 transition-colors mb-1">
+                    {fn.title}
+                  </h3>
+                  <p className="text-xs tracking-wider text-stone-600 mb-4">{fn.role}</p>
+                  <p className="text-stone-400 text-[15px] leading-relaxed mb-6">{fn.desc}</p>
+                  <span className="inline-flex items-center gap-2 text-xs tracking-wider text-stone-600 group-hover:text-stone-400 uppercase transition-colors">
+                    Details
+                    <svg className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                    </svg>
+                  </span>
+                </Link>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
