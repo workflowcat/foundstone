@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FadeIn } from "@/components/animate";
+import { GroupStructure, DuplicationCalculator } from "@/components/portfolio-visuals";
 
 export default function PortfolioPage() {
   return (
@@ -34,6 +35,17 @@ export default function PortfolioPage() {
                 operationally, because that is where the complexity
                 lives and where most of the interesting problems are.
               </p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Group structure map */}
+      <section className="relative px-6 md:px-12 pb-12">
+        <div className="max-w-3xl mx-auto">
+          <FadeIn>
+            <div className="py-8 border-t border-b border-white/[0.04]">
+              <GroupStructure className="w-full h-auto" />
             </div>
           </FadeIn>
         </div>
@@ -344,6 +356,15 @@ export default function PortfolioPage() {
             </article>
           </FadeIn>
 
+        </div>
+      </section>
+
+      {/* Duplication calculator */}
+      <section className="relative py-16 md:py-24 px-6 md:px-12">
+        <div className="max-w-3xl mx-auto">
+          <FadeIn>
+            <DuplicationCalculator />
+          </FadeIn>
         </div>
       </section>
 
