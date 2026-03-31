@@ -42,7 +42,7 @@ export default function PortfolioPage() {
                 </p>
               </div>
               <h2 className="font-serif text-2xl md:text-3xl text-cream mb-6">
-                Data365
+                Social media data APIs
               </h2>
               <div className="space-y-5 text-stone-400 leading-relaxed text-[15px] md:text-base">
                 <p className="text-stone-300">
@@ -90,7 +90,7 @@ export default function PortfolioPage() {
                 </p>
               </div>
               <h2 className="font-serif text-2xl md:text-3xl text-cream mb-6">
-                Distancematrix
+                Geocoding &amp; distance APIs
               </h2>
               <div className="space-y-5 text-stone-400 leading-relaxed text-[15px] md:text-base">
                 <p className="text-stone-300">
