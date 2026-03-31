@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 
-const S = "rgba(139,115,85,0.85)";
-const SM = "rgba(139,115,85,0.55)";
-const SL = "rgba(139,115,85,0.32)";
-const SF = "rgba(139,115,85,0.14)";
-const G = "rgba(196,154,108,0.6)";
-const GL = "rgba(196,154,108,0.3)";
+const S = "rgba(232,230,227,0.8)";
+const SM = "rgba(232,230,227,0.55)";
+const SL = "rgba(232,230,227,0.35)";
+const SF = "rgba(139,115,85,0.2)";
+const G = "rgba(196,154,108,0.8)";
+const GL = "rgba(196,154,108,0.45)";
 
 /* ═══ Group Structure Map ═══ */
 export function GroupStructure({ className = "" }: { className?: string }) {
@@ -26,23 +26,23 @@ export function GroupStructure({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 540 320" className={className} fill="none">
       {/* Foundstone Capital — top */}
-      <rect x="170" y="16" width="200" height="36" rx="2" stroke={S} strokeWidth="0.8" fill="rgba(17,17,22,0.4)" />
-      <text x="270" y="30" fill={S} fontSize="8" fontFamily="var(--font-humanist), Georgia, serif" textAnchor="middle">Foundstone Capital</text>
-      <text x="270" y="42" fill={SL} fontSize="6" fontFamily="var(--font-sans), system-ui" textAnchor="middle" letterSpacing="0.08em">HE 483648 · CYPRUS</text>
+      <rect x="170" y="16" width="200" height="38" rx="2" stroke={S} strokeWidth="1" fill="rgba(17,17,22,0.5)" />
+      <text x="270" y="31" fill={S} fontSize="10" fontFamily="var(--font-humanist), Georgia, serif" textAnchor="middle">Foundstone Capital</text>
+      <text x="270" y="44" fill={SL} fontSize="7" fontFamily="var(--font-sans), system-ui" textAnchor="middle" letterSpacing="0.08em">HE 483648 · CYPRUS</text>
 
       {/* Shared functions layer */}
-      <rect x="30" y="80" width="480" height="50" rx="2" stroke={G} strokeWidth="0.7" fill="rgba(196,154,108,0.03)" />
-      <text x="270" y="95" fill={GL} fontSize="6" fontFamily="var(--font-sans), system-ui" textAnchor="middle" letterSpacing="0.12em">SHARED OPERATIONAL INFRASTRUCTURE</text>
+      <rect x="30" y="82" width="480" height="50" rx="2" stroke={G} strokeWidth="0.8" fill="rgba(196,154,108,0.04)" />
+      <text x="270" y="98" fill={G} fontSize="7" fontFamily="var(--font-sans), system-ui" textAnchor="middle" letterSpacing="0.12em">SHARED OPERATIONAL INFRASTRUCTURE</text>
 
       {/* Function labels inside the layer */}
       {sharedFunctions.map((fn, i) => (
-        <text key={fn} x={60 + i * 78} y="116" fill={SL} fontSize="6.5" fontFamily="var(--font-sans), system-ui" textAnchor="middle">
+        <text key={fn} x={60 + i * 78} y="120" fill={SM} fontSize="7" fontFamily="var(--font-sans), system-ui" textAnchor="middle">
           {fn}
         </text>
       ))}
 
       {/* Lines from Foundstone to shared layer */}
-      <line x1="270" y1="52" x2="270" y2="80" stroke={SM} strokeWidth="0.6" />
+      <line x1="270" y1="54" x2="270" y2="82" stroke={SM} strokeWidth="0.8" />
 
       {/* Portfolio entities — bottom */}
       {entities.map((ent, i) => (
@@ -51,11 +51,11 @@ export function GroupStructure({ className = "" }: { className?: string }) {
           <line x1={ent.x} y1="130" x2={ent.x} y2="170" stroke={SL} strokeWidth="0.5" />
 
           {/* Entity box */}
-          <rect x={ent.x - 42} y="170" width="84" height="44" rx="2" stroke={SM} strokeWidth="0.6" fill="rgba(17,17,22,0.3)" />
-          <text x={ent.x} y="190" fill={SM} fontSize="7.5" fontFamily="var(--font-humanist), Georgia, serif" textAnchor="middle">
+          <rect x={ent.x - 44} y="170" width="88" height="46" rx="2" stroke={SM} strokeWidth="0.8" fill="rgba(17,17,22,0.4)" />
+          <text x={ent.x} y="191" fill={S} fontSize="9" fontFamily="var(--font-humanist), Georgia, serif" textAnchor="middle">
             {ent.label}
           </text>
-          <text x={ent.x} y="204" fill={SF} fontSize="5.5" fontFamily="var(--font-sans), system-ui" textAnchor="middle" letterSpacing="0.06em">
+          <text x={ent.x} y="206" fill={SL} fontSize="6.5" fontFamily="var(--font-sans), system-ui" textAnchor="middle" letterSpacing="0.06em">
             {ent.sub}
           </text>
         </g>
@@ -102,6 +102,131 @@ export function GroupStructure({ className = "" }: { className?: string }) {
 
       {/* Construction lines */}
       <line x1="270" y1="5" x2="270" y2="315" stroke={SF} strokeWidth="0.2" strokeDasharray="4 6" />
+    </svg>
+  );
+}
+
+/* ═══ Portfolio entity icons — inline with article sections ═══ */
+
+const IS = "rgba(232,230,227,0.7)";
+const IL = "rgba(232,230,227,0.35)";
+const IG = "rgba(196,154,108,0.6)";
+
+export function IconDataAPI({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 64 64" className={className} fill="none">
+      {/* Data flow lines */}
+      <path d="M8 20 L28 32 L8 44" stroke={IL} strokeWidth="0.8" />
+      <path d="M8 14 L28 32 L8 50" stroke={IL} strokeWidth="0.5" />
+      {/* Central processing node */}
+      <circle cx="32" cy="32" r="6" stroke={IS} strokeWidth="1" />
+      <circle cx="32" cy="32" r="2" fill={IG} />
+      {/* Output streams */}
+      <line x1="38" y1="28" x2="56" y2="16" stroke={IS} strokeWidth="0.7" />
+      <line x1="38" y1="32" x2="56" y2="32" stroke={IS} strokeWidth="0.7" />
+      <line x1="38" y1="36" x2="56" y2="48" stroke={IS} strokeWidth="0.7" />
+      {/* Endpoint dots */}
+      <circle cx="56" cy="16" r="2" stroke={IG} strokeWidth="0.6" />
+      <circle cx="56" cy="32" r="2" stroke={IG} strokeWidth="0.6" />
+      <circle cx="56" cy="48" r="2" stroke={IG} strokeWidth="0.6" />
+    </svg>
+  );
+}
+
+export function IconGeocode({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 64 64" className={className} fill="none">
+      {/* Globe outline */}
+      <circle cx="32" cy="32" r="20" stroke={IS} strokeWidth="0.8" />
+      {/* Meridians */}
+      <ellipse cx="32" cy="32" rx="10" ry="20" stroke={IL} strokeWidth="0.5" />
+      <ellipse cx="32" cy="32" rx="18" ry="20" stroke={IL} strokeWidth="0.3" />
+      {/* Parallels */}
+      <ellipse cx="32" cy="32" rx="20" ry="7" stroke={IL} strokeWidth="0.4" />
+      <ellipse cx="32" cy="24" rx="18" ry="5" stroke={IL} strokeWidth="0.3" />
+      <ellipse cx="32" cy="40" rx="18" ry="5" stroke={IL} strokeWidth="0.3" />
+      {/* Pin */}
+      <path d="M38 26 L38 20 Q38 16 42 16 Q46 16 46 20 L46 26 L42 32 Z" stroke={IG} strokeWidth="0.8" />
+      <circle cx="42" cy="21" r="2" fill={IG} />
+    </svg>
+  );
+}
+
+export function IconSaaS({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 64 64" className={className} fill="none">
+      {/* Stacked layers — platform */}
+      <path d="M12 36 L32 44 L52 36 L32 28 Z" stroke={IS} strokeWidth="0.7" />
+      <path d="M12 30 L32 38 L52 30 L32 22 Z" stroke={IL} strokeWidth="0.6" />
+      <path d="M12 24 L32 32 L52 24 L32 16 Z" stroke={IL} strokeWidth="0.5" />
+      {/* Recurring arrow */}
+      <path d="M32 48 Q24 48 20 44" stroke={IG} strokeWidth="0.7" />
+      <path d="M22 42 L20 44 L22 46" stroke={IG} strokeWidth="0.6" />
+      <path d="M32 48 Q40 48 44 44" stroke={IG} strokeWidth="0.7" />
+      <path d="M42 42 L44 44 L42 46" stroke={IG} strokeWidth="0.6" />
+    </svg>
+  );
+}
+
+export function IconConsulting({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 64 64" className={className} fill="none">
+      {/* Two figures — consulting relationship */}
+      {/* Person 1 */}
+      <circle cx="22" cy="22" r="5" stroke={IS} strokeWidth="0.8" />
+      <path d="M14 40 L22 32 L30 40" stroke={IS} strokeWidth="0.7" />
+      {/* Person 2 */}
+      <circle cx="42" cy="22" r="5" stroke={IL} strokeWidth="0.7" />
+      <path d="M34 40 L42 32 L50 40" stroke={IL} strokeWidth="0.6" />
+      {/* Connection / exchange */}
+      <path d="M28 25 L36 25" stroke={IG} strokeWidth="0.7" strokeDasharray="2 2" />
+      <path d="M28 28 L36 28" stroke={IG} strokeWidth="0.5" strokeDasharray="2 2" />
+      {/* Document */}
+      <rect x="24" y="44" width="16" height="12" rx="1" stroke={IL} strokeWidth="0.5" />
+      <line x1="27" y1="48" x2="37" y2="48" stroke={IL} strokeWidth="0.3" />
+      <line x1="27" y1="51" x2="37" y2="51" stroke={IL} strokeWidth="0.3" />
+    </svg>
+  );
+}
+
+export function IconManufacturing({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 64 64" className={className} fill="none">
+      {/* Gear */}
+      <circle cx="24" cy="28" r="10" stroke={IS} strokeWidth="0.7" />
+      <circle cx="24" cy="28" r="5" stroke={IS} strokeWidth="0.5" />
+      {Array.from({ length: 8 }).map((_, i) => {
+        const a = (i * 45 * Math.PI) / 180;
+        return (
+          <line key={i} x1={24 + 6 * Math.cos(a)} y1={28 + 6 * Math.sin(a)} x2={24 + 9.5 * Math.cos(a)} y2={28 + 9.5 * Math.sin(a)} stroke={IS} strokeWidth="0.6" />
+        );
+      })}
+      {/* Component / circuit board trace */}
+      <path d="M38 20 L46 20 L46 28 L54 28" stroke={IG} strokeWidth="0.7" />
+      <path d="M38 28 L42 28 L42 36 L54 36" stroke={IG} strokeWidth="0.5" />
+      <circle cx="38" cy="20" r="1.5" fill={IG} />
+      <circle cx="54" cy="28" r="1.5" fill={IG} />
+      <circle cx="38" cy="28" r="1.5" fill={IG} />
+      <circle cx="54" cy="36" r="1.5" fill={IG} />
+      {/* Base / conveyor */}
+      <line x1="10" y1="48" x2="54" y2="48" stroke={IL} strokeWidth="0.6" />
+      <line x1="10" y1="44" x2="54" y2="44" stroke={IL} strokeWidth="0.4" />
+    </svg>
+  );
+}
+
+export function IconHolding({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 64 64" className={className} fill="none">
+      {/* Keystone arch */}
+      <path d="M10 52 L10 28 Q32 8 54 28 L54 52" stroke={IS} strokeWidth="0.8" />
+      {/* Keystone */}
+      <path d="M28 14 L32 10 L36 14 L34 22 L30 22 Z" stroke={IG} strokeWidth="0.7" />
+      {/* Pillars */}
+      <rect x="12" y="38" width="8" height="14" stroke={IL} strokeWidth="0.5" />
+      <rect x="44" y="38" width="8" height="14" stroke={IL} strokeWidth="0.5" />
+      {/* Foundation line */}
+      <line x1="6" y1="52" x2="58" y2="52" stroke={IS} strokeWidth="0.6" />
     </svg>
   );
 }

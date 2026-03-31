@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FadeIn } from "@/components/animate";
 import { GroupStructure, DuplicationCalculator } from "@/components/portfolio-visuals";
+import { DataAPIDiagram, GeocodeDiagram, ManufacturingDiagram } from "@/components/entity-diagrams";
 
 export default function PortfolioPage() {
   return (
@@ -67,6 +68,9 @@ export default function PortfolioPage() {
               <h2 className="font-serif text-2xl md:text-3xl text-cream mb-6">
                 Data infrastructure APIs
               </h2>
+              <div className="mb-8 py-4 border-t border-b border-white/[0.04] overflow-x-auto">
+                <DataAPIDiagram className="w-full min-w-[480px] h-auto" />
+              </div>
               <div className="space-y-5 text-stone-400 leading-relaxed text-[15px] md:text-base">
                 <p className="text-stone-300">
                   Enterprise-grade APIs serving structured data to clients
@@ -121,6 +125,9 @@ export default function PortfolioPage() {
               <h2 className="font-serif text-2xl md:text-3xl text-cream mb-6">
                 Geocoding &amp; distance APIs
               </h2>
+              <div className="mb-8 py-4 border-t border-b border-white/[0.04] overflow-x-auto">
+                <GeocodeDiagram className="w-full min-w-[480px] h-auto" />
+              </div>
               <div className="space-y-5 text-stone-400 leading-relaxed text-[15px] md:text-base">
                 <p className="text-stone-300">
                   High-throughput geocoding, reverse geocoding, and
@@ -254,6 +261,9 @@ export default function PortfolioPage() {
               <h2 className="font-serif text-2xl md:text-3xl text-cream mb-6">
                 Hardware &amp; manufacturing
               </h2>
+              <div className="mb-8 py-4 border-t border-b border-white/[0.04] overflow-x-auto">
+                <ManufacturingDiagram className="w-full min-w-[480px] h-auto" />
+              </div>
               <div className="space-y-5 text-stone-400 leading-relaxed text-[15px] md:text-base">
                 <p className="text-stone-300">
                   A small-scale manufacturing operation producing
