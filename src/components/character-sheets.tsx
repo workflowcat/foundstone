@@ -113,9 +113,11 @@ interface CoverageRow {
 
 export function PartyComposition({ className = "" }: { className?: string }) {
   const coverage: CoverageRow[] = [
-    { dimension: "Operating cadence", andrii: 3, jana: 1, marina: 0 },
-    { dimension: "Vendor management", andrii: 3, jana: 1, marina: 0 },
-    { dimension: "Hiring pipeline", andrii: 2, jana: 0, marina: 1 },
+    { dimension: "Corporate structure", andrii: 3, jana: 1, marina: 0 },
+    { dimension: "Legal / governance", andrii: 3, jana: 1, marina: 0 },
+    { dimension: "Market entry strategy", andrii: 3, jana: 0, marina: 2 },
+    { dimension: "Hiring pipeline", andrii: 3, jana: 0, marina: 1 },
+    { dimension: "Fundraise / exit prep", andrii: 3, jana: 2, marina: 0 },
     { dimension: "Management reporting", andrii: 1, jana: 3, marina: 0 },
     { dimension: "Cash flow / treasury", andrii: 0, jana: 3, marina: 0 },
     { dimension: "Bank relationships", andrii: 1, jana: 3, marina: 0 },
@@ -197,9 +199,9 @@ export function PartyComposition({ className = "" }: { className?: string }) {
         </p>
         <div className="space-y-2">
           {[
-            "No dedicated technical lead — engineering oversight relies on external partners and the founder's technical background",
-            "Data infrastructure (warehousing, dashboards, analytics) is handled ad hoc rather than as a standing function",
-            "Legal is outsourced per-jurisdiction — no in-house counsel",
+            "No dedicated daily operations person — Andrii is strategic, not a daily operator. Embedded COO work for clients is scoped per engagement.",
+            "No dedicated technical lead — engineering oversight relies on external partners",
+            "Data infrastructure (warehousing, dashboards, analytics) is handled ad hoc",
           ].map((gap) => (
             <p key={gap} className="text-stone-600 text-xs leading-relaxed pl-3 border-l border-white/[0.04]">
               {gap}

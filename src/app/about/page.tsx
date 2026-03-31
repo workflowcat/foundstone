@@ -119,12 +119,10 @@ export default function AboutPage() {
               The party
             </p>
             <p className="text-stone-400 leading-relaxed max-w-2xl mb-16">
-              Three people covering operations, finance, and marketing
+              Three people covering strategy, finance, and marketing
               across a group of businesses in three jurisdictions. Below
               is what each person actually does, what they have been
-              through, and where the coverage gaps are. We are honest
-              about the gaps because pretending they do not exist is how
-              companies get into trouble.
+              through, and where the coverage gaps are.
             </p>
           </FadeIn>
 
@@ -137,22 +135,22 @@ export default function AboutPage() {
               <CharacterSheet
                 name="Andrii"
                 role="Chief of Staff"
-                origin="Built the group's first data product. Ended up running the operations, compliance, and automation because somebody had to and he was closest to the problem."
+                origin="Cornell Law. Joined recently to build out the corporate structure, market entry strategy, and hiring infrastructure. Thinks about what the company looks like in three years when you are trying to raise or sell."
                 stats={[
-                  { name: "Operations", value: 5 },
-                  { name: "Compliance", value: 4 },
-                  { name: "Process design", value: 5 },
-                  { name: "Vendor mgmt", value: 4 },
-                  { name: "Automation", value: 4 },
-                  { name: "Finance", value: 2 },
+                  { name: "Corporate structure", value: 5 },
+                  { name: "Legal / compliance", value: 5 },
+                  { name: "Market entry", value: 4 },
+                  { name: "Hiring strategy", value: 4 },
+                  { name: "Fundraise prep", value: 4 },
+                  { name: "Daily ops", value: 2 },
                   { name: "Marketing", value: 1 },
                 ]}
-                carries={["Operating cadence", "Vendor stack", "Compliance checklists", "Automation workflows", "Incident playbooks"]}
+                carries={["Entity structure", "Governance frameworks", "Hiring scorecards", "Market entry playbooks", "Due diligence prep"]}
                 hasSeen={[
-                  "72-hour bank documentation drill, multiple times",
-                  "Platform API deprecation with 3-day adaptation window",
-                  "Payroll setup across three employment law regimes",
-                  "The transition from founder-does-everything to delegated ops",
+                  "Corporate restructuring ahead of a fundraise",
+                  "Multi-jurisdiction entity setup from scratch",
+                  "Hiring pipelines built for teams entering new markets",
+                  "What investors and acquirers actually look at in the back office",
                 ]}
               />
             </StaggerItem>
