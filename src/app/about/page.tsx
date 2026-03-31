@@ -1,39 +1,7 @@
 import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animate";
 import { GeometricSection } from "@/components/geometric-bg";
+import { CharacterSheet, PartyComposition } from "@/components/character-sheets";
 import Link from "next/link";
-
-const team = [
-  {
-    name: "Andrii",
-    role: "Chief of Staff",
-    initial: "A",
-    lines: [
-      "Operations, compliance, automation.",
-      "Three jurisdictions, one operating cadence.",
-      "Writes the notes.",
-    ],
-  },
-  {
-    name: "Jana",
-    role: "CFO",
-    initial: "J",
-    lines: [
-      "Multi-entity finance. Estonia, Cyprus, Ukraine.",
-      "Closes the books in five days.",
-      "Knows what your bank wants before they ask.",
-    ],
-  },
-  {
-    name: "Marina",
-    role: "CMO",
-    initial: "M",
-    lines: [
-      "B2B positioning and channel strategy.",
-      "Builds systems that compound.",
-      "Measures with numbers.",
-    ],
-  },
-];
 
 export default function AboutPage() {
   return (
@@ -54,7 +22,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Origin story — dark, no cream section */}
+      {/* Origin story */}
       <section className="relative py-16 md:py-24 px-6 md:px-12">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
@@ -69,22 +37,17 @@ export default function AboutPage() {
                 data and API businesses, we were that someone.
               </p>
               <p>
-                Over a few years we built internal systems for payment
-                controls, management reporting, compliance tracking,
-                operational automation. Formalized them into repeatable
-                processes. Then started noticing that every founder we
-                talked to was solving the same problems from scratch —
-                usually while also trying to build product, usually
-                discovering the compliance gap when a bank asked for
-                documentation that did not exist.
+                We built internal systems for payment controls, management
+                reporting, compliance tracking, operational automation. Then
+                we noticed that every founder we talked to was solving the
+                same problems from scratch — usually while trying to build
+                product, usually discovering the compliance gap when a bank
+                asked for documentation that did not exist.
               </p>
               <p>
                 Same team, same systems. Now on retainer for companies
-                that are not ours.
-              </p>
-              <p className="text-stone-500 text-sm">
-                Registered in Cyprus (HE&nbsp;483648, Limassol). Real
-                office. Real employees.
+                that are not ours. Registered in Cyprus (HE&nbsp;483648,
+                Limassol).
               </p>
             </div>
           </FadeIn>
@@ -112,9 +75,9 @@ export default function AboutPage() {
                 </h3>
                 <p className="text-stone-400 leading-relaxed text-[15px]">
                   We join your Slack, your standups, your board prep. The
-                  deliverable is not a report — it is the thing getting done.
-                  If your AP workflow is broken, we fix the workflow. If
-                  nobody is closing the books, we close the books.
+                  deliverable is the thing getting done. If your AP workflow
+                  is broken, we fix the workflow. If nobody is closing the
+                  books, we close the books.
                 </p>
               </div>
             </StaggerItem>
@@ -124,11 +87,10 @@ export default function AboutPage() {
                   Repeatable
                 </h3>
                 <p className="text-stone-400 leading-relaxed text-[15px]">
-                  Every process we run for our own companies is documented,
-                  version-controlled, and available to every client. Payment
-                  controls, management reporting templates, compliance
-                  checklists, vendor evaluation frameworks. Built once,
-                  maintained permanently.
+                  Every process we run for our own companies is documented
+                  and available to every client. Payment controls, reporting
+                  templates, compliance checklists. Built once, maintained
+                  permanently.
                 </p>
               </div>
             </StaggerItem>
@@ -140,8 +102,8 @@ export default function AboutPage() {
                 <p className="text-stone-400 leading-relaxed text-[15px]">
                   We have been through enhanced due diligence recently,
                   multiple times, across multiple jurisdictions. We know
-                  what banks want to see because we produce it for ourselves.
-                  This is not a service we added. It is how we operate.
+                  what banks want to see because we produce it for
+                  ourselves.
                 </p>
               </div>
             </StaggerItem>
@@ -149,47 +111,107 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* ═══ The Party ═══ */}
       <section className="relative py-24 md:py-32 px-6 md:px-12 border-t border-white/[0.04]">
         <div className="max-w-[1200px] mx-auto">
           <FadeIn>
-            <p className="text-xs tracking-[0.3em] uppercase text-stone-600 mb-16">
-              Team
+            <p className="text-xs tracking-[0.3em] uppercase text-stone-600 mb-4">
+              The party
+            </p>
+            <p className="text-stone-400 leading-relaxed max-w-2xl mb-16">
+              Three people covering operations, finance, and marketing
+              across a group of businesses in three jurisdictions. Below
+              is what each person actually does, what they have been
+              through, and where the coverage gaps are. We are honest
+              about the gaps because pretending they do not exist is how
+              companies get into trouble.
             </p>
           </FadeIn>
 
+          {/* Character sheets */}
           <StaggerChildren
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
+            className="grid grid-cols-1 lg:grid-cols-3 gap-6"
             stagger={0.12}
           >
-            {team.map((person) => (
-              <StaggerItem key={person.name}>
-                <div className="relative p-8 border border-white/[0.04] bg-stone-900/30">
-                  {/* Geometric initial */}
-                  <div className="w-12 h-12 flex items-center justify-center border border-amber/30 mb-6">
-                    <span className="font-serif text-xl text-amber/70">
-                      {person.initial}
-                    </span>
-                  </div>
+            <StaggerItem>
+              <CharacterSheet
+                name="Andrii"
+                role="Chief of Staff"
+                origin="Built the group's first data product. Ended up running the operations, compliance, and automation because somebody had to and he was closest to the problem."
+                stats={[
+                  { name: "Operations", value: 5 },
+                  { name: "Compliance", value: 4 },
+                  { name: "Process design", value: 5 },
+                  { name: "Vendor mgmt", value: 4 },
+                  { name: "Automation", value: 4 },
+                  { name: "Finance", value: 2 },
+                  { name: "Marketing", value: 1 },
+                ]}
+                carries={["Operating cadence", "Vendor stack", "Compliance checklists", "Automation workflows", "Incident playbooks"]}
+                hasSeen={[
+                  "72-hour bank documentation drill, multiple times",
+                  "Platform API deprecation with 3-day adaptation window",
+                  "Payroll setup across three employment law regimes",
+                  "The transition from founder-does-everything to delegated ops",
+                ]}
+              />
+            </StaggerItem>
 
-                  <p className="font-serif text-xl text-cream mb-1">
-                    {person.name}
-                  </p>
-                  <p className="text-xs tracking-[0.2em] uppercase text-amber/40 mb-5">
-                    {person.role}
-                  </p>
+            <StaggerItem>
+              <CharacterSheet
+                name="Jana"
+                role="CFO"
+                origin="Multi-entity finance across Estonia, Cyprus, and Ukraine. Closes the books in five days. Knows what the bank wants before they ask because she has produced the documentation set enough times to do it from memory."
+                stats={[
+                  { name: "Financial reporting", value: 5 },
+                  { name: "Cash management", value: 5 },
+                  { name: "Bank relationships", value: 5 },
+                  { name: "Multi-entity", value: 5 },
+                  { name: "Compliance", value: 4 },
+                  { name: "Operations", value: 2 },
+                  { name: "Marketing", value: 0 },
+                ]}
+                carries={["Management accounts", "Cash flow models", "Transfer pricing docs", "Board deck templates", "Bank file set"]}
+                hasSeen={[
+                  "Enhanced due diligence across multiple jurisdictions simultaneously",
+                  "Multi-currency consolidation with three fiscal calendars",
+                  "Usage-based revenue recognition at the API-call level",
+                  "The moment a founder looks at their bank balance and thinks it is revenue",
+                ]}
+              />
+            </StaggerItem>
 
-                  <div className="space-y-2">
-                    {person.lines.map((line) => (
-                      <p key={line} className="text-stone-400 text-sm leading-relaxed">
-                        {line}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
+            <StaggerItem>
+              <CharacterSheet
+                name="Marina"
+                role="CMO"
+                origin="B2B positioning and channel strategy. Builds systems that compound. Measures with numbers. Has rebuilt the marketing function for companies that were running on LinkedIn posts and hope."
+                stats={[
+                  { name: "Positioning", value: 5 },
+                  { name: "Channel strategy", value: 5 },
+                  { name: "Content systems", value: 4 },
+                  { name: "Attribution", value: 4 },
+                  { name: "Unit economics", value: 3 },
+                  { name: "Operations", value: 1 },
+                  { name: "Finance", value: 1 },
+                ]}
+                carries={["Positioning framework", "Channel playbook", "Content calendar", "Attribution model", "Competitive landscape"]}
+                hasSeen={[
+                  "Company with 18-month-old website and no attribution model",
+                  "Founder postponing positioning decisions for a year",
+                  "The difference between content that compounds and content that evaporates",
+                  "Marketing hire with no direction and no metrics",
+                ]}
+              />
+            </StaggerItem>
           </StaggerChildren>
+
+          {/* Party composition table */}
+          <FadeIn>
+            <div className="mt-12">
+              <PartyComposition />
+            </div>
+          </FadeIn>
         </div>
       </section>
 
