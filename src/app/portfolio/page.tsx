@@ -23,12 +23,12 @@ export default function PortfolioPage() {
             <div className="mt-8 text-stone-400 text-lg max-w-2xl leading-relaxed space-y-4">
               <p>
                 Foundstone manages a group of businesses across data
-                infrastructure, B2B services, consulting, and
-                manufacturing, operating out of Estonia, Cyprus, and
-                Ukraine. They have different margin structures, different
-                client profiles, different regulatory exposure, and
-                different operational rhythms — which is both the
-                challenge and the reason the holding company exists.
+                infrastructure, B2B SaaS, and manufacturing, operating
+                out of Estonia, Cyprus, and Ukraine. They have different
+                margin structures, different client profiles, different
+                regulatory exposure, and different operational rhythms —
+                which is both the challenge and the reason the holding
+                company exists.
               </p>
               <p>
                 What follows is a description of each business through
@@ -208,52 +208,11 @@ export default function PortfolioPage() {
             </article>
           </FadeIn>
 
-          {/* ─── Consulting ─── */}
-          <FadeIn>
-            <article className="py-16 md:py-20 border-t border-white/[0.06]">
-              <div className="flex items-center gap-4 mb-2">
-                <p className="text-amber/50 text-sm font-mono">04</p>
-                <p className="text-xs tracking-wider text-stone-600">
-                  Cyprus &middot; Ukraine
-                </p>
-              </div>
-              <h2 className="font-serif text-2xl md:text-3xl text-cream mb-6">
-                Services &amp; consulting
-              </h2>
-              <div className="space-y-5 text-stone-400 leading-relaxed text-[15px] md:text-base">
-                <p className="text-stone-300">
-                  Consulting and advisory engagements that grew out of the
-                  operational expertise the group accumulated over the
-                  years — initially for companies in the same ecosystem,
-                  then for companies outside it who were dealing with
-                  similar problems and did not have the in-house capacity
-                  to solve them.
-                </p>
-                <p>
-                  The operational challenge of a services business is
-                  different from a product business in ways that are easy
-                  to underestimate. Revenue is tied to people and hours
-                  rather than subscriptions and usage, which means
-                  capacity planning is about human bandwidth rather than
-                  server bandwidth, and the constraint on growth is
-                  finding and retaining people who can deliver at the
-                  level the brand promises — a problem that compounds
-                  quickly because every underdelivered engagement damages
-                  the next three sales conversations. We handle this by
-                  keeping the team small and the engagement scope tight,
-                  and by saying no to work that falls outside the
-                  operational functions we actually run for our own
-                  companies.
-                </p>
-              </div>
-            </article>
-          </FadeIn>
-
           {/* ─── Manufacturing ─── */}
           <FadeIn>
             <article className="py-16 md:py-20 border-t border-white/[0.06]">
               <div className="flex items-center gap-4 mb-2">
-                <p className="text-amber/50 text-sm font-mono">05</p>
+                <p className="text-amber/50 text-sm font-mono">04</p>
                 <p className="text-xs tracking-wider text-stone-600">
                   Ukraine
                 </p>
@@ -308,7 +267,7 @@ export default function PortfolioPage() {
           <FadeIn>
             <article className="py-16 md:py-20 border-t border-white/[0.06]">
               <div className="flex items-center gap-4 mb-2">
-                <p className="text-amber/50 text-sm font-mono">06</p>
+                <p className="text-amber/50 text-sm font-mono">05</p>
                 <p className="text-xs tracking-wider text-stone-600">
                   Cyprus &middot; HE 483648
                 </p>
@@ -323,14 +282,14 @@ export default function PortfolioPage() {
                   can focus on their products and clients.
                 </p>
                 <p>
-                  Running five businesses as one undifferentiated group
+                  Running these businesses as one undifferentiated group
                   hides which one is generating the margin and which one
                   is consuming the capital, and the consolidated numbers
                   tell a story that may have very little to do with
                   what is actually happening inside any individual
                   entity. Running them as fully independent companies
-                  produces five sets of bank relationships, five payroll
-                  systems, five compliance packages, five versions of
+                  produces separate bank relationships, payroll
+                  systems, compliance packages, versions of
                   every vendor contract negotiated slightly differently
                   each time by someone who does not know what the other
                   four negotiated. The holding company sits between those
@@ -355,12 +314,29 @@ export default function PortfolioPage() {
                 </p>
                 <p>
                   These are the same functions we offer on retainer to
-                  companies outside the group. We did not design them as
-                  products. They accumulated as solutions to problems we
-                  encountered while running our own businesses, and at
-                  some point we noticed that every founder we talked to
-                  was encountering the same problems and solving them
-                  from scratch.
+                  companies outside the group. They accumulated as
+                  solutions to problems we encountered running our own
+                  businesses, and at some point we noticed that every
+                  founder we talked to was encountering the same problems
+                  and solving them from scratch.
+                </p>
+                <p>
+                  A note on the services side of the business, since it
+                  is worth being honest about the structural tension:
+                  services revenue is tied to people and hours, which
+                  means growth requires hiring, which requires more
+                  clients to cover the cost, which requires more people
+                  to serve the clients. The cycle is familiar to anyone
+                  who has run an agency or a consulting firm — you are
+                  always either over-capacity or under-staffed, and the
+                  treadmill does not stop. We are aware of this. Our
+                  focus is on product businesses that scale without
+                  linear headcount growth. The services arm exists
+                  because the operational expertise was already there
+                  and the demand was obvious, but we scope it
+                  deliberately — small team, tight engagement boundaries,
+                  saying no to work that falls outside the functions we
+                  actually run for ourselves.
                 </p>
               </div>
             </article>
