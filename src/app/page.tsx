@@ -78,8 +78,14 @@ export default function Home() {
             </h1>
           </FadeIn>
 
+          <FadeIn delay={0.4}>
+            <p className="mt-6 text-stone-600 text-sm tracking-wider text-center">
+              Привіт, Діана &#x1F44B;
+            </p>
+          </FadeIn>
+
           <FadeIn delay={0.5}>
-            <p className="mt-10 max-w-2xl mx-auto text-stone-400 text-lg leading-relaxed text-center">
+            <p className="mt-6 max-w-2xl mx-auto text-stone-400 text-lg leading-relaxed text-center">
               Fractional COO, CFO, and CMO on retainer. We&apos;ve been
               running these functions for our own companies since 2018.
               Now we run them for yours.
