@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FadeIn } from "@/components/animate";
+import { AdvisoryDiagram, EmbeddedDiagram, ProjectDiagram, TransitionDiagram } from "@/components/engagement-diagrams";
 
 export default function ServicesPage() {
   return (
@@ -50,7 +51,10 @@ export default function ServicesPage() {
                     <p className="text-stone-700 text-xs">per month</p>
                   </div>
                   <div>
-                    <h3 className="font-serif text-xl text-cream mb-3">Advisory</h3>
+                    <h3 className="font-serif text-xl text-cream mb-4">Advisory</h3>
+                    <div className="mb-5 py-3 overflow-x-auto">
+                      <AdvisoryDiagram className="w-full min-w-[360px] h-auto" />
+                    </div>
                     <p className="text-stone-400 leading-relaxed text-[15px]">
                       A standing call, biweekly or monthly, where you talk
                       through operational decisions with someone who has seen
@@ -77,7 +81,10 @@ export default function ServicesPage() {
                     <p className="text-stone-700 text-xs">per week</p>
                   </div>
                   <div>
-                    <h3 className="font-serif text-xl text-cream mb-3">Embedded</h3>
+                    <h3 className="font-serif text-xl text-cream mb-4">Embedded</h3>
+                    <div className="mb-5 py-3 overflow-x-auto">
+                      <EmbeddedDiagram className="w-full min-w-[360px] h-auto" />
+                    </div>
                     <p className="text-stone-400 leading-relaxed text-[15px]">
                       Two to three days a week inside your operations. We
                       join your Slack, attend your standups, own the weekly
@@ -105,7 +112,10 @@ export default function ServicesPage() {
                     <p className="text-stone-700 text-xs">day scope</p>
                   </div>
                   <div>
-                    <h3 className="font-serif text-xl text-cream mb-3">Project</h3>
+                    <h3 className="font-serif text-xl text-cream mb-4">Project</h3>
+                    <div className="mb-5 py-3 overflow-x-auto">
+                      <ProjectDiagram className="w-full min-w-[360px] h-auto" />
+                    </div>
                     <p className="text-stone-400 leading-relaxed text-[15px]">
                       A defined deliverable with a written scope, a
                       timeline, and a clear endpoint. Examples: produce
@@ -140,7 +150,10 @@ export default function ServicesPage() {
                     <p className="text-stone-700 text-xs">months</p>
                   </div>
                   <div>
-                    <h3 className="font-serif text-xl text-cream mb-3">Build &amp; transition</h3>
+                    <h3 className="font-serif text-xl text-cream mb-4">Build &amp; transition</h3>
+                    <div className="mb-5 py-3 overflow-x-auto">
+                      <TransitionDiagram className="w-full min-w-[360px] h-auto" />
+                    </div>
                     <p className="text-stone-400 leading-relaxed text-[15px]">
                       The full arc: build the function from scratch, hire
                       the team underneath it, run it until the right
