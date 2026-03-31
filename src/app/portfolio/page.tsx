@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FadeIn } from "@/components/animate";
 import { GroupStructure, DuplicationCalculator } from "@/components/portfolio-visuals";
 import { DataAPIDiagram, GeocodeDiagram, ManufacturingDiagram } from "@/components/entity-diagrams";
+import { ServicesTreadmill, HoldingComplexity } from "@/components/business-model-diagrams";
 
 export default function PortfolioPage() {
   return (
@@ -275,6 +276,9 @@ export default function PortfolioPage() {
               <h2 className="font-serif text-2xl md:text-3xl text-cream mb-6">
                 Foundstone Capital
               </h2>
+              <div className="mb-8 py-4 border-t border-b border-white/[0.04] overflow-x-auto">
+                <HoldingComplexity className="w-full min-w-[440px] h-auto" />
+              </div>
               <div className="space-y-5 text-stone-400 leading-relaxed text-[15px] md:text-base">
                 <p className="text-stone-300">
                   The holding and management company. Limassol. The layer
@@ -320,23 +324,34 @@ export default function PortfolioPage() {
                   founder we talked to was encountering the same problems
                   and solving them from scratch.
                 </p>
+                <div className="my-8 py-4 border-t border-b border-white/[0.04] overflow-x-auto">
+                  <ServicesTreadmill className="w-full min-w-[440px] h-auto" />
+                </div>
+
                 <p>
-                  A note on the services side of the business, since it
-                  is worth being honest about the structural tension:
-                  services revenue is tied to people and hours, which
-                  means growth requires hiring, which requires more
-                  clients to cover the cost, which requires more people
-                  to serve the clients. The cycle is familiar to anyone
-                  who has run an agency or a consulting firm — you are
-                  always either over-capacity or under-staffed, and the
-                  treadmill does not stop. We are aware of this. Our
-                  focus is on product businesses that scale without
-                  linear headcount growth. The services arm exists
-                  because the operational expertise was already there
-                  and the demand was obvious, but we scope it
-                  deliberately — small team, tight engagement boundaries,
-                  saying no to work that falls outside the functions we
-                  actually run for ourselves.
+                  The services side of the business has a structural
+                  tension we are honest about. Services revenue is tied
+                  to people and hours: more clients means more people
+                  means more overhead means you need more clients to
+                  cover the overhead. The cycle is familiar to anyone
+                  who has run an agency or a consulting firm. You are
+                  always either chasing the next engagement or
+                  scrambling to staff the one you just won.
+                </p>
+                <p>
+                  This is also how many companies start. It is where
+                  they earn their first money, where they learn what
+                  the market actually needs, and where the operational
+                  expertise accumulates that eventually becomes
+                  something more scalable. We understand the model
+                  because we have lived inside it. Our focus is on
+                  product businesses — APIs, SaaS, things that scale
+                  without linear headcount growth. The services arm
+                  exists because the operational expertise was already
+                  built and the demand was obvious, but we scope it
+                  deliberately: small team, tight engagement
+                  boundaries, saying no to work outside the functions
+                  we actually run for our own companies.
                 </p>
               </div>
             </article>
