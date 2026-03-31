@@ -311,44 +311,51 @@ export default function ServicesPage() {
               </article>
             </FadeIn>
 
-            {/* Infrastructure */}
+            {/* Back Office */}
             <FadeIn>
               <article className="py-16 md:py-20 border-t border-white/[0.06]">
                 <p className="text-amber/50 text-sm font-mono mb-2">04</p>
                 <h2 className="font-serif text-2xl md:text-3xl text-cream mb-6">
-                  Infrastructure &amp; Governance
+                  Back Office
                 </h2>
                 <div className="space-y-5 text-stone-400 leading-relaxed text-[15px] md:text-base">
                   <p>
-                    The functions nobody wants to think about and
-                    everybody needs. Technical operations (CI/CD,
-                    monitoring, SOC 2 prep). Data infrastructure
-                    (warehouse, dashboards). People operations (payroll
-                    across jurisdictions, employment contracts,
-                    onboarding). Compliance ({" "}
+                    Entity management: setting up companies, maintaining
+                    intercompany agreements, registered agent
+                    coordination, annual filings, the corporate
+                    housekeeping that nobody thinks about until a bank
+                    or a regulator asks for it. People operations:
+                    payroll across jurisdictions, employment contracts,
+                    onboarding workflows — three different employment
+                    law regimes if you are operating across the EU and
+                    Ukraine, each with its own expectations about how
+                    things work. Compliance: AML/EDD readiness,{" "}
+                    <Link href="/notes/what-your-bank-sees" className="text-amber/60 hover:text-amber/80 transition-colors">
+                      bank file maintenance
+                    </Link>,{" "}
                     <Link href="/notes/risk-management-1556" className="text-amber/60 hover:text-amber/80 transition-colors">
                       risk registers
-                    </Link>, corporate housekeeping, the{" "}
-                    <Link href="/notes/what-your-bank-sees" className="text-amber/60 hover:text-amber/80 transition-colors">
-                      documentation banks ask for
-                    </Link>{" "}
-                    during enhanced due diligence). Entity management.
+                    </Link>, document registers with expiry tracking.
                   </p>
                   <p>
-                    These are almost always project engagements at first
-                    — build the compliance package, get SOC 2 ready,
-                    set up payroll in a new jurisdiction — and then
-                    convert to a light retained function to maintain
-                    what was built. The governance office is a standing
-                    engagement by nature, because compliance
-                    documentation expires and bank reviews recur on
-                    their own schedule. The 72-hour documentation drill
-                    either works or it does not, and you find out which
-                    one when the email from the bank arrives.
+                    These usually start as project engagements — build
+                    the compliance package, set up payroll in a new
+                    jurisdiction, produce the corporate documentation
+                    set that a bank needs during enhanced due
+                    diligence — and then convert to a light retained
+                    function to maintain what was built. The governance
+                    office is a standing engagement by nature, because
+                    compliance documentation expires, bank reviews
+                    recur on their own schedule, and the{" "}
+                    <Link href="/notes/what-your-bank-sees" className="text-amber/60 hover:text-amber/80 transition-colors">
+                      72-hour documentation drill
+                    </Link>{" "}
+                    either works or it does not. You find out which one
+                    when the email arrives.
                   </p>
                 </div>
                 <div className="mt-6 flex flex-wrap gap-2">
-                  {["Technical ops", "Data infrastructure", "People ops", "Compliance", "Entity management", "SOC 2", "Governance office"].map((t) => (
+                  {["Entity management", "People ops", "Compliance", "AML/EDD readiness", "Bank file maintenance", "Governance office"].map((t) => (
                     <span key={t} className="text-xs tracking-wider text-stone-600 border border-white/[0.04] px-3 py-1">{t}</span>
                   ))}
                 </div>

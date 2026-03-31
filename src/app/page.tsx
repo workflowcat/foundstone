@@ -58,9 +58,9 @@ const services = [
     desc: "Positioning, channel strategy, content systems. Where the next 50 customers come from, measured with numbers.",
   },
   {
-    title: "Infrastructure",
-    roles: "CTO \u00b7 Data Ops \u00b7 People Ops \u00b7 Governance",
-    desc: "Technical operations, data warehousing, HR systems, compliance frameworks, entity management. The load-bearing functions.",
+    title: "Back Office",
+    roles: "People Ops \u00b7 Compliance \u00b7 Entity Management",
+    desc: "Payroll across jurisdictions, employment contracts, AML/EDD readiness, bank file maintenance, corporate housekeeping. The functions that keep the structure clean.",
   },
 ];
 
