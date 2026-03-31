@@ -45,8 +45,7 @@ export default function AboutPage() {
               </p>
               <p>
                 Same team, same systems. Now on retainer for companies
-                that are not ours. Registered in Cyprus (HE&nbsp;483648,
-                Limassol).
+                that are not ours.
               </p>
             </div>
           </FadeIn>
@@ -61,10 +60,11 @@ export default function AboutPage() {
               The party
             </p>
             <p className="text-stone-400 leading-relaxed max-w-2xl mb-16">
-              Three people covering strategy, finance, and marketing
-              across a group of businesses in three jurisdictions. Below
-              is what each person actually does, what they have been
-              through, and where the coverage gaps are.
+              The core team you work with directly. Behind them is a
+              network of partners, advisors, and jurisdiction-specific
+              specialists we bring in when the engagement requires it.
+              Below is who does what, what they have been through, and
+              where the gaps are.
             </p>
           </FadeIn>
 

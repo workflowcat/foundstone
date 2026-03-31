@@ -29,31 +29,31 @@ export function CharacterSheet({
   name, role, origin, stats, carries, hasSeen, className = "",
 }: CharacterProps) {
   return (
-    <div className={`border border-white/[0.06] bg-stone-900/30 p-6 md:p-8 ${className}`}>
+    <div className={`border border-white/[0.08] bg-stone-900/40 p-6 md:p-8 ${className}`}>
       {/* Header */}
       <div className="flex items-start justify-between mb-6">
         <div>
           <p className="font-serif text-2xl text-cream">{name}</p>
-          <p className="text-xs tracking-[0.2em] uppercase text-amber/50 mt-1">{role}</p>
+          <p className="text-xs tracking-[0.2em] uppercase text-amber/70 mt-1">{role}</p>
         </div>
         {/* Level / class icon — geometric initial */}
-        <div className="w-10 h-10 flex items-center justify-center border border-amber/30 shrink-0">
-          <span className="font-serif text-lg text-amber/60">{name[0]}</span>
+        <div className="w-10 h-10 flex items-center justify-center border border-amber/40 shrink-0">
+          <span className="font-serif text-lg text-amber/80">{name[0]}</span>
         </div>
       </div>
 
       {/* Origin */}
-      <p className="text-stone-400 text-sm leading-relaxed mb-8 italic">
+      <p className="text-stone-300 text-sm leading-relaxed mb-8 italic">
         {origin}
       </p>
 
       {/* Stats — hand-drawn bar chart */}
       <div className="mb-8">
-        <p className="text-xs tracking-[0.15em] uppercase text-stone-600 mb-4">Attributes</p>
+        <p className="text-xs tracking-[0.15em] uppercase text-stone-500 mb-4">Attributes</p>
         <div className="space-y-3">
           {stats.map((stat) => (
             <div key={stat.name} className="flex items-center gap-3">
-              <span className="text-xs text-stone-500 w-28 shrink-0 text-right">{stat.name}</span>
+              <span className="text-xs text-stone-400 w-28 shrink-0 text-right">{stat.name}</span>
               <div className="flex-1 flex gap-1.5">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <div
@@ -77,10 +77,10 @@ export function CharacterSheet({
 
       {/* Carries */}
       <div className="mb-8">
-        <p className="text-xs tracking-[0.15em] uppercase text-stone-600 mb-3">Carries</p>
+        <p className="text-xs tracking-[0.15em] uppercase text-stone-500 mb-3">Carries</p>
         <div className="flex flex-wrap gap-2">
           {carries.map((item) => (
-            <span key={item} className="text-xs text-stone-500 border border-white/[0.04] px-2.5 py-1">
+            <span key={item} className="text-xs text-stone-400 border border-white/[0.06] px-2.5 py-1">
               {item}
             </span>
           ))}
@@ -89,10 +89,10 @@ export function CharacterSheet({
 
       {/* Has seen */}
       <div>
-        <p className="text-xs tracking-[0.15em] uppercase text-stone-600 mb-3">Has seen</p>
+        <p className="text-xs tracking-[0.15em] uppercase text-stone-500 mb-3">Has seen</p>
         <div className="space-y-2">
           {hasSeen.map((exp) => (
-            <p key={exp} className="text-stone-500 text-xs leading-relaxed pl-3 border-l border-white/[0.04]">
+            <p key={exp} className="text-stone-400 text-xs leading-relaxed pl-3 border-l border-white/[0.06]">
               {exp}
             </p>
           ))}
@@ -146,11 +146,11 @@ export function PartyComposition({ className = "" }: { className?: string }) {
   };
 
   return (
-    <div className={`border border-white/[0.06] bg-stone-900/30 p-6 md:p-8 ${className}`}>
-      <p className="text-xs tracking-[0.15em] uppercase text-stone-600 mb-2">
+    <div className={`border border-white/[0.08] bg-stone-900/40 p-6 md:p-8 ${className}`}>
+      <p className="text-xs tracking-[0.15em] uppercase text-stone-500 mb-2">
         Party composition
       </p>
-      <p className="text-stone-500 text-sm mb-6">
+      <p className="text-stone-400 text-sm mb-6">
         Coverage map across operational dimensions. Primary means they
         own it. Capable means they can run it. Backup means they can
         cover in a pinch.
@@ -169,7 +169,7 @@ export function PartyComposition({ className = "" }: { className?: string }) {
           <tbody>
             {coverage.map((row) => (
               <tr key={row.dimension} className="border-b border-white/[0.02]">
-                <td className="text-stone-500 py-2 pr-4">{row.dimension}</td>
+                <td className="text-stone-400 py-2 pr-4">{row.dimension}</td>
                 {[row.andrii, row.jana, row.marina].map((v, i) => (
                   <td key={i} className="text-center py-2 px-2">
                     {v > 0 && (
@@ -194,16 +194,17 @@ export function PartyComposition({ className = "" }: { className?: string }) {
 
       {/* Gaps */}
       <div className="mt-8 pt-6 border-t border-white/[0.04]">
-        <p className="text-xs tracking-[0.15em] uppercase text-stone-600 mb-3">
+        <p className="text-xs tracking-[0.15em] uppercase text-stone-500 mb-3">
           Known gaps
         </p>
         <div className="space-y-2">
           {[
-            "No dedicated daily operations person — Andrii is strategic, not a daily operator. Embedded COO work for clients is scoped per engagement.",
+            "No dedicated daily operations person — embedded COO work for clients is scoped per engagement and staffed accordingly",
             "No dedicated technical lead — engineering oversight relies on external partners",
-            "Data infrastructure (warehousing, dashboards, analytics) is handled ad hoc",
+            "Data infrastructure handled ad hoc — not a standing function yet",
+            "Legal outsourced per-jurisdiction via partner network",
           ].map((gap) => (
-            <p key={gap} className="text-stone-600 text-xs leading-relaxed pl-3 border-l border-white/[0.04]">
+            <p key={gap} className="text-stone-500 text-xs leading-relaxed pl-3 border-l border-white/[0.06]">
               {gap}
             </p>
           ))}
