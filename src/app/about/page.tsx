@@ -1,5 +1,4 @@
 import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animate";
-import { GeometricSection } from "@/components/geometric-bg";
 import { CharacterSheet, PartyComposition } from "@/components/character-sheets";
 import Link from "next/link";
 
@@ -51,63 +50,6 @@ export default function AboutPage() {
               </p>
             </div>
           </FadeIn>
-        </div>
-      </section>
-
-      {/* How we operate */}
-      <section className="relative py-24 md:py-32 px-6 md:px-12 border-t border-white/[0.04]">
-        <GeometricSection variant="strata" />
-        <div className="relative z-10 max-w-[1200px] mx-auto">
-          <FadeIn>
-            <p className="text-xs tracking-[0.3em] uppercase text-stone-600 mb-16">
-              How we operate
-            </p>
-          </FadeIn>
-
-          <StaggerChildren
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
-            stagger={0.15}
-          >
-            <StaggerItem>
-              <div className="relative pl-6 border-l border-amber/30">
-                <h3 className="font-serif text-xl md:text-2xl text-cream mb-4">
-                  Embedded
-                </h3>
-                <p className="text-stone-400 leading-relaxed text-[15px]">
-                  We join your Slack, your standups, your board prep. The
-                  deliverable is the thing getting done. If your AP workflow
-                  is broken, we fix the workflow. If nobody is closing the
-                  books, we close the books.
-                </p>
-              </div>
-            </StaggerItem>
-            <StaggerItem>
-              <div className="relative pl-6 border-l border-amber/30">
-                <h3 className="font-serif text-xl md:text-2xl text-cream mb-4">
-                  Repeatable
-                </h3>
-                <p className="text-stone-400 leading-relaxed text-[15px]">
-                  Every process we run for our own companies is documented
-                  and available to every client. Payment controls, reporting
-                  templates, compliance checklists. Built once, maintained
-                  permanently.
-                </p>
-              </div>
-            </StaggerItem>
-            <StaggerItem>
-              <div className="relative pl-6 border-l border-amber/30">
-                <h3 className="font-serif text-xl md:text-2xl text-cream mb-4">
-                  Compliance-native
-                </h3>
-                <p className="text-stone-400 leading-relaxed text-[15px]">
-                  We have been through enhanced due diligence recently,
-                  multiple times, across multiple jurisdictions. We know
-                  what banks want to see because we produce it for
-                  ourselves.
-                </p>
-              </div>
-            </StaggerItem>
-          </StaggerChildren>
         </div>
       </section>
 
