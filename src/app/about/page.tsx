@@ -1,5 +1,5 @@
-import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animate";
-import { CharacterSheet, PartyComposition } from "@/components/character-sheets";
+import { FadeIn } from "@/components/animate";
+import { Teams } from "@/components/teams";
 import Link from "next/link";
 
 export default function AboutPage() {
@@ -27,130 +27,53 @@ export default function AboutPage() {
           <FadeIn>
             <div className="space-y-6 text-stone-300 leading-relaxed text-[16px]">
               <p>
-                Foundstone exists because running multiple companies across
-                multiple countries produces a specific kind of operational
-                overhead that nobody warns you about. Finance, compliance,
-                contracts, vendor relationships, payroll in three
-                jurisdictions, bank due diligence that arrives on its own
-                schedule. Someone has to handle it. For our group of B2B
-                data and API businesses, we were that someone.
+                Foundstone is a management company. We run the operations,
+                finance, marketing, and back-office functions for a group
+                of B2B technology businesses we operate ourselves, and for
+                a small number of external clients on retainer.
               </p>
               <p>
-                We built internal systems for payment controls, management
-                reporting, compliance tracking, operational automation. Then
-                we noticed that every founder we talked to was solving the
-                same problems from scratch — usually while trying to build
-                product, usually discovering the compliance gap when a bank
-                asked for documentation that did not exist.
+                The first business in the group launched in 2018 — a B2B
+                data API serving enterprise clients across the EU and
+                North America. As the group grew, the operational overhead
+                of running multiple companies across multiple countries
+                became its own discipline. Finance, compliance, contracts,
+                vendor relationships, payroll in three jurisdictions, bank
+                due diligence that arrives on its own schedule. Someone
+                had to handle all of it. We were that someone.
               </p>
               <p>
-                Same team, same systems. Now on retainer for companies
-                that are not ours.
+                Over time we built internal systems for payment controls,
+                management reporting, compliance tracking, and operational
+                automation. Then we noticed that every founder we talked
+                to was solving the same problems from scratch — usually
+                while trying to build product, usually discovering the
+                compliance gap when a bank asked for documentation that
+                did not exist. So we opened the door. Same team, same
+                systems, now available on retainer to companies that are
+                not ours.
               </p>
             </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* ═══ The Party ═══ */}
-      <section className="relative py-24 md:py-32 px-6 md:px-12 border-t border-white/[0.04]">
-        <div className="max-w-[1200px] mx-auto">
+      {/* ═══ Teams ═══ */}
+      <section className="relative py-16 md:py-24 px-6 md:px-12 border-t border-white/[0.04]">
+        <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <p className="text-xs tracking-[0.3em] uppercase text-stone-600 mb-4">
-              The party
+            <p className="text-xs tracking-[0.3em] uppercase text-stone-500 mb-4">
+              Teams
             </p>
-            <p className="text-stone-400 leading-relaxed max-w-2xl mb-16">
-              The core team you work with directly. Behind them is a
-              network of partners, advisors, and jurisdiction-specific
-              specialists we bring in when the engagement requires it.
-              Below is who does what, what they have been through, and
-              where the gaps are.
+            <p className="text-stone-400 leading-relaxed max-w-2xl mb-12 text-[15px]">
+              Three teams covering operations, finance, and marketing.
+              Each team has key people who work with you directly and
+              a network of specialists behind them.
             </p>
           </FadeIn>
 
-          {/* Character sheets */}
-          <StaggerChildren
-            className="grid grid-cols-1 lg:grid-cols-3 gap-6"
-            stagger={0.12}
-          >
-            <StaggerItem>
-              <CharacterSheet
-                name="Andrii"
-                role="Chief of Staff"
-                origin="Cornell Law. Joined recently to build out the corporate structure, market entry strategy, and hiring infrastructure. Thinks about what the company looks like in three years when you are trying to raise or sell."
-                stats={[
-                  { name: "Corporate structure", value: 5 },
-                  { name: "Legal / compliance", value: 5 },
-                  { name: "Market entry", value: 4 },
-                  { name: "Hiring strategy", value: 4 },
-                  { name: "Fundraise prep", value: 4 },
-                  { name: "Daily ops", value: 2 },
-                  { name: "Marketing", value: 1 },
-                ]}
-                carries={["Entity structure", "Governance frameworks", "Hiring scorecards", "Market entry playbooks", "Due diligence prep"]}
-                hasSeen={[
-                  "Corporate restructuring ahead of a fundraise",
-                  "Multi-jurisdiction entity setup from scratch",
-                  "Hiring pipelines built for teams entering new markets",
-                  "What investors and acquirers actually look at in the back office",
-                ]}
-              />
-            </StaggerItem>
-
-            <StaggerItem>
-              <CharacterSheet
-                name="Jana"
-                role="CFO"
-                origin="Multi-entity finance across Estonia, Cyprus, and Ukraine. Closes the books in five days. Knows what the bank wants before they ask because she has produced the documentation set enough times to do it from memory."
-                stats={[
-                  { name: "Financial reporting", value: 5 },
-                  { name: "Cash management", value: 5 },
-                  { name: "Bank relationships", value: 5 },
-                  { name: "Multi-entity", value: 5 },
-                  { name: "Compliance", value: 4 },
-                  { name: "Operations", value: 2 },
-                  { name: "Marketing", value: 0 },
-                ]}
-                carries={["Management accounts", "Cash flow models", "Transfer pricing docs", "Board deck templates", "Bank file set"]}
-                hasSeen={[
-                  "Enhanced due diligence across multiple jurisdictions simultaneously",
-                  "Multi-currency consolidation with three fiscal calendars",
-                  "Usage-based revenue recognition at the API-call level",
-                  "The moment a founder looks at their bank balance and thinks it is revenue",
-                ]}
-              />
-            </StaggerItem>
-
-            <StaggerItem>
-              <CharacterSheet
-                name="Marina"
-                role="CMO"
-                origin="B2B positioning and channel strategy. Builds systems that compound. Measures with numbers. Has rebuilt the marketing function for companies that were running on LinkedIn posts and hope."
-                stats={[
-                  { name: "Positioning", value: 5 },
-                  { name: "Channel strategy", value: 5 },
-                  { name: "Content systems", value: 4 },
-                  { name: "Attribution", value: 4 },
-                  { name: "Unit economics", value: 3 },
-                  { name: "Operations", value: 1 },
-                  { name: "Finance", value: 1 },
-                ]}
-                carries={["Positioning framework", "Channel playbook", "Content calendar", "Attribution model", "Competitive landscape"]}
-                hasSeen={[
-                  "Company with 18-month-old website and no attribution model",
-                  "Founder postponing positioning decisions for a year",
-                  "The difference between content that compounds and content that evaporates",
-                  "Marketing hire with no direction and no metrics",
-                ]}
-              />
-            </StaggerItem>
-          </StaggerChildren>
-
-          {/* Party composition table */}
           <FadeIn>
-            <div className="mt-12">
-              <PartyComposition />
-            </div>
+            <Teams />
           </FadeIn>
         </div>
       </section>
