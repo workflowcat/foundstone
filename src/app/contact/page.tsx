@@ -15,6 +15,15 @@ export default function ContactPage() {
               Get in touch.
             </h1>
           </FadeIn>
+          <FadeIn delay={0.2}>
+            <p className="mt-8 text-stone-400 text-[15px] leading-relaxed max-w-xl">
+              We reply to every message within one business day, Cyprus
+              time. If your situation calls for it, the reply includes a
+              link to book a 30-minute diagnostic call — no slide deck,
+              no sales process, just a conversation about what is
+              actually going on.
+            </p>
+          </FadeIn>
         </div>
       </section>
 

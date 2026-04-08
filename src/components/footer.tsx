@@ -59,8 +59,17 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-white/[0.04] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <p className="text-xs text-stone-600">
-            &copy; {new Date().getFullYear()} Foundstone Capital Ltd &mdash; HE
-            483648
+            &copy; {new Date().getFullYear()} Foundstone Capital Ltd &mdash;{" "}
+            <a
+              href="https://efiling.drcor.mcit.gov.cy/DrcorPublic/SearchForm.aspx?sc=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-stone-400 transition-colors"
+              title="Search HE 483648 in the Cyprus Department of Registrar of Companies"
+            >
+              HE 483648
+            </a>
+            {" "}&middot; Registered in Cyprus
           </p>
           <div className="flex items-center gap-6">
             <Link

@@ -177,6 +177,116 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* ═══ How pricing works ═══ */}
+      <section className="relative px-6 md:px-12 pb-16 md:pb-24 border-t border-white/[0.04]">
+        <div className="max-w-3xl mx-auto">
+          <FadeIn>
+            <p className="text-xs tracking-[0.3em] uppercase text-stone-600 mt-16 mb-4">
+              How pricing works
+            </p>
+            <p className="text-stone-400 leading-relaxed mb-10 max-w-2xl text-[15px]">
+              Pricing follows the shape of the engagement, not a rate
+              card. Each shape has a pricing structure that matches how
+              value actually gets delivered.
+            </p>
+          </FadeIn>
+
+          <div className="space-y-0">
+            {[
+              {
+                shape: "Advisory",
+                model: "Fixed monthly retainer",
+                note: "Priced by seniority and number of standing calls per month. No per-minute billing, no time sheets, no nickel-and-diming async questions.",
+              },
+              {
+                shape: "Embedded",
+                model: "Day-rate × days per week",
+                note: "Invoiced monthly in arrears. Rate reflects the seniority of the person and the functional area. Minimum three-month commitment because the first month is always diagnostic.",
+              },
+              {
+                shape: "Project",
+                model: "Fixed fee against a one-page scope",
+                note: "Priced at contract signing. Scope changes get a written amendment and a price adjustment. We do not do uncapped time-and-materials on operational work — it is how scope creep eats both sides.",
+              },
+              {
+                shape: "Build & transition",
+                model: "Blended monthly rate that steps down as handover progresses",
+                note: "High while we are running the function, lower once the permanent hire is in, zero at exit. The math is spelled out in the engagement letter so nobody is guessing what month three looks like.",
+              },
+            ].map((p) => (
+              <FadeIn key={p.shape}>
+                <div className="border-t border-white/[0.06] py-8 grid grid-cols-1 md:grid-cols-12 gap-6">
+                  <div className="md:col-span-3">
+                    <h4 className="font-serif text-lg text-cream">{p.shape}</h4>
+                  </div>
+                  <div className="md:col-span-9">
+                    <p className="text-amber/70 text-sm mb-2">{p.model}</p>
+                    <p className="text-stone-500 text-[14px] leading-relaxed">{p.note}</p>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn>
+            <p className="text-stone-500 text-[13px] leading-relaxed mt-10 max-w-2xl italic">
+              Exact numbers come after a diagnostic call — we need to
+              see the situation before quoting. If the fit is not
+              obvious we will say so on that call, not three weeks in.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ═══ Not a fit if ═══ */}
+      <section className="relative px-6 md:px-12 pb-16 md:pb-24 border-t border-white/[0.04]">
+        <div className="max-w-3xl mx-auto">
+          <FadeIn>
+            <p className="text-xs tracking-[0.3em] uppercase text-stone-600 mt-16 mb-4">
+              Not a fit if
+            </p>
+            <p className="text-stone-400 leading-relaxed mb-10 max-w-2xl text-[15px]">
+              Fractional operational work has a narrow band of
+              situations where it actually makes sense. We would rather
+              save both sides the cycles than start an engagement that
+              was not going to work.
+            </p>
+          </FadeIn>
+
+          <div className="space-y-5">
+            {[
+              {
+                title: "Pre-revenue seed stage",
+                body: "If you do not yet have paying customers and the question is still whether the product works, you do not need an operational function — you need to ship. Come back when the operational surface area exists.",
+              },
+              {
+                title: "Looking for a contractor on individual tasks",
+                body: "We are not a staffing agency. If the ask is \"write me a financial model\" or \"set up a CRM\", you want a specialist on a project basis, not a management company.",
+              },
+              {
+                title: "Outside B2B technology",
+                body: "Our operating playbooks were built for software, data, and infrastructure businesses. Consumer, retail, services-only, and physical-goods businesses work differently and we are not the right team for them.",
+              },
+              {
+                title: "Under $500k ARR",
+                body: "At that stage the founder is the operating system. A fractional team on top of that usually creates more overhead than it removes. Retainer economics start making sense later.",
+              },
+              {
+                title: "Looking for someone to outsource decisions to",
+                body: "We run the function. You run the company. Engagements that try to flip that arrangement — where the CEO wants the fractional team to decide what the strategy is — do not work for either side.",
+              },
+            ].map((item) => (
+              <FadeIn key={item.title}>
+                <div className="border-l-2 border-amber/20 pl-5 py-1">
+                  <p className="text-cream text-[15px] mb-1">{item.title}</p>
+                  <p className="text-stone-500 text-[14px] leading-relaxed">{item.body}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ═══ The four functions — compact grid linking to subpages ═══ */}
       <section className="relative px-6 md:px-12 pb-16 md:pb-24 border-t border-white/[0.04]">
         <div className="max-w-3xl mx-auto">

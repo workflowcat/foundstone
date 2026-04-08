@@ -10,13 +10,41 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <p className="text-xs tracking-[0.3em] uppercase text-amber mb-6">
-              About
+              About &middot; Operating since 2018
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.15] text-cream">
               How we got here
             </h1>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ─── Quick facts strip ─── */}
+      <section className="relative px-6 md:px-12 pb-8">
+        <div className="max-w-4xl mx-auto">
+          <FadeIn delay={0.15}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 border-t border-b border-white/[0.06] py-8">
+              <div>
+                <p className="text-[10px] tracking-[0.2em] uppercase text-stone-600 mb-2">Founded</p>
+                <p className="font-serif text-2xl text-cream">2018</p>
+              </div>
+              <div>
+                <p className="text-[10px] tracking-[0.2em] uppercase text-stone-600 mb-2">Jurisdictions</p>
+                <p className="font-serif text-2xl text-cream">3</p>
+                <p className="text-[11px] text-stone-500 mt-1">CY · EE · UA</p>
+              </div>
+              <div>
+                <p className="text-[10px] tracking-[0.2em] uppercase text-stone-600 mb-2">Entities operated</p>
+                <p className="font-serif text-2xl text-cream">5</p>
+              </div>
+              <div>
+                <p className="text-[10px] tracking-[0.2em] uppercase text-stone-600 mb-2">Core team</p>
+                <p className="font-serif text-2xl text-cream">5</p>
+                <p className="text-[11px] text-stone-500 mt-1">+ partner network</p>
+              </div>
+            </div>
           </FadeIn>
         </div>
       </section>
@@ -52,6 +80,13 @@ export default function AboutPage() {
                 did not exist. So we opened the door. Same team, same
                 systems, now available on retainer to companies that are
                 not ours.
+              </p>
+              <p className="text-stone-400 pt-2 border-t border-white/[0.06] mt-6 pt-6">
+                We still run the companies we started with in 2018. Every
+                system we offer on retainer is a system we use on
+                ourselves first. If it does not work for our own books,
+                our own banks, and our own boards, it does not leave the
+                building.
               </p>
             </div>
           </FadeIn>

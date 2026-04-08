@@ -1,10 +1,24 @@
 /* ─── Team unit cards ─── */
 /* Teams (not individuals) with key people listed inside.
-   Honest about the team being the deliverable, not any one person. */
+   Honest about the team being the deliverable, not any one person.
+
+   ── TODO (human input required) ──
+   Each person has three fields that need verifiable content:
+     - role (already filled)
+     - background: 1 short line of prior operating history
+                   (e.g. "10+ years building B2B data products · previously
+                   built and exited X · ran ops at Y")
+     - linkedin: full URL to public profile (undefined to hide)
+
+   Never fabricate — if a field is unknown, leave it undefined and the
+   line won't render. Trust signals fail closed, not open.
+*/
 
 interface Person {
   name: string;
-  note?: string;
+  role: string;
+  background?: string;
+  linkedin?: string;
 }
 
 interface Team {
@@ -18,23 +32,48 @@ const teams: Team[] = [
     name: "Operations",
     what: "Operating cadence, vendor management, hiring infrastructure, process design. The team that runs the day-to-day rhythm.",
     people: [
-      { name: "Andrii", note: "Chief of Staff · corporate structure, market entry, hiring" },
-      { name: "Illya", note: "Operations lead · daily cadence, vendor stack, automation" },
+      {
+        name: "Andrii",
+        role: "Chief of Staff · corporate structure, market entry, hiring",
+        background: undefined, // TODO: e.g. "Building B2B data businesses since 2018 · founded the first company in the group"
+        linkedin: undefined, // TODO: full URL
+      },
+      {
+        name: "Illya",
+        role: "Operations lead · daily cadence, vendor stack, automation",
+        background: undefined, // TODO
+        linkedin: undefined, // TODO
+      },
     ],
   },
   {
     name: "Finance",
     what: "Multi-entity reporting, cash management, bank relationships, compliance documentation. The team that keeps the books closeable and the bank account open.",
     people: [
-      { name: "Jana", note: "CFO · multi-entity finance across three jurisdictions" },
-      { name: "Diana", note: "Finance operations · management reporting, AP/AR, controls" },
+      {
+        name: "Jana",
+        role: "CFO · multi-entity finance across three jurisdictions",
+        background: undefined, // TODO
+        linkedin: undefined, // TODO
+      },
+      {
+        name: "Diana",
+        role: "Finance operations · management reporting, AP/AR, controls",
+        background: undefined, // TODO
+        linkedin: undefined, // TODO
+      },
     ],
   },
   {
     name: "Marketing",
     what: "Positioning, channel strategy, content systems, attribution. The team that figures out where the next 50 customers come from.",
     people: [
-      { name: "Marina", note: "CMO · positioning, channel strategy, B2B systems" },
+      {
+        name: "Marina",
+        role: "CMO · positioning, channel strategy, B2B systems",
+        background: undefined, // TODO
+        linkedin: undefined, // TODO
+      },
     ],
   },
 ];
@@ -67,16 +106,31 @@ export function Teams({ className = "" }: { className?: string }) {
                 <p className="text-stone-300 leading-relaxed text-[15px] mb-6">
                   {team.what}
                 </p>
-                <div className="space-y-2">
+                <div className="space-y-5">
                   {team.people.map((person) => (
-                    <div key={person.name} className="flex items-baseline gap-3">
-                      <span className="text-cream/90 text-sm font-medium w-16 shrink-0">
-                        {person.name}
-                      </span>
-                      {person.note && (
-                        <span className="text-stone-500 text-xs leading-relaxed">
-                          {person.note}
+                    <div key={person.name} className="border-l border-white/[0.06] pl-4">
+                      <div className="flex items-baseline gap-3 flex-wrap">
+                        <span className="text-cream text-sm font-medium">
+                          {person.name}
                         </span>
+                        {person.linkedin && (
+                          <a
+                            href={person.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-stone-500 hover:text-amber/70 transition-colors"
+                          >
+                            LinkedIn ↗
+                          </a>
+                        )}
+                      </div>
+                      <p className="text-stone-400 text-xs leading-relaxed mt-1">
+                        {person.role}
+                      </p>
+                      {person.background && (
+                        <p className="text-stone-500 text-xs leading-relaxed mt-1.5 italic">
+                          {person.background}
+                        </p>
                       )}
                     </div>
                   ))}
