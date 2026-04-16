@@ -10,7 +10,7 @@ export default function WhatYourBankSeesNote() {
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-4 mb-8">
-              <time className="text-xs tracking-wider text-stone-600">March 2025</time>
+              <time className="text-xs tracking-wider text-stone-600">March 2026</time>
               <span className="text-stone-800">&middot;</span>
               <span className="text-xs tracking-wider text-stone-600">16 min read</span>
             </div>

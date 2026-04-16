@@ -1,5 +1,4 @@
 import { FadeIn } from "@/components/animate";
-import { Teams } from "@/components/teams";
 import Link from "next/link";
 
 export default function AboutPage() {
@@ -10,41 +9,13 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <p className="text-xs tracking-[0.3em] uppercase text-amber mb-6">
-              About &middot; Operating since 2018
+              About
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.15] text-cream">
               How we got here
             </h1>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* ─── Quick facts strip ─── */}
-      <section className="relative px-6 md:px-12 pb-8">
-        <div className="max-w-4xl mx-auto">
-          <FadeIn delay={0.15}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 border-t border-b border-white/[0.06] py-8">
-              <div>
-                <p className="text-[10px] tracking-[0.2em] uppercase text-stone-600 mb-2">Founded</p>
-                <p className="font-serif text-2xl text-cream">2018</p>
-              </div>
-              <div>
-                <p className="text-[10px] tracking-[0.2em] uppercase text-stone-600 mb-2">Jurisdictions</p>
-                <p className="font-serif text-2xl text-cream">3</p>
-                <p className="text-[11px] text-stone-500 mt-1">CY · EE · UA</p>
-              </div>
-              <div>
-                <p className="text-[10px] tracking-[0.2em] uppercase text-stone-600 mb-2">Entities operated</p>
-                <p className="font-serif text-2xl text-cream">5</p>
-              </div>
-              <div>
-                <p className="text-[10px] tracking-[0.2em] uppercase text-stone-600 mb-2">Core team</p>
-                <p className="font-serif text-2xl text-cream">5</p>
-                <p className="text-[11px] text-stone-500 mt-1">+ partner network</p>
-              </div>
-            </div>
           </FadeIn>
         </div>
       </section>
@@ -56,9 +27,9 @@ export default function AboutPage() {
             <div className="space-y-6 text-stone-300 leading-relaxed text-[16px]">
               <p>
                 Foundstone is a management company. We run the operations,
-                finance, marketing, and back-office functions for a group
-                of B2B technology businesses we operate ourselves, and for
-                a small number of external clients on retainer.
+                finance, governance, and back-office functions for a
+                group of B2B technology businesses we operate ourselves,
+                and for a small number of external clients on retainer.
               </p>
               <p>
                 The first business in the group launched in 2018 — a B2B
@@ -71,44 +42,32 @@ export default function AboutPage() {
                 had to handle all of it. We were that someone.
               </p>
               <p>
-                Over time we built internal systems for payment controls,
-                management reporting, compliance tracking, and operational
-                automation. Then we noticed that every founder we talked
-                to was solving the same problems from scratch — usually
-                while trying to build product, usually discovering the
+                Over time the list of capabilities grew from the three we
+                started with to nine. Transactions. Corporate governance.
+                Finance and treasury. KYC and intelligence research. Data
+                operations and automation. AI implementation. Privacy
+                operations. Managed services. Strategic advisory. Each
+                practice was added when one of our companies hit a
+                problem the existing team couldn&apos;t solve, not because
+                the practice looked interesting on a slide.
+              </p>
+              <p>
+                Then we noticed that every founder we talked to was
+                solving the same problems from scratch — usually while
+                trying to build product, usually discovering the
                 compliance gap when a bank asked for documentation that
                 did not exist. So we opened the door. Same team, same
                 systems, now available on retainer to companies that are
                 not ours.
               </p>
-              <p className="text-stone-400 pt-2 border-t border-white/[0.06] mt-6 pt-6">
-                We still run the companies we started with in 2018. Every
-                system we offer on retainer is a system we use on
-                ourselves first. If it does not work for our own books,
-                our own banks, and our own boards, it does not leave the
-                building.
+              <p className="text-stone-400 border-t border-white/[0.06] mt-6 pt-6">
+                We still run the companies we started with in 2018.
+                Every practice we offer on retainer is a practice we
+                use on ourselves first. If it does not work for our own
+                books, our own banks, and our own boards, it does not
+                leave the building.
               </p>
             </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* ═══ Teams ═══ */}
-      <section className="relative py-16 md:py-24 px-6 md:px-12 border-t border-white/[0.04]">
-        <div className="max-w-4xl mx-auto">
-          <FadeIn>
-            <p className="text-xs tracking-[0.3em] uppercase text-stone-500 mb-4">
-              Teams
-            </p>
-            <p className="text-stone-400 leading-relaxed max-w-2xl mb-12 text-[15px]">
-              Three teams covering operations, finance, and marketing.
-              Each team has key people who work with you directly and
-              a network of specialists behind them.
-            </p>
-          </FadeIn>
-
-          <FadeIn>
-            <Teams />
           </FadeIn>
         </div>
       </section>

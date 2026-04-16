@@ -17,8 +17,14 @@ export default function ContactPage() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="mt-8 text-stone-400 text-[15px] leading-relaxed max-w-xl">
-              We reply to every message within one business day, Cyprus
-              time. If your situation calls for it, the reply includes a
+              Write to us directly at{" "}
+              <a
+                href="mailto:contact@foundstonecap.com"
+                className="text-amber hover:text-cream transition-colors"
+              >
+                contact@foundstonecap.com
+              </a>
+              . If your situation calls for it, the reply includes a
               link to book a 30-minute diagnostic call — no slide deck,
               no sales process, just a conversation about what is
               actually going on.
@@ -74,68 +80,64 @@ export default function ContactPage() {
               </div>
             </FadeIn>
 
-            {/* Right side — message or map placeholder */}
+            {/* Right side — what to include when writing */}
             <FadeIn delay={0.3}>
               <div className="relative">
                 <div className="border border-white/[0.04] rounded-sm p-8 md:p-12 bg-stone-900/50">
                   <p className="text-xs tracking-[0.25em] uppercase text-stone-600 mb-8">
-                    Send a message
+                    Writing to us
                   </p>
 
-                  <form className="space-y-6">
-                    <div>
-                      <label className="block text-sm text-stone-400 mb-2">
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        className="w-full bg-transparent border-b border-white/[0.08] pb-3 text-cream placeholder:text-stone-700 focus:border-amber/40 focus:outline-none transition-colors"
-                        placeholder="Your name"
-                      />
-                    </div>
+                  <p className="text-stone-400 text-[15px] leading-relaxed mb-6">
+                    The more we know up front, the faster we can tell
+                    you whether we are the right team at all. Useful to
+                    include:
+                  </p>
 
-                    <div>
-                      <label className="block text-sm text-stone-400 mb-2">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        className="w-full bg-transparent border-b border-white/[0.08] pb-3 text-cream placeholder:text-stone-700 focus:border-amber/40 focus:outline-none transition-colors"
-                        placeholder="your@email.com"
-                      />
-                    </div>
+                  <ul className="space-y-3 text-stone-400 text-[15px] leading-relaxed mb-8">
+                    <li className="flex items-start gap-3">
+                      <span className="text-amber/40 mt-[7px] shrink-0">
+                        <span className="block w-1 h-1 bg-current rounded-full" />
+                      </span>
+                      <span>Who you are and what you are building</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-amber/40 mt-[7px] shrink-0">
+                        <span className="block w-1 h-1 bg-current rounded-full" />
+                      </span>
+                      <span>
+                        What operational problem is actually hurting
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-amber/40 mt-[7px] shrink-0">
+                        <span className="block w-1 h-1 bg-current rounded-full" />
+                      </span>
+                      <span>
+                        What shape of engagement you are thinking about
+                      </span>
+                    </li>
+                  </ul>
 
-                    <div>
-                      <label className="block text-sm text-stone-400 mb-2">
-                        Message
-                      </label>
-                      <textarea
-                        rows={4}
-                        className="w-full bg-transparent border-b border-white/[0.08] pb-3 text-cream placeholder:text-stone-700 focus:border-amber/40 focus:outline-none transition-colors resize-none"
-                        placeholder="How can we help?"
-                      />
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="inline-flex items-center gap-3 px-8 py-4 border border-amber/40 text-amber text-sm tracking-wider uppercase hover:bg-amber/10 transition-all duration-300 mt-4"
+                  <a
+                    href="mailto:contact@foundstonecap.com?subject=Situation%20we%20are%20working%20on"
+                    className="inline-flex items-center gap-3 px-8 py-4 border border-amber/40 text-amber text-sm tracking-wider uppercase hover:bg-amber/10 transition-all duration-300"
+                  >
+                    Open email
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
                     >
-                      Send message
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={1.5}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                        />
-                      </svg>
-                    </button>
-                  </form>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                      />
+                    </svg>
+                  </a>
                 </div>
               </div>
             </FadeIn>

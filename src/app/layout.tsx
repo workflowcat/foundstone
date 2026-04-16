@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display, EB_Garamond } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
@@ -23,14 +24,26 @@ const garamond = EB_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Foundstone Capital Ltd",
+  metadataBase: new URL("https://foundstonecap.com"),
+  title: {
+    default: "Foundstone Capital — Limassol, Cyprus",
+    template: "%s · Foundstone Capital",
+  },
   description:
-    "Cyprus-based management and holding company for a group of B2B technology businesses operating in data, APIs, and infrastructure.",
+    "Cyprus-based management company running nine operational practice areas for B2B technology businesses in data, APIs, and infrastructure. Based in Limassol.",
   openGraph: {
-    title: "Foundstone Capital Ltd",
+    title: "Foundstone Capital",
     description:
-      "Management company for a group of B2B technology businesses in data, APIs, and infrastructure.",
+      "Nine practice areas — from transactions and governance to finance, data, AI, KYC, and managed services. Built on businesses we run ourselves. Available on retainer.",
     type: "website",
+    siteName: "Foundstone Capital",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Foundstone Capital",
+    description:
+      "Nine practice areas — from transactions and governance to finance, data, AI, KYC, and managed services. Built on businesses we run ourselves. Available on retainer.",
   },
 };
 
@@ -45,6 +58,7 @@ export default function RootLayout({
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

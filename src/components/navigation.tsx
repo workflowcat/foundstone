@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Logo } from "@/components/logo";
 
 const links = [
   { href: "/services", label: "Services" },
@@ -35,12 +36,7 @@ export function Navigation() {
       }`}
     >
       <nav className="max-w-[1400px] mx-auto flex items-center justify-between px-6 md:px-12 h-20">
-        <Link
-          href="/"
-          className="font-serif text-xl tracking-wide text-cream hover:text-amber transition-colors"
-        >
-          Foundstone
-        </Link>
+        <Logo size="nav" href="/" />
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-10">

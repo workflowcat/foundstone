@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Logo } from "@/components/logo";
 
 export function Footer() {
   return (
@@ -7,7 +8,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           {/* Brand */}
           <div>
-            <p className="font-serif text-lg text-cream mb-4">Foundstone</p>
+            <div className="mb-6">
+              <Logo size="footer" />
+            </div>
             <p className="text-sm text-stone-400 leading-relaxed max-w-xs">
               Management company for a group of B2B technology businesses
               in data, APIs, and infrastructure.

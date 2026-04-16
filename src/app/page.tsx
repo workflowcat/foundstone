@@ -1,99 +1,37 @@
 import Link from "next/link";
 import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animate";
 import { GeometricHero, StrataDivider } from "@/components/geometric-bg";
-import { IconConstraint, IconFile, IconLedger, IconMineShaft, IconShip } from "@/components/note-icons";
-
-const notes = [
-  {
-    slug: "master-craftsman-constraint",
-    date: "Mar 2026",
-    title: "When the master craftsman becomes the constraint",
-    readTime: "18 min",
-    Icon: IconConstraint,
-  },
-  {
-    slug: "what-your-bank-sees",
-    date: "Mar 2026",
-    title: "What your bank actually sees when they open your file",
-    readTime: "16 min",
-    Icon: IconFile,
-  },
-  {
-    slug: "venetian-bookkeeping",
-    date: "Feb 2026",
-    title: "Why the Venetian Republic\u2019s bookkeeping system matters for modern SaaS companies",
-    readTime: "14 min",
-    Icon: IconLedger,
-  },
-  {
-    slug: "risk-management-1556",
-    date: "Jan 2026",
-    title: "What mining engineers knew about risk management in 1556 that startup founders don\u2019t",
-    readTime: "14 min",
-    Icon: IconMineShaft,
-  },
-  {
-    slug: "dutch-east-india-holding",
-    date: "Dec 2025",
-    title: "How the Dutch East India Company invented the holding company structure",
-    readTime: "11 min",
-    Icon: IconShip,
-  },
-];
-
-const services = [
-  {
-    title: "Operations",
-    desc: "Operating cadence, vendor management, hiring frameworks, process design.",
-  },
-  {
-    title: "Finance",
-    desc: "Cash flow forecasting, board-ready financials, multi-entity consolidation, bank relationships.",
-  },
-  {
-    title: "Marketing",
-    desc: "Positioning, channel strategy, content systems, attribution.",
-  },
-  {
-    title: "Back Office",
-    desc: "Payroll across jurisdictions, compliance documentation, entity management, governance.",
-  },
-];
+import { practices } from "@/data/practices";
+import { notes } from "@/data/notes";
 
 export default function Home() {
   return (
     <>
-      {/* ═══ Hero — direct positioning statement ═══ */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-12">
+      {/* ═══ Hero ═══ */}
+      {/* pt-24 keeps content clear of the fixed h-20 nav on mobile where
+          the centered content would otherwise drift under it. */}
+      <section className="relative min-h-screen pt-24 pb-12 flex flex-col items-center justify-center px-6 md:px-12">
         <GeometricHero />
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <FadeIn delay={0.2}>
-            <p className="text-xs tracking-[0.3em] uppercase text-amber/60 mb-8">
-              Foundstone Capital
-            </p>
-          </FadeIn>
-
           <FadeIn delay={0.3}>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] tracking-tight text-cream">
-              We run the operations,
+              We run the operations
               <br />
-              finance, and marketing
-              <br className="hidden md:block" />
-              <span className="text-amber/80"> for B2B technology companies.</span>
+              <span className="text-amber/80">behind B2B technology companies.</span>
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.6}>
             <p className="mt-10 max-w-2xl mx-auto text-stone-400 text-lg leading-relaxed">
-              We built these functions for our own group of B2B businesses
-              starting in 2018. Same team, same systems, now available on
-              retainer to companies that are not ours.
+              Nine practice areas — from transactions and governance to
+              finance, data, AI, KYC, and managed services. Built on
+              businesses we run ourselves. Available on retainer.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.9}>
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="mt-10 flex items-center justify-center">
               <Link
                 href="/services"
                 className="inline-flex items-center gap-3 px-8 py-4 border border-amber/40 text-amber text-sm tracking-wider uppercase hover:bg-amber/10 transition-all duration-300"
@@ -103,51 +41,49 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                 </svg>
               </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-3 px-8 py-4 text-stone-400 text-sm tracking-wider uppercase hover:text-cream transition-all duration-300"
-              >
-                Get in touch
-              </Link>
             </div>
           </FadeIn>
+
         </div>
 
-        <FadeIn delay={1.4} className="absolute bottom-12">
-          <div className="flex flex-col items-center gap-3">
-            <span className="text-[10px] tracking-[0.3em] uppercase text-stone-600">
-              Scroll
-            </span>
-            <div className="w-px h-8 bg-gradient-to-b from-stone-600 to-transparent" />
-          </div>
-        </FadeIn>
       </section>
 
-      {/* ═══ Services overview ═══ */}
+      {/* ═══ Practice areas grid ═══ */}
       <section className="relative py-24 md:py-32 px-6 md:px-12 border-t border-white/[0.04]">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <FadeIn>
             <p className="text-xs tracking-[0.3em] uppercase text-amber/60 mb-4">
-              What we do
+              Practice areas
             </p>
             <p className="text-stone-400 leading-relaxed max-w-2xl mb-16 text-lg">
-              Four functional areas. Each one delivered as advisory,
-              embedded retainer, project, or full build-and-transition —
-              depending on what you need.
+              Nine practices, each built when one of our own companies
+              hit a problem the existing team couldn&apos;t solve. Each
+              one delivered as advisory, embedded retainer, a project,
+              or a full build-and-transition — depending on what you
+              need.
             </p>
           </FadeIn>
 
-          <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/[0.04]" stagger={0.1}>
-            {services.map((s) => (
-              <StaggerItem key={s.title}>
-                <div className="bg-stone-950 p-8 md:p-10 h-full">
-                  <p className="text-xs tracking-[0.2em] uppercase text-amber/60 mb-3">
-                    {s.title}
+          <StaggerChildren
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.04]"
+            stagger={0.05}
+          >
+            {practices.map((practice) => (
+              <StaggerItem key={practice.slug}>
+                <Link
+                  href={`/services#${practice.slug}`}
+                  className="group block bg-stone-950 p-7 md:p-8 h-full transition-colors hover:bg-stone-900/50"
+                >
+                  <p className="font-mono text-amber/50 text-[11px] mb-3">
+                    {practice.num}
                   </p>
-                  <p className="text-stone-300 text-[15px] leading-relaxed">
-                    {s.desc}
+                  <h3 className="font-serif text-lg md:text-xl text-cream group-hover:text-amber/90 transition-colors mb-2 leading-snug">
+                    {practice.name}
+                  </h3>
+                  <p className="text-stone-500 text-[13px] leading-relaxed">
+                    {practice.tagline}
                   </p>
-                </div>
+                </Link>
               </StaggerItem>
             ))}
           </StaggerChildren>
@@ -230,8 +166,9 @@ export default function Home() {
               Tell us about your situation.
             </p>
             <p className="text-stone-400 leading-relaxed mb-10">
-              We will tell you whether we can help and what the
-              engagement would look like. No pitch deck.
+              We will tell you which practice areas fit, what shape
+              the engagement should take, and whether we are the right
+              team at all. No pitch deck.
             </p>
             <Link
               href="/contact"

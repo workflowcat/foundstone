@@ -11,7 +11,7 @@ export default function RiskManagementNote() {
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-4 mb-8">
-              <time className="text-xs tracking-wider text-stone-600">February 2025</time>
+              <time className="text-xs tracking-wider text-stone-600">January 2026</time>
               <span className="text-stone-800">&middot;</span>
               <span className="text-xs tracking-wider text-stone-600">14 min read</span>
             </div>
